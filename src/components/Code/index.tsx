@@ -1,5 +1,5 @@
-import * as React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
+import * as React from "react";
 
 const Code = ({ codeString, language }) => {
   return (

@@ -8,6 +8,7 @@ export interface Theme {
     bg: Colour;
     primary: Colour;
     secondary: Colour;
+    accent: Colour;
   };
 }
 
@@ -15,12 +16,19 @@ export const theme: Theme = {
   colours: {
     text: "#333",
     bg: "white",
-    primary: "#ebebeb",
+    primary: "#5dd9c1",
     secondary: "#4d3ae2",
+    accent: "#4d3ae2",
   },
 };
 
-export const NarrowScreenWidth = "40em";
+export const sizes = {
+  phone: "480px",
+  tablet: "768px",
+  laptop: "1200px",
+};
+
+export const NarrowScreenWidth = sizes.phone;
 
 export const forNarrowScreen = (first, ...interpolations) => css`
   @media only screen ${NarrowScreenWidth != null &&
