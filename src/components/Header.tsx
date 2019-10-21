@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
-import { sizes } from "../../styles";
-import { makeAnchor } from "../../utils";
+import { sizes } from "../styles";
+import { makeAnchor } from "../utils";
 
 export const H1: React.FC = props => (
   <h1 id={makeAnchor(props.children)} {...props} />
@@ -28,6 +28,7 @@ const StyledHeading = styled.div`
 
   h2 {
     font-size: 2.5rem;
+    margin-top: 0;
     margin-bottom: 0;
   }
 
