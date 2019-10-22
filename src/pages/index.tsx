@@ -1,8 +1,8 @@
 import * as React from "react";
 import styled from "styled-components";
-import { Heading } from "../components/Header";
+import { Heading } from "../components/Text";
 import Layout from "../components/Layout";
-import { ExternalLink } from "../components/Link";
+import Link from "../components/Link";
 import SEO from "../components/SEO";
 import { sizes } from "../styles";
 import Project from "../components/Project";
@@ -60,9 +60,9 @@ const StyledNav = styled.div`
 const Nav: React.FC<Props> = props => (
   <StyledNav>
     {props.links.map(({ text, href }) => (
-      <ExternalLink key={text} href={href}>
+      <Link key={text} to={href}>
         {text}
-      </ExternalLink>
+      </Link>
     ))}
   </StyledNav>
 );
@@ -73,14 +73,15 @@ const Home = () => {
       <SEO />
       <StyledHome className="home">
         <Hero>
-          <Heading title="Hello." subtitle="I'm Jake 👋" />
-          <Description>
-            Software engineer{" "}
-            <ExternalLink href="https://prodo.dev">@prodo</ExternalLink> in
-            London
-          </Description>
+          <div>
+            <Heading title="Hello." subtitle="I'm Jake 👋" />
+            <Description>
+              Software engineer <Link href="https://prodo.dev">@prodo</Link> in
+              London
+            </Description>
 
-          <Nav links={links} />
+            <Nav links={links} />
+          </div>
         </Hero>
 
         <Projects>

@@ -1,6 +1,6 @@
+import gray from "gray-percentage";
 import Typography from "typography";
 import CodePlugin from "typography-plugin-code";
-import gray from "gray-percentage";
 
 const fontFamilies = [
   "-apple-system",

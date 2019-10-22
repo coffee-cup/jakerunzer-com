@@ -2,8 +2,9 @@ import { MDXProvider } from "@mdx-js/react";
 import { Location } from "@reach/router";
 import * as React from "react";
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
-import { H1, H2, H3 } from "../components/Header";
-import { ExternalLink } from "../components/Link";
+import Footer from "./Footer";
+import { H1, H2, H3 } from "../components/Text";
+import { MdxLink } from "../components/Link";
 import { sizes, theme } from "../styles";
 
 const GlobalStyle = createGlobalStyle`
@@ -24,12 +25,15 @@ const ContentWrapper = styled.div`
   }
 `;
 
+const Content = styled.main`
+  min-height: 100vh;
+`;
+
 const components = {
-  p: Text,
   h1: H1,
   h2: H2,
   h3: H3,
-  a: ExternalLink,
+  a: MdxLink,
 };
 
 const Layout: React.FC = ({ children }) => {
@@ -40,7 +44,11 @@ const Layout: React.FC = ({ children }) => {
           <ThemeProvider theme={theme}>
             <>
               <GlobalStyle />
-              <ContentWrapper>{children}</ContentWrapper>
+              <ContentWrapper>
+                <Content>{children}</Content>
+
+                <Footer />
+              </ContentWrapper>
             </>
           </ThemeProvider>
         </MDXProvider>

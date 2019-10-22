@@ -6,13 +6,12 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-typescript`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        isTSX: true,
-        allExtensions: true,
+        path: `${__dirname}/content`,
+        name: `content`,
       },
     },
-    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -20,23 +19,18 @@ module.exports = {
         name: `assets`,
       },
     },
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [".mdx", ".md"],
+        plugins: ["gatsby-remark-images"],
         gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              classPrefix: "language-",
-              inlineCodeMarker: null,
-              aliases: {},
-            },
-          },
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 800,
+              quality: 100,
             },
           },
           {
@@ -71,6 +65,14 @@ module.exports = {
     },
     `gatsby-plugin-remove-serviceworker`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        isTSX: true,
+        allExtensions: true,
+      },
+    },
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {

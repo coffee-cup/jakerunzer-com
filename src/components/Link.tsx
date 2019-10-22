@@ -2,8 +2,8 @@ import { Link as GLink } from "gatsby";
 import * as React from "react";
 import styled from "styled-components";
 
-const StyledGLink = styled(GLink)`
-  color: ${props => props.theme.colours.accent};
+const StyledLink = styled(GLink)<{ empty: number }>`
+  color: ${props => (props.empty ? "inherit" : props.theme.colours.accent)};
   text-decoration: none;
   transition: opacity 150ms ease-in-out;
 
@@ -13,21 +13,45 @@ const StyledGLink = styled(GLink)`
   }
 `;
 
-const Link = (props: any) => (
-  <StyledGLink {...(props as any)}>
-    <span>{props.children}</span>
-  </StyledGLink>
-);
+export interface Props {
+  to: string;
+  href?: string;
+  empty?: boolean;
+  target?: string;
+  className?: string;
+}
+
+const isExternalLink = (href: string): boolean =>
+  href.startsWith("http://") || href.startsWith("https://");
+
+const Link: React.FC<Props> = props => {
+  const href = props.href || props.to;
+  if (isExternalLink(href)) {
+    return (
+      <StyledLink
+        as="a"
+        href={href}
+        target="_blank"
+        {...{ ...props, empty: props.empty ? 1 : 0 }}
+      >
+        {props.children}
+      </StyledLink>
+    );
+  }
+
+  return (
+    <StyledLink to={href} {...{ ...props, empty: props.empty ? 1 : 0 }}>
+      {props.children}
+    </StyledLink>
+  );
+};
 
 export default Link;
 
-export const ExternalLink = styled.a`
-  color: ${props => props.theme.colours.accent};
-  text-decoration: none;
-  transition: opacity 150ms ease-in-out;
+export const EmptyLink: React.FC<Props> = props => (
+  <Link empty={true} {...props} />
+);
 
-  &:hover {
-    text-decoration: none;
-    opacity: 0.6;
-  }
-`;
+export const MdxLink: React.FC<any> = props => {
+  return <Link {...props} />;
+};

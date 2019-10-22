@@ -16,7 +16,7 @@ export interface Props {
   };
 }
 
-function SEO(props: Props) {
+const SEO: React.FC<Props> = props => {
   const data = useStaticQuery(query);
   const meta = data.site.siteMetadata;
 
@@ -55,12 +55,12 @@ function SEO(props: Props) {
       {meta.image && <meta name="twitter:image" content={meta.image} />}
     </Helmet>
   );
-}
+};
 
 export default SEO;
 
 const query = graphql`
-  query SEOQuery {
+  query {
     site {
       siteMetadata {
         siteShortTitle

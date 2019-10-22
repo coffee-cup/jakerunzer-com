@@ -1,52 +1,15 @@
 import * as React from "react";
 import styled from "styled-components";
-import { sizes } from "../styles";
-import { makeAnchor } from "../utils";
+import Link from "./Link";
 
-export const H1: React.FC = props => (
-  <h1 id={makeAnchor(props.children)} {...props} />
+const StyledHeader = styled.header``;
+
+const Header: React.FC<{ home?: string }> = props => (
+  <StyledHeader>
+    <Link to={props.home || "/"} empty>
+      <h2>j.</h2>
+    </Link>
+  </StyledHeader>
 );
-export const H2: React.FC = props => (
-  <h2 id={makeAnchor(props.children)} {...props} />
-);
-export const H3: React.FC = props => <h3 {...props} />;
 
-export const Title = styled.h1`
-  font-size: 3em;
-`;
-
-const StyledHeading = styled.div`
-  margin-top: 0;
-  padding: 1rem 0;
-
-  h1 {
-    font-size: 6rem;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    margin-left: -8px;
-  }
-
-  h2 {
-    font-size: 2.5rem;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  @media (min-width: ${sizes.phone}) {
-    h1 {
-      font-size: 8rem;
-    }
-  }
-`;
-
-interface Props {
-  title: string;
-  subtitle?: string;
-}
-
-export const Heading: React.FC<Props> = props => (
-  <StyledHeading>
-    <h1>{props.title}</h1>
-    {props.subtitle && <h2>{props.subtitle}</h2>}
-  </StyledHeading>
-);
+export default Header;
