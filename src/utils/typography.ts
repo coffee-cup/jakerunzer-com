@@ -26,8 +26,14 @@ const typography = new Typography({
   bodyWeight: "normal",
   boldWeight: 600,
   blockMarginBottom: 1 / 2,
-  headerFontFamily: fontFamilies,
-  bodyFontFamily: fontFamilies,
+  headerFontFamily: ["Montserrat", ...fontFamilies],
+  bodyFontFamily: [...fontFamilies],
+  googleFonts: [
+    {
+      name: "Montserrat",
+      styles: ["700"],
+    },
+  ],
   overrideStyles: ({ rhythm }) => ({
     h1: {
       paddingBottom: `calc(${rhythm(1 / 4)} - 1px)`,
