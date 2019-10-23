@@ -19,7 +19,6 @@ module.exports = {
         name: `assets`,
       },
     },
-    `gatsby-transformer-json`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -63,6 +62,7 @@ module.exports = {
         icon: `content/assets/icon.png`,
       },
     },
+    `gatsby-plugin-simple-analytics`,
     `gatsby-plugin-remove-serviceworker`,
     `gatsby-plugin-react-helmet`,
     {
