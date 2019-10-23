@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import { H1, H2, H3 } from "../components/Text";
 import { MdxLink } from "../components/Link";
 import { sizes, theme } from "../styles";
+import Code from "./Code";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -34,6 +35,7 @@ const components = {
   h2: H2,
   h3: H3,
   a: MdxLink,
+  pre: Code,
 };
 
 const Layout: React.FC = ({ children }) => {

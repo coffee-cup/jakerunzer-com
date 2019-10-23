@@ -13,7 +13,7 @@ Confused? Well hopefully after this article you won't be.
 As we saw [earlier](/blog/functors), a Functor is just a Haskell typeclass with the
 single required `fmap` function.
 
-```haskell
+```hs
 class Functor f where
   fmap :: (a -> b) -> f a -> f b
 ```
@@ -50,8 +50,8 @@ all implement the `fmap` function).
 
 ```haskell
 class (Functor f) => Applicative f where
-    pure  :: a -> f a
-    (<*>) :: f (a -> b) -> f a -> f b
+  pure  :: a -> f a
+  (<*>) :: f (a -> b) -> f a -> f b
 ```
 
 An Applicative must implement the `pure` and `(<*>)` functions.

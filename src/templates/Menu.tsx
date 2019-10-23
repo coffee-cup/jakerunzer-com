@@ -67,7 +67,7 @@ const Menu: React.FC<Props> = props => {
         <Pages>
           {dataPages.map(n => (
             <Page key={n.fields.slug}>
-              <Link to={n.fields.slug}>
+              <Link to={n.fields.slug} empty>
                 <PageName>{n.frontmatter.title}</PageName>
               </Link>
             </Page>
