@@ -13,7 +13,7 @@ Confused? Well hopefully after this article you won't be.
 As we saw [earlier](/blog/functors), a Functor is just a Haskell typeclass with the
 single required `fmap` function.
 
-```hs
+```haskell
 class Functor f where
   fmap :: (a -> b) -> f a -> f b
 ```
@@ -77,7 +77,7 @@ value is unwrapped (via pattern matching), the function is applied to the
 contents of second Maybe, and the result is wrapped back up as a Maybe.
 
 Since all functions in Haskell are curried, we can partially apply a function of
-\\(n\\) arguments to \\(n\\) parameters wrapped in the Applicative context.
+`n` arguments to `n` parameters wrapped in the Applicative context.
 
 Using our above example, summing two numbers wrapped in a Maybe would look like
 this
