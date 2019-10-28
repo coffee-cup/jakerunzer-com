@@ -4,7 +4,6 @@ import { Heading } from "../components/Text";
 import Layout from "../components/Layout";
 import Link from "../components/Link";
 import SEO from "../components/SEO";
-import { sizes } from "../styles";
 import Project from "../components/Project";
 import { projects } from "../../content/projects";
 
@@ -15,17 +14,14 @@ const links = [
 ];
 
 const Hero = styled.div`
-  padding: 11rem 0;
-
-  @media (min-width: ${sizes.phone}) {
-    padding: 18rem 0;
-  }
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
 `;
 
 const Description = styled.p`
   max-width: 38ch;
-  margin-bottom: 1.5rem;
-  margin-top: 0;
+  margin: 1rem 0;
 `;
 
 const Projects = styled.div`
@@ -76,7 +72,7 @@ const Home = () => {
           <div>
             <Heading title="Hello." subtitle="I'm Jake 👋" />
             <Description>
-              Software engineer <Link href="https://prodo.dev">@prodo</Link> in
+              Software engineer <Link to="https://prodo.dev">@prodo</Link> in
               London
             </Description>
 

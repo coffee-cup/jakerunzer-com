@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/jakerunzer
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://jakerunzer.com
+  * I am jakerunzer (https://keybase.io/jakerunzer) on keybase.
+  * I have a public key ASDTrMY_EQHLlcJ212YVW-cxv3wYPthoxTDlu48BUDqdpwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120d3acc63f1101cb95c276d766155be731bf7c183ed868c530e5bb8f01503a9da70a",
+      "host": "keybase.io",
+      "kid": "0120d3acc63f1101cb95c276d766155be731bf7c183ed868c530e5bb8f01503a9da70a",
+      "uid": "269fe7598009ee327e6fdfe483ebc919",
+      "username": "jakerunzer"
+    },
+    "merkle_root": {
+      "ctime": 1508903380,
+      "hash": "7547cddc1dc7ebbbcc62904d80fc9a22959105e28d5526e9065fcd9046e426fdf1738697b14a4a40149296cc96c8a919074cf6709e5e9336db0a9ca965490323",
+      "hash_meta": "e7f229a99df1acce3498b9166a3c71a26129b8247dc6ac508245f330d71db142",
+      "seqno": 1626006
+    },
+    "service": {
+      "hostname": "jakerunzer.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.33"
+  },
+  "ctime": 1508903393,
+  "expire_in": 504576000,
+  "prev": "ed7edd3f538e99bf0099a487e505711a3f6b6a7ca3b2ec0493cf92111ab42934",
+  "seqno": 22,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg06zGPxEBy5XCdtdmFVvnMb98GD7YaMUw5buPAVA6nacKp3BheWxvYWTFA0l7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwZDNhY2M2M2YxMTAxY2I5NWMyNzZkNzY2MTU1YmU3MzFiZjdjMTgzZWQ4NjhjNTMwZTViYjhmMDE1MDNhOWRhNzBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwZDNhY2M2M2YxMTAxY2I5NWMyNzZkNzY2MTU1YmU3MzFiZjdjMTgzZWQ4NjhjNTMwZTViYjhmMDE1MDNhOWRhNzBhIiwidWlkIjoiMjY5ZmU3NTk4MDA5ZWUzMjdlNmZkZmU0ODNlYmM5MTkiLCJ1c2VybmFtZSI6Impha2VydW56ZXIifSwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE1MDg5MDMzODAsImhhc2giOiI3NTQ3Y2RkYzFkYzdlYmJiY2M2MjkwNGQ4MGZjOWEyMjk1OTEwNWUyOGQ1NTI2ZTkwNjVmY2Q5MDQ2ZTQyNmZkZjE3Mzg2OTdiMTRhNGE0MDE0OTI5NmNjOTZjOGE5MTkwNzRjZjY3MDllNWU5MzM2ZGIwYTljYTk2NTQ5MDMyMyIsImhhc2hfbWV0YSI6ImU3ZjIyOWE5OWRmMWFjY2UzNDk4YjkxNjZhM2M3MWEyNjEyOWI4MjQ3ZGM2YWM1MDgyNDVmMzMwZDcxZGIxNDIiLCJzZXFubyI6MTYyNjAwNn0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJqYWtlcnVuemVyLmNvbSIsInByb3RvY29sIjoiaHR0cHM6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjMzIn0sImN0aW1lIjoxNTA4OTAzMzkzLCJleHBpcmVfaW4iOjUwNDU3NjAwMCwicHJldiI6ImVkN2VkZDNmNTM4ZTk5YmYwMDk5YTQ4N2U1MDU3MTFhM2Y2YjZhN2NhM2IyZWMwNDkzY2Y5MjExMWFiNDI5MzQiLCJzZXFubyI6MjIsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RA0bMp5qpZT0hgSxk9xGLNRZDEWKkldUHwBpTylvIDiwD1igrgSlHJaSNUkumMPem/XxDS0bRt2szjaZtvBbrtA6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIOssyr1L8IT0LuxlvPpa7xtHRN2hWh9n9g+NjZBKpgLto3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/jakerunzer
+
+==================================================================

@@ -59,10 +59,6 @@ const typography = new Typography({
     "li>ol,li>ul": {
       marginLeft: rhythm(1.25),
     },
-    a: {
-      color: "#4078c0",
-      textDecoration: "none",
-    },
     "a:hover,a:active": {
       textDecoration: "underline",
     },

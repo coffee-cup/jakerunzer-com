@@ -16,20 +16,20 @@ export const Title = styled.h1`
 `;
 
 const StyledHeading = styled.div`
-  margin-top: 0;
-  padding: 1rem 0;
+  margin: 0;
+  padding: 0;
 
   h1 {
     font-size: 6rem;
-    margin-bottom: 0;
+    margin: 0;
     padding-bottom: 0;
     margin-left: -8px;
   }
 
   h2 {
     font-size: 2.5rem;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
+    padding: 0;
   }
 
   @media (min-width: ${sizes.phone}) {
