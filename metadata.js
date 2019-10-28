@@ -1,9 +1,9 @@
 const config = {
-  siteTitle: "Jake",
+  siteTitle: "Jake Runzer",
   siteShortTitle: "Jake",
   logo: "/logos/logo-1024.png",
   url: "https://jakerunzer.com",
-  description: "Software engineering working at Prodo in London.",
+  description: "Software engineering working in London.",
   dateFromFormat: "YYYY-MM-DD",
   dateFormat: "DD/MM/YYYY",
   author: "Jake Runzer",
