@@ -47,7 +47,7 @@ export const projects: IProject[] = [
   },
   {
     name: "LastFM Albums",
-    link: "https://lastfm-albums.netlify.com/",
+    link: "https://lastfm-albums.jakerunzer.com/",
     desc: "View artwork grid of your top albums.",
   },
   {
