@@ -41,7 +41,7 @@ const Pages = styled.ul`
 `;
 
 const Page = styled.li`
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 `;
 
 const PageName = styled.h2`
