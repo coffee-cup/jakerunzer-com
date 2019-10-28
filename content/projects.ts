@@ -28,7 +28,7 @@ export const projects: IProject[] = [
   {
     name: "Bowtie",
     link: "https://bowtie.jakerunzer.com/",
-    desc: "Score keeping iOS app. Save paper when playing card games.",
+    desc: "Score keeping iOS app. Save paper when playing card or board games.",
   },
   {
     name: "LastFM leaderboards",
