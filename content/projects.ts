@@ -4,18 +4,14 @@ export const projects: IProject[] = [
   {
     name: "Quiztastic",
     link: "https://quiztastic.app",
-    desc: "Trivia game to play with friends and family.",
+    desc:
+      "Web based trivia game designed for multiple players. Create games that can be joined by multiple people using a code.",
   },
   {
     name: "Krill",
     link: "https://krill.jakerunzer.com",
-    desc: "Dynamic, curried, and minimal programming language.",
-  },
-  {
-    name: "Vraw",
-    link: "https://krill.jakerunzer.com",
     desc:
-      "A small programming language for drawing SVGs. You can create complex shapes by composing together simple ones.",
+      "Dynamic, curried, and minimal programming language implemented in Haskell.",
   },
   {
     name: "Solis",
@@ -24,9 +20,15 @@ export const projects: IProject[] = [
       "iOS app that shows you the times of sunrise, sunset, twilights, and golden hour.",
   },
   {
+    name: "Vraw",
+    link: "https://github.com/coffee-cup/vraw/",
+    desc:
+      "A small programming language for drawing SVGs. You can create complex shapes by composing together simple ones.",
+  },
+  {
     name: "Bowtie",
     link: "https://bowtie.jakerunzer.com/",
-    desc: "Score keeping iOS app.",
+    desc: "Score keeping iOS app. Save paper when playing card games.",
   },
   {
     name: "LastFM leaderboards",

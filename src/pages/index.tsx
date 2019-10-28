@@ -15,7 +15,7 @@ const links = [
 
 const Hero = styled.div`
   display: flex;
-  min-height: 100vh;
+  min-height: 70vh;
   align-items: center;
 `;
 
