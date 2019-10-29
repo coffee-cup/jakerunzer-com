@@ -1,11 +1,11 @@
 import { graphql } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 import * as React from "react";
 import styled from "styled-components";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+import Header from "../components/Header";
 import Layout from "../components/Layout";
 import Link from "../components/Link";
 import SEO from "../components/SEO";
-import Header from "../components/Header";
 import { Title } from "../components/Text";
 
 interface Page {

@@ -7,6 +7,7 @@ import styled from "styled-components";
 import normalize from "./normalize";
 
 ((typeof global !== "undefined" ? global : window) as any).Prism = Prism;
+// tslint:disable-next-line:no-var-requires
 require("prismjs/components/prism-haskell");
 
 const StyledCode = styled.div`

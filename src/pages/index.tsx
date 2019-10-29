@@ -1,11 +1,11 @@
 import * as React from "react";
 import styled from "styled-components";
-import { Heading } from "../components/Text";
+import { projects } from "../../content/projects";
 import Layout from "../components/Layout";
 import Link from "../components/Link";
-import SEO from "../components/SEO";
 import Project from "../components/Project";
-import { projects } from "../../content/projects";
+import SEO from "../components/SEO";
+import { Heading } from "../components/Text";
 
 const links = [
   { text: "Github", href: "https://github.com/coffee-cup" },

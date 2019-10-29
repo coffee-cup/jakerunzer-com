@@ -2,11 +2,11 @@ import { MDXProvider } from "@mdx-js/react";
 import { Location } from "@reach/router";
 import * as React from "react";
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
-import Footer from "./Footer";
-import { H1, H2, H3 } from "../components/Text";
 import { MdxLink } from "../components/Link";
+import { H1, H2, H3 } from "../components/Text";
 import { sizes, theme } from "../styles";
 import Code from "./Code";
+import Footer from "./Footer";
 
 const GlobalStyle = createGlobalStyle`
   body {
