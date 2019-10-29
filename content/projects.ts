@@ -5,7 +5,7 @@ export const projects: IProject[] = [
     name: "Quiztastic",
     link: "https://quiztastic.app",
     desc:
-      "Web based trivia game designed for multiple players. Create games that can be joined by multiple people using a code.",
+      "Web based trivia game for friends and family. Create games that can be joined by multiple people.",
   },
   {
     name: "Krill",
