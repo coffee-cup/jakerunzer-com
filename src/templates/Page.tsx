@@ -16,6 +16,7 @@ interface Page {
     index: boolean;
   };
   body: string;
+  excerpt: string;
 }
 
 interface Props {
@@ -29,7 +30,7 @@ const Page: React.FC<Props> = props => {
 
   return (
     <Layout>
-      <SEO />
+      <SEO title={page.frontmatter.title} description={page.excerpt} />
 
       <Header home={page.frontmatter.category} />
 
@@ -53,6 +54,7 @@ export const query = graphql`
         slug
       }
       body
+      excerpt
     }
   }
 `;

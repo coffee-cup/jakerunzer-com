@@ -17,6 +17,7 @@ interface Page {
     index: boolean;
   };
   body: string;
+  excerpt: string;
 }
 
 interface Props {
@@ -56,7 +57,10 @@ const Menu: React.FC<Props> = props => {
 
   return (
     <Layout>
-      <SEO />
+      <SEO
+        title={indexPage.frontmatter.title}
+        description={indexPage.excerpt}
+      />
 
       <Header />
 
@@ -92,6 +96,7 @@ export const query = graphql`
           index
         }
         body
+        excerpt
       }
     }
   }
