@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
 
 const ContentWrapper = styled.div`
   margin: 0;
-  padding: 0 2rem;
+  padding: 0 1rem;
   max-width: 800px;
   margin: 0 auto;
 
