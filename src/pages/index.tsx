@@ -5,6 +5,8 @@ import Layout from "../components/Layout";
 import Link from "../components/Link";
 import Project from "../components/Project";
 import SEO from "../components/SEO";
+import Container from "../components/Container";
+import Section from "../components/Section";
 import { Heading } from "../components/Text";
 
 const links = [
@@ -22,10 +24,6 @@ const Hero = styled.div`
 const Description = styled.p`
   max-width: 38ch;
   margin: 1rem 0;
-`;
-
-const Projects = styled.div`
-  max-width: 48ch;
 `;
 
 const StyledHome = styled.div`
@@ -80,13 +78,15 @@ const Home = () => {
           </div>
         </Hero>
 
-        <Projects>
-          <h1>Projects</h1>
+        <Container>
+          <Section>
+            <h1>Projects</h1>
 
-          {projects.map(p => (
-            <Project key={p.name} name={p.name} link={p.link} desc={p.desc} />
-          ))}
-        </Projects>
+            {projects.map(p => (
+              <Project key={p.name} name={p.name} link={p.link} desc={p.desc} />
+            ))}
+          </Section>
+        </Container>
       </StyledHome>
     </Layout>
   );

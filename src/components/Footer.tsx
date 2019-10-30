@@ -1,15 +1,17 @@
 import * as React from "react";
 import styled from "styled-components";
+import Section from "./Section";
 
 const StyledFooter = styled.footer`
   display: flex;
   align-items: center;
-  padding: 1rem 0;
 `;
 
 const Footer = () => (
   <StyledFooter>
-    <h3>♥</h3>
+    <Section>
+      <h3>♥</h3>
+    </Section>
   </StyledFooter>
 );
 
