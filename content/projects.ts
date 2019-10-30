@@ -11,7 +11,7 @@ export const projects: IProject[] = [
     name: "Krill",
     link: "https://krill.jakerunzer.com",
     desc:
-      "Dynamic, curried, and minimal programming language implemented in Haskell.",
+      "Dynamic, curried, and minimal programming language. Implemented in Haskell.",
   },
   {
     name: "Solis",
@@ -20,7 +20,7 @@ export const projects: IProject[] = [
       "iOS app that shows you the times of sunrise, sunset, twilights, and golden hour.",
   },
   {
-    name: "Vraw",
+    name: "vraw",
     link: "https://github.com/coffee-cup/vraw/",
     desc:
       "A small programming language for drawing SVGs. You can create complex shapes by composing together simple ones.",
@@ -29,6 +29,12 @@ export const projects: IProject[] = [
     name: "Bowtie",
     link: "https://bowtie.jakerunzer.com/",
     desc: "Score keeping iOS app. Save paper when playing card or board games.",
+  },
+  {
+    name: "favocon",
+    link: "https://github.com/coffee-cup/favocon",
+    desc:
+      "Command line utility for creating favicons from an image. Written in Rust.",
   },
   {
     name: "LastFM leaderboards",
