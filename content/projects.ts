@@ -2,6 +2,12 @@ import { IProject } from "../src/types";
 
 export const projects: IProject[] = [
   {
+    name: "Prodo",
+    link: "https://github.com/prodo-dev/prodo",
+    desc:
+      "Simplified state management library for React with first class support for TypeScript and async actions.",
+  },
+  {
     name: "Quiztastic",
     link: "https://quiztastic.app",
     desc:
