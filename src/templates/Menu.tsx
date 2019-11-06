@@ -7,6 +7,8 @@ import Layout from "../components/Layout";
 import Link from "../components/Link";
 import SEO from "../components/SEO";
 import { Title } from "../components/Text";
+import { formatDate } from "../utils";
+import * as dayjs from "dayjs";
 
 interface Page {
   fields: {
@@ -15,6 +17,7 @@ interface Page {
   frontmatter: {
     title: string;
     index: boolean;
+    date?: string;
   };
   body: string;
   excerpt: string;
@@ -47,13 +50,26 @@ const Page = styled.li`
 
 const PageName = styled.h2`
   margin: 0;
+  padding-bottom: 0.15rem;
+`;
+
+const PageDate = styled.span`
+  margin: 0;
+  color: #a2a2a2;
+  font-size: 0.9em;
+  font-weight: normal;
 `;
 
 const Menu: React.FC<Props> = props => {
   const nodes = props.data.allMdx.nodes;
 
   const indexPage = getIndexPage(nodes);
-  const dataPages = getDataPages(nodes);
+  const dataPages = getDataPages(nodes).sort((a, b) =>
+    a.frontmatter.date && b.frontmatter.date
+      ? new Date(b.frontmatter.date).getTime() -
+        new Date(a.frontmatter.date).getTime()
+      : 0,
+  );
 
   return (
     <Layout>
@@ -73,6 +89,9 @@ const Menu: React.FC<Props> = props => {
             <Page key={n.fields.slug}>
               <Link to={n.fields.slug} empty>
                 <PageName>{n.frontmatter.title}</PageName>
+                {n.frontmatter.date && (
+                  <PageDate>{formatDate(n.frontmatter.date)}</PageDate>
+                )}
               </Link>
             </Page>
           ))}
@@ -97,6 +116,7 @@ export const query = graphql`
         frontmatter {
           title
           index
+          date
         }
         body
         excerpt

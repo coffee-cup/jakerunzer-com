@@ -1,10 +1,11 @@
 import { graphql } from "gatsby";
+import styled from "styled-components";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import * as React from "react";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-import { Title } from "../components/Text";
+import { formatDate } from "../utils";
 
 interface Page {
   fields: {
@@ -14,6 +15,7 @@ interface Page {
     title: string;
     category: string;
     index: boolean;
+    date?: string;
   };
   body: string;
   excerpt: string;
@@ -25,6 +27,21 @@ interface Props {
   };
 }
 
+const DateTitle = styled.div`
+  margin-bottom: 1.5rem;
+
+  h1 {
+    font-size: 3em;
+    margin-bottom: 0.5rem;
+  }
+
+  span {
+    display: block;
+    font-size: 0.95em;
+    color: grey;
+  }
+`;
+
 const Page: React.FC<Props> = props => {
   const page = props.data.mdx;
 
@@ -34,7 +51,12 @@ const Page: React.FC<Props> = props => {
 
       <Header home={page.frontmatter.category} />
 
-      <Title>{page.frontmatter.title}</Title>
+      <DateTitle>
+        <h1>{page.frontmatter.title}</h1>
+        {page.frontmatter.date && (
+          <span>{formatDate(page.frontmatter.date)}</span>
+        )}
+      </DateTitle>
       <MDXRenderer>{page.body}</MDXRenderer>
     </Layout>
   );
@@ -49,6 +71,7 @@ export const query = graphql`
         title
         category
         index
+        date
       }
       fields {
         slug

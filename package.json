@@ -22,6 +22,7 @@
     "@mdx-js/react": "^1.0.6",
     "@mdx-js/tag": "^0.20.3",
     "@reach/router": "^1.2.1",
+    "dayjs": "^1.8.16",
     "gray-percentage": "^2.0.0",
     "normalize.css": "^8.0.1",
     "prism-react-renderer": "^0.1.5",

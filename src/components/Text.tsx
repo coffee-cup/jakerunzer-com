@@ -15,6 +15,12 @@ export const Title = styled.h1`
   font-size: 3em;
 `;
 
+export const Detail = styled.span`
+  display: block;
+  font-size: 0.9em;
+  color: grey;
+`;
+
 const StyledHeading = styled.div`
   margin: 0;
   padding: 0;
