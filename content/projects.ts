@@ -73,4 +73,16 @@ export const projects: IProject[] = [
     link: "https://uvic-csc460-group7.surge.sh/project2/index.html",
     desc: "Real time operating system for the ATmega2560 AVR microcontroller.",
   },
+  {
+    name: "MBTI Predictor",
+    link: "https://github.com/coffee-cup/mbti",
+    desc:
+      "LSTM neural network trained to predict a Myers Brigg personality type based on some text.",
+  },
+  {
+    name: "YOLO9000 Implementation",
+    link: "https://github.com/coffee-cup/yolo",
+    desc:
+      "Implementation of Yolo9000, a real time object detection algorithm. Developed in Python Tensorflow.",
+  },
 ];
