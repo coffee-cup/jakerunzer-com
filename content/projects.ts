@@ -8,6 +8,12 @@ export const projects: IProject[] = [
       "Simplified state management library for React with first class support for TypeScript and async actions.",
   },
   {
+    name: "Alfie",
+    link: "https://alfie.prodo.ai",
+    desc:
+      "An online code editor and visual debugger which automatically selects and displays examples of values flowing through your code as you type it.",
+  },
+  {
     name: "Quiztastic",
     link: "https://quiztastic.app",
     desc:
@@ -74,15 +80,15 @@ export const projects: IProject[] = [
     desc: "Real time operating system for the ATmega2560 AVR microcontroller.",
   },
   {
+    name: "UL Compiler",
+    link: "https://github.com/coffee-cup/unnamed-language",
+    desc:
+      "Compiler written in Java for an imperative programming language targeting the JVM.",
+  },
+  {
     name: "MBTI Predictor",
     link: "https://github.com/coffee-cup/mbti",
     desc:
       "LSTM neural network trained to predict a Myers Brigg personality type based on some text.",
-  },
-  {
-    name: "YOLO9000 Implementation",
-    link: "https://github.com/coffee-cup/yolo",
-    desc:
-      "Implementation of Yolo9000, a real time object detection algorithm. Developed in Python Tensorflow.",
   },
 ];
