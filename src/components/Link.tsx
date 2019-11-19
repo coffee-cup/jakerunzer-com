@@ -32,6 +32,7 @@ const Link: React.FC<Props> = props => {
         as="a"
         href={href}
         target="_blank"
+        rel="noopener"
         {...{ ...props, empty: props.empty ? 1 : 0 }}
       >
         {props.children}
