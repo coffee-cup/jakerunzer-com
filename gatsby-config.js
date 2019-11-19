@@ -53,8 +53,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Jake`,
-        short_name: `Jake`,
+        name: metadata.siteTitle,
+        short_name: metadata.siteShortTitle,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#ffffff`,
@@ -68,7 +68,6 @@ module.exports = {
         domain: "hello.jakerunzer.com",
       },
     },
-    `gatsby-plugin-remove-serviceworker`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typescript`,
@@ -90,5 +89,6 @@ module.exports = {
         lang: "en",
       },
     },
+    `gatsby-plugin-offline`,
   ],
 };
