@@ -2,18 +2,6 @@ import { IProject } from "../src/types";
 
 export const projects: IProject[] = [
   {
-    name: "Prodo",
-    link: "https://github.com/prodo-dev/prodo",
-    desc:
-      "Simplified state management library for React with first class support for TypeScript and async actions.",
-  },
-  {
-    name: "Alfie",
-    link: "https://alfie.prodo.ai",
-    desc:
-      "An online code editor and visual debugger which automatically selects and displays examples of values flowing through your code as you type it.",
-  },
-  {
     name: "Quiztastic",
     link: "https://quiztastic.app",
     desc:
