@@ -20,6 +20,12 @@ export const projects: IProject[] = [
       "iOS app that shows you the times of sunrise, sunset, twilights, and golden hour.",
   },
   {
+    name: "Maze Generator",
+    link: "https://maze.jakerunzer.com",
+    desc:
+      "Experimental maze generator based of the book [_Mazes for Programmers_](http://www.mazesforprogrammers.com/).",
+  },
+  {
     name: "vraw",
     link: "https://github.com/coffee-cup/vraw/",
     desc:
