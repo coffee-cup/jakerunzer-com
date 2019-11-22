@@ -106,7 +106,9 @@ export default Menu;
 export const query = graphql`
   query($category: String!) {
     allMdx(
-      filter: { frontmatter: { category: { eq: $category } } }
+      filter: {
+        frontmatter: { category: { eq: $category }, draft: { ne: true } }
+      }
       sort: { fields: frontmatter___title, order: ASC }
     ) {
       nodes {
