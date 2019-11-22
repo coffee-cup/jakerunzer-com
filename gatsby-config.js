@@ -1,4 +1,5 @@
 const metadata = require("./metadata");
+const { getBlogFeed } = require("./feed");
 
 module.exports = {
   siteMetadata: {
@@ -45,6 +46,19 @@ module.exports = {
           {
             resolve: `gatsby-remark-smartypants`,
           },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        feeds: [
+          getBlogFeed({
+            filePathRegex: `//content/blog/`,
+            blogUrl: `https://jakerunzer.com/blog`,
+            output: `/blog/rss.xml`,
+            title: `Jake Runzer's Blog`,
+          }),
         ],
       },
     },
