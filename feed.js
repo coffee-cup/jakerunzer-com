@@ -1,10 +1,6 @@
 function getBlogFeed({ filePathRegex, blogUrl, ...overrides }) {
-  console.log("wtf");
-
   return {
     serialize: ({ query: { site, allMdx } }) => {
-      console.log("\n\n\nALLL");
-      console.log(allMdx);
       const stripSlash = slug => (slug.startsWith("/") ? slug.slice(1) : slug);
       return allMdx.edges.map(edge => {
         const siteUrl = site.siteMetadata.siteUrl;
@@ -18,9 +14,6 @@ function getBlogFeed({ filePathRegex, blogUrl, ...overrides }) {
           .replace(/src="\//g, `src="${siteUrl}/`)
           .replace(/"\/static\//g, `"${siteUrl}/static/`)
           .replace(/,\s*\/static\//g, `,${siteUrl}/static/`);
-
-        console.log("BLOG");
-        console.log(edge.node.frontmatter);
 
         return {
           ...edge.node.frontmatter,

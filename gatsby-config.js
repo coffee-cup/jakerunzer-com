@@ -52,11 +52,22 @@ module.exports = {
     {
       resolve: `gatsby-plugin-feed`,
       options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title: siteTitle
+                description
+                siteUrl: url
+              }
+            }
+          }
+        `,
         feeds: [
           getBlogFeed({
             filePathRegex: `//content/blog/`,
             blogUrl: `https://jakerunzer.com/blog`,
-            output: `/blog/rss.xml`,
+            output: `/rss.xml`,
             title: `Jake Runzer's Blog`,
           }),
         ],
