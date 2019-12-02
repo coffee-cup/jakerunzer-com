@@ -82,6 +82,11 @@ const Home = () => {
           <Section>
             <h1>Projects</h1>
 
+            <p>
+              At any given moment I have 2-3 ongoing projects. They range from
+              iOS or web apps to programming languages and small libraries.
+            </p>
+
             {projects.map(p => (
               <Project key={p.name} name={p.name} link={p.link} desc={p.desc} />
             ))}
