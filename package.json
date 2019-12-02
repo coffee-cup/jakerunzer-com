@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "gatsby develop",
-    "lint": "tslint -p .",
+    "lint": "set -ex; tsc --noEmit -p .; tslint --project .",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
     "develop": "gatsby develop",
     "start": "npm run develop",
