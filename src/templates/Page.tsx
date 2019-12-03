@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import * as React from "react";
 import Header from "../components/Header";

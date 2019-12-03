@@ -1,5 +1,7 @@
 import * as React from "react";
-import styled from "styled-components";
+import styled from "@emotion/styled";
+import css from "@styled-system/css";
+import { Styled } from "theme-ui";
 import { projects } from "../../content/projects";
 import Layout from "../components/Layout";
 import Link from "../components/Link";
@@ -15,41 +17,37 @@ const links = [
   { text: "Twitter", href: "https://twitter.com/jakerunzer" },
 ];
 
-const Hero = styled.div`
-  display: flex;
-  min-height: 70vh;
-  align-items: center;
-`;
+const Hero = styled(Styled.div)(
+  css({
+    display: "flex",
+    minHeight: "70vh",
+    alignItems: "center",
+    color: "text",
+  }),
+);
 
-const Description = styled.p`
-  max-width: 38ch;
-  margin: 1rem 0;
-`;
+const Description = styled(Styled.p)(
+  css({
+    maxWidth: "38ch",
+    my: 1,
+  }),
+);
 
-const StyledHome = styled.div`
-  padding-bottom: 1rem;
-`;
+const StyledHome = styled(Styled.div)(
+  css({
+    pb: 1,
+  }),
+);
 
 export interface Props {
   links: Array<{ text: string; href: string }>;
 }
 
-const StyledNav = styled.div`
-  display: flex;
-
-  a {
-    font-weight: bold;
-    padding: 0 1.5rem;
-
-    &:first-child {
-      padding-left: 0;
-    }
-
-    &:last-child {
-      padding-right: 0;
-    }
-  }
-`;
+const StyledNav = styled.div(
+  css({
+    display: "flex",
+  }),
+);
 
 const Nav: React.FC<Props> = props => (
   <StyledNav>
@@ -61,7 +59,28 @@ const Nav: React.FC<Props> = props => (
   </StyledNav>
 );
 
-const Home = () => {
+const Home = () => (
+  <Layout>
+    <SEO />
+
+    <StyledHome className="home">
+      <Hero>
+        <div>
+          <Heading title="Hello." subtitle="I'm Jake 👋" />
+          <Description>
+            Software engineer <Link to="https://prodo.dev">@prodo</Link> in
+            London
+          </Description>
+
+          <Nav links={links} />
+        </div>
+      </Hero>
+    </StyledHome>
+  </Layout>
+);
+
+/*
+export const Home1 = () => {
   return (
     <Layout>
       <SEO />
@@ -96,5 +115,6 @@ const Home = () => {
     </Layout>
   );
 };
+*/
 
 export default Home;

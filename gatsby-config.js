@@ -14,13 +14,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [".mdx", ".md"],
@@ -101,19 +94,13 @@ module.exports = {
         allExtensions: true,
       },
     },
-    `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
     {
       resolve: "gatsby-plugin-html-attributes",
       options: {
         lang: "en",
       },
     },
+    `gatsby-plugin-theme-ui`,
     `gatsby-plugin-offline`,
   ],
 };

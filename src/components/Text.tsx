@@ -1,7 +1,7 @@
 import * as React from "react";
-import styled from "styled-components";
-import { sizes } from "../styles";
+import styled from "@emotion/styled";
 import { makeAnchor } from "../utils";
+import { Styled } from "theme-ui";
 
 export const H1: React.FC = props => (
   <h1 id={makeAnchor(props.children)} {...props} />
@@ -37,12 +37,6 @@ const StyledHeading = styled.div`
     margin: 0;
     padding: 0;
   }
-
-  @media (min-width: ${sizes.phone}) {
-    h1 {
-      font-size: 8rem;
-    }
-  }
 `;
 
 interface Props {
@@ -52,7 +46,7 @@ interface Props {
 
 export const Heading: React.FC<Props> = props => (
   <StyledHeading>
-    <h1>{props.title}</h1>
-    {props.subtitle && <h2>{props.subtitle}</h2>}
+    <Styled.h1>{props.title}</Styled.h1>
+    {props.subtitle && <Styled.h2>{props.subtitle}</Styled.h2>}
   </StyledHeading>
 );

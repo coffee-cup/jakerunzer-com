@@ -1,8 +1,9 @@
 import * as React from "react";
-import styled from "styled-components";
+import styled from "@emotion/styled";
+import css from "@styled-system/css";
 import Link from "./Link";
 
-const StyledHeader = styled.header``;
+const StyledHeader = styled.header(css({}));
 
 const Header: React.FC<{ home?: string }> = props => (
   <StyledHeader>

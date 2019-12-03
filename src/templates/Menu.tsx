@@ -1,14 +1,13 @@
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import * as React from "react";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
 import Link from "../components/Link";
 import SEO from "../components/SEO";
 import { Title } from "../components/Text";
 import { formatDate } from "../utils";
-import * as dayjs from "dayjs";
 
 interface Page {
   fields: {

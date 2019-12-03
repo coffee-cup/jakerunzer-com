@@ -1,15 +1,18 @@
 import * as React from "react";
 import Layout from "../components/Layout";
 import SEO from "../components/SEO";
-import styled from "styled-components";
+import css from "@styled-system/css";
+import styled from "@emotion/styled";
 import Link from "../components/Link";
 
-const Centered = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-`;
+const Centered = styled.div(
+  css({
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    minHeight: "100vh",
+  }),
+);
 
 const NotFoundPage = () => (
   <Layout>
