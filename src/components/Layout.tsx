@@ -13,7 +13,8 @@ export interface FrontMatter {
   description?: string;
 }
 
-export interface Props {
+export interface Props extends FrontMatter {
+  noHeader?: boolean;
   _frontmatter?: FrontMatter;
 }
 
@@ -25,7 +26,7 @@ const ContentWrapper = styled(Styled.root)(
     mx: "auto",
     py: 0,
     px: 4,
-    fontSize: [2, 3],
+    fontSize: [2],
   }),
 );
 
@@ -36,14 +37,14 @@ const Content = styled.main(
 );
 
 const Layout: React.FC<Props> = ({ children, ...rest }) => {
-  const frontmatter = rest._frontmatter || {};
+  const frontmatter = rest._frontmatter || rest || {};
 
   return (
     <MDXProvider>
       <SEO title={frontmatter.title} description={frontmatter.description} />
 
       <ContentWrapper className="wrapper">
-        <Header />
+        {!rest.noHeader && <Header />}
 
         <Content>{children}</Content>
 

@@ -102,6 +102,12 @@ module.exports = {
     },
     `gatsby-plugin-theme-ui`,
     {
+      resolve: "gatsby-theme-style-guide",
+      options: {
+        basePath: "/design-system",
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [`Montserrat\:700`],

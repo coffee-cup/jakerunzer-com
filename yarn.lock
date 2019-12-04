@@ -882,7 +882,7 @@
     "@emotion/utils" "0.11.2"
     "@emotion/weak-memoize" "0.2.4"
 
-"@emotion/core@^10.0.22":
+"@emotion/core@^10.0.10", "@emotion/core@^10.0.22":
   version "10.0.22"
   resolved "https://registry.yarnpkg.com/@emotion/core/-/core-10.0.22.tgz#2ac7bcf9b99a1979ab5b0a876fbf37ab0688b177"
   integrity sha512-7eoP6KQVUyOjAkE6y4fdlxbZRA4ILs7dqkkm6oZUJmihtHv0UBq98VgPirq9T8F9K2gKu0J/au/TpKryKMinaA==
@@ -1471,6 +1471,18 @@
   integrity sha512-FD9UtROhol8limL2XtQPfnTUfUJETUC37wYW6dSIfVCDR4l0CSbqYS+niQAqVGcuD0wtL1pbkvb/qDtUg94Ebw==
   dependencies:
     prism-react-renderer "^1.0.2"
+
+"@theme-ui/style-guide@^0.2.49":
+  version "0.2.49"
+  resolved "https://registry.yarnpkg.com/@theme-ui/style-guide/-/style-guide-0.2.49.tgz#757811bebc37c4f8b20635fa0f903f718ad86c11"
+  integrity sha512-forfqzay6tNGEj09fVWBu73NYFzkDVtxW/LA8z/KQWS3+J5f14U7MQDTv2fVUcUcJ+iMgoHWlgfJmClpr2Ws9g==
+  dependencies:
+    "@emotion/core" "^10.0.10"
+    "@theme-ui/presets" "^0.2.44"
+    color "^3.1.2"
+    lodash.get "^4.4.2"
+    react "^16.8.6"
+    theme-ui "^0.2.49"
 
 "@types/color-name@^1.1.1":
   version "1.1.1"
@@ -6100,6 +6112,14 @@ gatsby-telemetry@^1.1.41:
     stack-utils "1.0.2"
     uuid "3.3.3"
 
+gatsby-theme-style-guide@^0.2.49:
+  version "0.2.49"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-style-guide/-/gatsby-theme-style-guide-0.2.49.tgz#a69b216574c3a8963ca04f1578e7813471679fb7"
+  integrity sha512-oVHM2A9/vXbNOqPy+fm2nConf879XJ89rUP70ukjxWl48ZfCqpUz1DKlmL1yowzmRjvZ0TEoJIyEV16MPl/qcQ==
+  dependencies:
+    "@theme-ui/style-guide" "^0.2.49"
+    theme-ui "^0.2.49"
+
 gatsby-transformer-remark@^2.1.6:
   version "2.6.39"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.6.39.tgz#37d65a1e4c0ca6105db31eeb9fec9ce9e4ced13a"
@@ -8415,6 +8435,11 @@ lodash.foreach@^4.3.0, lodash.foreach@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.foreach/-/lodash.foreach-4.5.0.tgz#1a6a35eace401280c7f06dddec35165ab27e3e53"
   integrity sha1-Gmo16s5AEoDH8G3d7DUWWrJ+PlM=
+
+lodash.get@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+  integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
 
 lodash.isnumber@^3.0.0:
   version "3.0.3"
@@ -11155,7 +11180,7 @@ react-typography@^0.16.13:
   resolved "https://registry.yarnpkg.com/react-typography/-/react-typography-0.16.19.tgz#5736b47961dcf6b9605b6fa38d41980db2588e28"
   integrity sha512-kV2qLEsdm0x9P4YXQEDVc88tDb4Vg0h/vdVZGgbqaRn8ERvNzV76JHUeOby3vvcUYU5MPd5Kz5DPH9Bhp4I/iw==
 
-react@^16.12.0:
+react@^16.12.0, react@^16.8.6:
   version "16.12.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.12.0.tgz#0c0a9c6a142429e3614834d5a778e18aa78a0b83"
   integrity sha512-fglqy3k5E+81pA8s+7K0/T3DBCF0ZDOher1elBFzF7O6arXJgzyu/FW+COxFvAWXJoJN9KIZbT2LXlukwphYTA==
