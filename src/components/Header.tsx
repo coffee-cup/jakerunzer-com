@@ -10,6 +10,7 @@ const StyledHeader = styled.header(
     alignItems: "center",
     justifyContent: "space-between",
     height: props => props.sizes.header,
+    pt: 3,
   }),
 );
 

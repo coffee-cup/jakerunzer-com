@@ -1,13 +1,9 @@
 import * as React from "react";
 import styled from "@emotion/styled";
 import css from "@styled-system/css";
-import { Styled, jsx } from "theme-ui";
-import { projects } from "../../content/projects";
+import { Styled } from "theme-ui";
 import Layout from "../components/Layout";
 import Link from "../components/Link";
-import Project from "../components/Project";
-import Container from "../components/Container";
-import Section from "../components/Section";
 import { Heading } from "../components/Text";
 import Menu from "../components/Menu";
 
@@ -35,28 +31,8 @@ const StyledHome = styled(Styled.div)(
   }),
 );
 
-export interface Props {
-  links: Array<{ text: string; href: string }>;
-}
-
-const StyledNav = styled.div(
-  css({
-    display: "flex",
-  }),
-);
-
-const Nav: React.FC<Props> = props => (
-  <StyledNav>
-    {props.links.map(({ text, href }) => (
-      <Link key={text} to={href}>
-        {text}
-      </Link>
-    ))}
-  </StyledNav>
-);
-
 const Home = () => (
-  <Layout>
+  <Layout noHeader>
     <StyledHome className="home">
       <Hero>
         <div>
@@ -64,8 +40,8 @@ const Home = () => (
           <Description>
             Software engineer working at{" "}
             <Link to="https://prodo.dev">@prodo</Link> in London. I like to
-            build web and iOS apps, as well as dig deep into compilers and
-            functional programming.
+            build web and iOS apps, as well as dig deep into React, compilers,
+            and functional programming.
           </Description>
 
           <Menu />

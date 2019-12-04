@@ -58,7 +58,7 @@ class (Functor f) => Applicative f where
   (<*>) :: f (a -> b) -> f a -> f b
 ```
 
-An Applicative must implement the `pure` and `(<*>)` functions.
+Additionally, an Applicative must implement the `pure` and `(<*>)` functions.
 
 `pure` just takes a normal unwrapped value and wraps it into an Applicative
 context.

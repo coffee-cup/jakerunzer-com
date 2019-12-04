@@ -11,7 +11,8 @@
     "noImplicitReturns": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "esModuleInterop": true
   },
   "include": ["src", "typings"]
 }

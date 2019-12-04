@@ -60,7 +60,7 @@ and adding it to your Babel config
 Use a macro just by importing it like any other JavaScript dependency. For
 example, the [count.macro](https://github.com/coffee-cup/count.macro).
 
-```ts
+```javascript
 import { lines } from "count.macro";
 
 console.log(`This file has ${lines} lines`);

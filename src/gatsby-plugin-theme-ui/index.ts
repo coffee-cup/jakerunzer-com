@@ -1,6 +1,6 @@
 import { system } from "@theme-ui/presets";
 import { Theme } from "theme-ui";
-// import prism from "@theme-ui/prism/presets/theme-ui";
+import nightOwl from "@theme-ui/prism/presets/night-owl-light.json";
 
 const heading = {
   fontFamily: "heading",
@@ -29,8 +29,9 @@ const theme: Theme = {
     text: "#333",
     background: "white",
     primary: "#4d3ae2",
-    secondary: "#30c",
-    muted: "#a2a2a2",
+    secondary: "text",
+    muted: "#eff0f6",
+    grey: "#a2a2a2",
   },
   breakpoints: ["40em", "52em", "64em"],
   fontWeights: {
@@ -42,7 +43,7 @@ const theme: Theme = {
   fonts: {
     body: font,
     heading: `"Montserrat", ${font}`,
-    monospace: "Menlo, monospace",
+    monospace: "Consolas, Liberation Mono, Menlo, Courier, monospace",
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   sizes: {
@@ -97,6 +98,12 @@ const theme: Theme = {
         opacity: 0.6,
       },
     },
+    p: {
+      code: {
+        p: "2px",
+        borderRadius: "4px",
+      },
+    },
     pre: {
       fontFamily: "monospace",
       overflowX: "auto",
@@ -105,6 +112,10 @@ const theme: Theme = {
       },
     },
     code: {
+      ...nightOwl,
+      backgroundColor: "muted",
+      p: 2,
+      borderRadius: "4px",
       fontFamily: "monospace",
       fontSize: "inherit",
     },

@@ -5,13 +5,13 @@ import css from "@styled-system/css";
 
 const StyledLink = styled(GLink)<{ empty: number }>(props =>
   css({
-    color: props.empty ? "inherit" : "primary",
-    textDecoration: "none",
+    color: "text",
+    textDecoration: props.empty ? "none" : "underline",
     transition: "opacity 250ms ease-in-out",
 
     "&:hover": {
-      textDecoration: "none",
       opacity: 0.6,
+      textDecoration: props.empty ? "none" : "underline",
     },
   }),
 );
