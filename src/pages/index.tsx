@@ -6,7 +6,6 @@ import { projects } from "../../content/projects";
 import Layout from "../components/Layout";
 import Link from "../components/Link";
 import Project from "../components/Project";
-import SEO from "../components/SEO";
 import Container from "../components/Container";
 import Section from "../components/Section";
 import { Heading } from "../components/Text";
@@ -23,7 +22,6 @@ const Hero = styled(Styled.div)(
 const Description = styled(Styled.p)(
   css({
     maxWidth: "38ch",
-    fontSize: 3,
     my: 3,
   }),
 );
@@ -59,8 +57,6 @@ const Nav: React.FC<Props> = props => (
 
 const Home = () => (
   <Layout>
-    <SEO />
-
     <StyledHome className="home">
       <Hero>
         <div>
@@ -78,43 +74,5 @@ const Home = () => (
     </StyledHome>
   </Layout>
 );
-
-/*
-export const Home1 = () => {
-  return (
-    <Layout>
-      <SEO />
-      <StyledHome className="home">
-        <Hero>
-          <div>
-            <Heading title="Hello." subtitle="I'm Jake 👋" />
-            <Description>
-              Software engineer <Link to="https://prodo.dev">@prodo</Link> in
-              London
-            </Description>
-
-            <Nav links={links} />
-          </div>
-        </Hero>
-
-        <Container>
-          <Section>
-            <h1>Projects</h1>
-
-            <p>
-              At any given moment I have 2-3 ongoing projects. They range from
-              iOS or web apps to programming languages and small libraries.
-            </p>
-
-            {projects.map(p => (
-              <Project key={p.name} name={p.name} link={p.link} desc={p.desc} />
-            ))}
-          </Section>
-        </Container>
-      </StyledHome>
-    </Layout>
-  );
-};
-*/
 
 export default Home;

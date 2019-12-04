@@ -1,9 +1,11 @@
 ---
-category: blog
 title: Babel Macros
-date: 2019-11-25T23:44:00+00:00
-draft: true
 ---
+
+import Layout from "../../components/Layout";
+export default Layout;
+
+# Babel Macros
 
 [Babel](https://babeljs.io/) macros are a way to apply code transformations
 without having to install a new plugin for each transformation. They are

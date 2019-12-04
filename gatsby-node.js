@@ -1,7 +1,8 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
-const categories = ["blog", "recipes"];
+// const categories = ["blog", "recipes"];
+const categories = [];
 
 const createIndexPage = async (page, { createPage }) => {
   const menu = path.resolve("./src/templates/Menu.tsx");

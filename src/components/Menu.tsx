@@ -7,7 +7,7 @@ const links = [
   { text: "Github", href: "https://github.com/coffee-cup" },
   { text: "Keybase", href: "https://keybase.io/jakerunzer" },
   { text: "Twitter", href: "https://twitter.com/jakerunzer" },
-  { text: "Writing", href: "/blog" },
+  { text: "Writing", href: "/writing" },
   { text: "Resume", href: "/resume.pdf" },
 ];
 

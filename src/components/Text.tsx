@@ -35,6 +35,7 @@ const StyledHeading = styled(Styled.div)(
 const HeadingTitle = styled(Styled.h1)(
   css({
     fontSize: ["6rem", "8rem"],
+    mt: 0,
     mb: 2,
     p: 0,
     ml: "-8px",

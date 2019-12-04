@@ -66,7 +66,7 @@ const theme: Theme = {
     },
     h1: {
       ...heading,
-      fontSize: 5,
+      fontSize: [6, 7],
     },
     h2: {
       ...heading,
@@ -87,6 +87,15 @@ const theme: Theme = {
     h6: {
       ...heading,
       fontSize: 0,
+    },
+    a: {
+      color: "text",
+      textDecoration: "underline",
+      transition: "opacity 250ms ease-in-out",
+
+      "&:hover": {
+        opacity: 0.6,
+      },
     },
     pre: {
       fontFamily: "monospace",
@@ -111,6 +120,19 @@ const theme: Theme = {
     td: {
       textAlign: "left",
       borderBottomStyle: "solid",
+    },
+    blockquote: {
+      mt: 0,
+      mx: 0,
+      py: 0,
+      pr: 0,
+      pl: 3,
+      borderLeft: "solid 4px hsla(0,0%,0%,0.13)",
+      color: "hsla(0,0%,0%,0.53)",
+    },
+    ul: {},
+    li: {
+      pb: 1,
     },
   },
 };

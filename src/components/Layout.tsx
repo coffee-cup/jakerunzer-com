@@ -4,55 +4,52 @@ import * as React from "react";
 import { Styled } from "theme-ui";
 import styled from "@emotion/styled";
 import css from "@styled-system/css";
-import Link from "./Link";
-/* import Code from "./Code"; */
 import Footer from "./Footer";
+import Header from "./Header";
+import SEO from "./SEO";
+
+export interface FrontMatter {
+  title?: string;
+  description?: string;
+}
+
+export interface Props {
+  _frontmatter?: FrontMatter;
+}
 
 const ContentWrapper = styled(Styled.root)(
   css({
+    maxWidth: "container",
+    color: "text",
     my: 0,
     mx: "auto",
     py: 0,
     px: 4,
+    fontSize: [2, 3],
   }),
 );
 
 const Content = styled.main(
   css({
-    maxWidth: "container",
-    mx: "auto",
+    minHeight: props => `calc(100vh - ${props.sizes.header})`,
   }),
 );
 
-/* const components = { */
-/* h1: Styled.h1, */
-/* h2: Styled.h2, */
-/* h3: Styled.h3, */
-/* h4: Styled.h4, */
-/* a: Link, */
-/* }; */
+const Layout: React.FC<Props> = ({ children, ...rest }) => {
+  const frontmatter = rest._frontmatter || {};
 
-/* const components = { */
-/* h1: H1, */
-/* h2: H2, */
-/* h3: H3, */
-/* a: MdxLink, */
-/* pre: Code, */
-/* }; */
-
-const Layout: React.FC = ({ children }) => {
   return (
-    <Location>
-      {({}) => (
-        <MDXProvider>
-          <ContentWrapper>
-            <Content>{children}</Content>
+    <MDXProvider>
+      <SEO title={frontmatter.title} description={frontmatter.description} />
 
-            <Footer />
-          </ContentWrapper>
-        </MDXProvider>
-      )}
-    </Location>
+      <ContentWrapper className="wrapper">
+        <Header />
+
+        <Content>{children}</Content>
+
+        <Footer />
+      </ContentWrapper>
+    </MDXProvider>
   );
 };
 

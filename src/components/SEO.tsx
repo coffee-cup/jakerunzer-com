@@ -21,7 +21,10 @@ const SEO: React.FC<Props> = props => {
   const data = useStaticQuery(query);
   const meta = data.site.siteMetadata;
 
-  const title = props.title != null ? props.title : meta.siteShortTitle;
+  const title =
+    props.title != null
+      ? `${props.title} | ${meta.siteShortTitle}`
+      : meta.siteShortTitle;
   const description = props.description || meta.description;
 
   return (
