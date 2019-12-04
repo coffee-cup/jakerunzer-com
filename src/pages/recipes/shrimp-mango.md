@@ -1,9 +1,13 @@
 ---
-category: recipes
-title: "Shrimp and Mango Salad"
+title: Shrimp and mango salad recipe
 ---
 
-# Ingredients
+import Layout from "../../components/Layout";
+export default Layout;
+
+# Shrimp and Mango Salad
+
+## Ingredients
 
 - 500g fresh peeled shrimp
 - 1 ripe mango, diced
@@ -18,7 +22,7 @@ title: "Shrimp and Mango Salad"
 - 1tbsp olive oil
 - salt and pepper to taste
 
-# Method
+## Method
 
 1. Place the shrimp in a colander and press down a little to remove any excess moisture
 2. Transfer shrimp to a large bowl

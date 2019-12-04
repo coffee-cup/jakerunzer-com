@@ -1,8 +1,12 @@
 ---
-category: blog
 title: Static Sites
 date: 2018-09-05T15:21:00+01:00
 ---
+
+import Layout from "../../components/Layout";
+export default Layout;
+
+# Static Sites
 
 I first started web development in 2013 by learning HTML and CSS. I created
 simple photography and portfolio sites with unnecessarily complicated nested

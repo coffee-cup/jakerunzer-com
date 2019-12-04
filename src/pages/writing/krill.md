@@ -1,9 +1,12 @@
 ---
-category: blog
 title: Krill
-date: 2019-11-16T03:32:00+00:00
-draft: true
+description: Dynamic, curried, and minimal programming language.
 ---
+
+import Layout from "../../components/Layout";
+export default Layout;
+
+# Krill
 
 A small programming language. You can find it at [krill.jakerunzer.com](https://krill.jakerunzer.com).
 

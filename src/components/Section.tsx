@@ -1,12 +1,10 @@
-import * as React from "react";
-import styled from "styled-components";
+import styled from "@emotion/styled";
+import css from "@styled-system/css";
 
-const StyledSection = styled.div`
-  padding: 3rem 0;
-`;
-
-const Section: React.FC = props => (
-  <StyledSection>{props.children}</StyledSection>
+const Section = styled.div(
+  css({
+    py: 4,
+  }),
 );
 
 export default Section;

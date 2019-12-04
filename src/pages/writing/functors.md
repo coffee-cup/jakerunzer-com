@@ -1,8 +1,12 @@
 ---
-category: blog
-title: "Functors"
-date: 2017-11-24T15:12:00+00:00
+title: Functors
+date: 2018-09-05T15:21:00+01:00
 ---
+
+import Layout from "../../components/Layout";
+export default Layout;
+
+# Functors
 
 In mathematics, Functors are a mapping between categories. They define a way to
 convert an object in one category to an object in another.

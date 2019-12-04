@@ -1,61 +1,56 @@
 import { MDXProvider } from "@mdx-js/react";
 import { Location } from "@reach/router";
 import * as React from "react";
-import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
-import { MdxLink } from "../components/Link";
-import { H1, H2, H3 } from "../components/Text";
-import { sizes, theme } from "../styles";
-import Code from "./Code";
+import { Styled } from "theme-ui";
+import styled from "@emotion/styled";
+import css from "@styled-system/css";
 import Footer from "./Footer";
+import Header from "./Header";
+import SEO from "./SEO";
 
-const GlobalStyle = createGlobalStyle`
-  body {
-    background: ${props => props.theme.colours.bg}
-    scroll-behavior: smooth;
-  }
-`;
+export interface FrontMatter {
+  title?: string;
+  description?: string;
+}
 
-const ContentWrapper = styled.div`
-  margin: 0;
-  padding: 0 1rem;
-  max-width: 800px;
-  margin: 0 auto;
+export interface Props extends FrontMatter {
+  noHeader?: boolean;
+  _frontmatter?: FrontMatter;
+}
 
-  @media (min-width: ${sizes.phone}) {
-    padding: 0 2rem;
-  }
-`;
+const ContentWrapper = styled(Styled.root)(
+  css({
+    maxWidth: "container",
+    color: "text",
+    my: 0,
+    mx: "auto",
+    py: 0,
+    px: 4,
+    fontSize: [2],
+  }),
+);
 
-const Content = styled.main`
-  min-height: 100vh;
-`;
+const Content = styled.main(
+  css({
+    minHeight: props => `calc(100vh - ${props.sizes.header})`,
+  }),
+);
 
-const components = {
-  h1: H1,
-  h2: H2,
-  h3: H3,
-  a: MdxLink,
-  pre: Code,
-};
+const Layout: React.FC<Props> = ({ children, ...rest }) => {
+  const frontmatter = rest._frontmatter || rest || {};
 
-const Layout: React.FC = ({ children }) => {
   return (
-    <Location>
-      {({}) => (
-        <MDXProvider components={components}>
-          <ThemeProvider theme={theme}>
-            <>
-              <GlobalStyle />
-              <ContentWrapper>
-                <Content>{children}</Content>
+    <MDXProvider>
+      <SEO title={frontmatter.title} description={frontmatter.description} />
 
-                <Footer />
-              </ContentWrapper>
-            </>
-          </ThemeProvider>
-        </MDXProvider>
-      )}
-    </Location>
+      <ContentWrapper className="wrapper">
+        {!rest.noHeader && <Header />}
+
+        <Content>{children}</Content>
+
+        <Footer />
+      </ContentWrapper>
+    </MDXProvider>
   );
 };
 

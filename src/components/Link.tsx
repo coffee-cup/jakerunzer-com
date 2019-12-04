@@ -1,17 +1,20 @@
 import { Link as GLink } from "gatsby";
 import * as React from "react";
-import styled from "styled-components";
+import { Styled } from "theme-ui";
+import styled from "@emotion/styled";
+import css from "@styled-system/css";
+import theme from "../gatsby-plugin-theme-ui";
 
-const StyledLink = styled(GLink)<{ empty: number }>`
-  color: ${props => (props.empty ? "inherit" : props.theme.colours.accent)};
-  text-decoration: none;
-  transition: opacity 150ms ease-in-out;
-
-  &:hover {
-    text-decoration: none;
-    opacity: 0.6;
-  }
-`;
+const StyledLink = styled(GLink)<{ empty: number }>(props =>
+  css({
+    ...(props.empty
+      ? {
+          ...theme.styles.a,
+          textDecoration: "none",
+        }
+      : theme.styles.a),
+  }),
+);
 
 export interface Props {
   to: string;
@@ -28,15 +31,9 @@ const Link: React.FC<Props> = props => {
   const href = props.href || props.to;
   if (isExternalLink(href)) {
     return (
-      <StyledLink
-        as="a"
-        href={href}
-        target="_blank"
-        rel="noopener"
-        {...{ ...props, empty: props.empty ? 1 : 0 }}
-      >
+      <Styled.a href={href} target="_blank" rel="noopener" {...props}>
         {props.children}
-      </StyledLink>
+      </Styled.a>
     );
   }
 

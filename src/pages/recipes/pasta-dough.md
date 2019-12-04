@@ -1,14 +1,18 @@
 ---
-category: recipes
-title: "Pasta Dough"
+title: Pasta Dough
 ---
 
-# Ingredients
+import Layout from "../../components/Layout";
+export default Layout;
+
+# Pasta Dough
+
+## Ingredients
 
 - 3 cups flour
 - 2 eggs
 
-# Method
+## Method
 
 - clear off surface
 - make well with flour
@@ -16,6 +20,6 @@ title: "Pasta Dough"
 - use fork to (slowly) whisk egg
 - keep stiring and mixing in flour
 - when dough becomes thick enough use hands to knead dough
-- knead for about 10 min until supple (not too dry, not too wet. doesn't crack)
+- knead for about 10 min until supple (not too dry, not too wet. does't crack)
 - wrap dough and keep in dark place for at least 30 min
-- dough is ready to be used in pasta maker
+- dough is ready to be used in pasta make

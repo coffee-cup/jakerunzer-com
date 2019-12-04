@@ -1,17 +1,21 @@
 ---
-category: recipes
 title: "Grilled Cheese"
 ---
 
+import Layout from "../../components/Layout";
+export default Layout;
+
+# Grilled Cheese
+
 yum yum.
 
-# Ingredients
+## Ingredients
 
 - Bread
 - Butter
 - Cheese
 
-# Method
+## Method
 
 1. Butter one side of each piece of bread
 2. Cut the desired amount of cheese

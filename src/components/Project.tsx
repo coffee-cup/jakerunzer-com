@@ -1,11 +1,17 @@
 import * as React from "react";
-import styled from "styled-components";
+import styled from "@emotion/styled";
+import css from "@styled-system/css";
 import * as ReactMarkdown from "react-markdown";
 import Link from "./Link";
 
-const StyledProject = styled.div``;
-const ProjectName = styled.h3``;
-const ProjectDesc = styled.div`
+const StyledProject = styled.div(css({}));
+
+const ProjectName = styled.h3(css({}));
+
+const ProjectDesc = styled.div({});
+
+/*
+`
   a {
     color: ${props => props.theme.colours.accent};
     text-decoration: none;
@@ -17,6 +23,7 @@ const ProjectDesc = styled.div`
     }
   }
 `;
+*/
 
 const Project: React.FC<{
   name: string;

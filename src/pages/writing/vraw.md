@@ -1,9 +1,12 @@
 ---
-category: blog
-title: vraw
-date: 2019-11-25T23:57:00+00:00
-draft: true
+title: Vaw
+date: 2018-09-05T15:21:00+01:00
 ---
+
+import Layout from "../../components/Layout";
+export default Layout;
+
+# Vraw
 
 Vraw is a programming language for drawing SVGs. You can create complex shapes
 by composing together smaller ones. Think JSX, but without any logic or control flow.

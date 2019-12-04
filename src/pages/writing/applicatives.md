@@ -1,8 +1,12 @@
 ---
-category: blog
 title: Applicatives
-date: 2017-12-08T22:18:00+00:00
+date: 2018-09-05T15:21:00+01:00
 ---
+
+import Layout from "../../components/Layout";
+export default Layout;
+
+# Applicatives
 
 Applicative functors are more powerful than Functors but not as powerful as
 monads. They provide a way to partially apply a function inside an Applicative
@@ -54,7 +58,7 @@ class (Functor f) => Applicative f where
   (<*>) :: f (a -> b) -> f a -> f b
 ```
 
-An Applicative must implement the `pure` and `(<*>)` functions.
+Additionally, an Applicative must implement the `pure` and `(<*>)` functions.
 
 `pure` just takes a normal unwrapped value and wraps it into an Applicative
 context.
