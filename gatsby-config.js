@@ -42,30 +42,30 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-feed`,
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                title: siteTitle
-                description
-                siteUrl: url
-              }
-            }
-          }
-        `,
-        feeds: [
-          getBlogFeed({
-            filePathRegex: `//content/blog/`,
-            blogUrl: `https://jakerunzer.com/blog`,
-            output: `/rss.xml`,
-            title: `Jake Runzer's Blog`,
-          }),
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-feed`,
+    //   options: {
+    //     query: `
+    //       {
+    //         site {
+    //           siteMetadata {
+    //             title: siteTitle
+    //             description
+    //             siteUrl: url
+    //           }
+    //         }
+    //       }
+    //     `,
+    //     feeds: [
+    //       getBlogFeed({
+    //         filePathRegex: `//content/blog/`,
+    //         blogUrl: `https://jakerunzer.com/blog`,
+    //         output: `/rss.xml`,
+    //         title: `Jake Runzer's Blog`,
+    //       }),
+    //     ],
+    //   },
+    // },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
