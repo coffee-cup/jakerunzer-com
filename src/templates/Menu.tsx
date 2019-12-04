@@ -8,8 +8,9 @@ import Link from "../components/Link";
 import SEO from "../components/SEO";
 import { Title } from "../components/Text";
 import { formatDate } from "../utils";
+import css from "@styled-system/css";
 
-interface Page {
+interface IPage {
   fields: {
     slug: string;
   };
@@ -28,36 +29,43 @@ interface Props {
   };
   data: {
     allMdx: {
-      nodes: Page[];
+      nodes: IPage[];
     };
   };
 }
 
-const getIndexPage = (pages: Page[]): Page =>
+const getIndexPage = (pages: IPage[]): IPage =>
   pages.filter(p => p.frontmatter.index)[0];
-const getDataPages = (pages: Page[]): Page[] =>
+const getDataPages = (pages: IPage[]): IPage[] =>
   pages.filter(p => !p.frontmatter.index);
 
-const Pages = styled.ul`
-  margin-left: 0;
-  list-style: none;
-`;
+const Pages = styled.ul(
+  css({
+    listStyle: "none",
+    pl: 0,
+  }),
+);
 
-const Page = styled.li`
-  padding: 0.5rem 0;
-`;
+const Page = styled.li(
+  css({
+    py: 1,
+  }),
+);
 
-const PageName = styled.h2`
-  margin: 0;
-  padding-bottom: 0.15rem;
-`;
+const PageName = styled.h2(
+  css({
+    m: 0,
+    pb: 0,
+  }),
+);
 
-const PageDate = styled.span`
-  margin: 0;
-  color: #a2a2a2;
-  font-size: 0.9em;
-  font-weight: normal;
-`;
+const PageDate = styled.span(
+  css({
+    m: 0,
+    color: "muted",
+    fontSize: 1,
+  }),
+);
 
 const Menu: React.FC<Props> = props => {
   const nodes = props.data.allMdx.nodes;

@@ -2,6 +2,7 @@ import * as React from "react";
 import styled from "@emotion/styled";
 import { makeAnchor } from "../utils";
 import { Styled } from "theme-ui";
+import css from "@styled-system/css";
 
 export const H1: React.FC = props => (
   <h1 id={makeAnchor(props.children)} {...props} />
@@ -11,9 +12,12 @@ export const H2: React.FC = props => (
 );
 export const H3: React.FC = props => <h3 {...props} />;
 
-export const Title = styled.h1`
-  font-size: 3em;
-`;
+export const Title = styled.h1(
+  css({
+    mb: 0,
+    fontSize: 6,
+  }),
+);
 
 export const Detail = styled.span`
   display: block;
@@ -21,23 +25,28 @@ export const Detail = styled.span`
   color: grey;
 `;
 
-const StyledHeading = styled.div`
-  margin: 0;
-  padding: 0;
+const StyledHeading = styled(Styled.div)(
+  css({
+    m: 0,
+    p: 0,
+  }),
+);
 
-  h1 {
-    font-size: 6rem;
-    margin: 0;
-    padding-bottom: 0;
-    margin-left: -8px;
-  }
+const HeadingTitle = styled(Styled.h1)(
+  css({
+    fontSize: ["6rem", "8rem"],
+    mb: 2,
+    p: 0,
+    ml: "-8px",
+  }),
+);
 
-  h2 {
-    font-size: 2.5rem;
-    margin: 0;
-    padding: 0;
-  }
-`;
+const HeadingSubTitle = styled(Styled.h2)(
+  css({
+    fontSize: 5,
+    m: 0,
+  }),
+);
 
 interface Props {
   title: string;
@@ -46,7 +55,7 @@ interface Props {
 
 export const Heading: React.FC<Props> = props => (
   <StyledHeading>
-    <Styled.h1>{props.title}</Styled.h1>
-    {props.subtitle && <Styled.h2>{props.subtitle}</Styled.h2>}
+    <HeadingTitle>{props.title}</HeadingTitle>
+    {props.subtitle && <HeadingSubTitle>{props.subtitle}</HeadingSubTitle>}
   </StyledHeading>
 );

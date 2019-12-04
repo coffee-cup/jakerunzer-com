@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "@emotion/styled";
 import css from "@styled-system/css";
-import { Styled } from "theme-ui";
+import { Styled, jsx } from "theme-ui";
 import { projects } from "../../content/projects";
 import Layout from "../components/Layout";
 import Link from "../components/Link";
@@ -10,17 +10,11 @@ import SEO from "../components/SEO";
 import Container from "../components/Container";
 import Section from "../components/Section";
 import { Heading } from "../components/Text";
-
-const links = [
-  { text: "Github", href: "https://github.com/coffee-cup" },
-  { text: "Keybase", href: "https://keybase.io/jakerunzer" },
-  { text: "Twitter", href: "https://twitter.com/jakerunzer" },
-];
+import Menu from "../components/Menu";
 
 const Hero = styled(Styled.div)(
   css({
     display: "flex",
-    minHeight: "70vh",
     alignItems: "center",
     color: "text",
   }),
@@ -29,12 +23,16 @@ const Hero = styled(Styled.div)(
 const Description = styled(Styled.p)(
   css({
     maxWidth: "38ch",
-    my: 1,
+    fontSize: 3,
+    my: 3,
   }),
 );
 
 const StyledHome = styled(Styled.div)(
   css({
+    display: "flex",
+    alignItems: "center",
+    minHeight: "100vh",
     pb: 1,
   }),
 );
@@ -68,11 +66,13 @@ const Home = () => (
         <div>
           <Heading title="Hello." subtitle="I'm Jake 👋" />
           <Description>
-            Software engineer <Link to="https://prodo.dev">@prodo</Link> in
-            London
+            Software engineer working at{" "}
+            <Link to="https://prodo.dev">@prodo</Link> in London. I like to
+            build web and iOS apps, as well as dig deep into compilers and
+            functional programming.
           </Description>
 
-          <Nav links={links} />
+          <Menu />
         </div>
       </Hero>
     </StyledHome>

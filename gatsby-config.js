@@ -101,6 +101,13 @@ module.exports = {
       },
     },
     `gatsby-plugin-theme-ui`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Montserrat\:700`],
+        display: "swap",
+      },
+    },
     `gatsby-plugin-offline`,
   ],
 };

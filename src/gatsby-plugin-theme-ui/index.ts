@@ -30,7 +30,7 @@ const theme: Theme = {
     background: "white",
     primary: "#4d3ae2",
     secondary: "#30c",
-    muted: "#f6f6f6",
+    muted: "#a2a2a2",
   },
   breakpoints: ["40em", "52em", "64em"],
   fontWeights: {
@@ -41,13 +41,14 @@ const theme: Theme = {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body: font,
-    heading: font,
+    heading: `"Montserrat", ${font}`,
     monospace: "Menlo, monospace",
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
   sizes: {
     container: "48em",
     measure: "32em",
+    header: "4rem",
   },
   lineHeights: {
     body: 1.5,
