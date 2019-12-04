@@ -19,6 +19,11 @@ const Description = styled(Styled.p)(
   css({
     maxWidth: "38ch",
     my: 3,
+
+    a: {
+      color: "primary",
+      textDecoration: "none",
+    },
   }),
 );
 
