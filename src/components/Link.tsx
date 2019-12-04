@@ -31,7 +31,7 @@ const Link: React.FC<Props> = props => {
   const href = props.href || props.to;
   if (isExternalLink(href)) {
     return (
-      <Styled.a href={href} target="_blank" rel="noopener">
+      <Styled.a href={href} target="_blank" rel="noopener" {...props}>
         {props.children}
       </Styled.a>
     );
