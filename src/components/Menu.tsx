@@ -8,7 +8,7 @@ const links = [
   { text: "Keybase", href: "https://keybase.io/jakerunzer" },
   { text: "Twitter", href: "https://twitter.com/jakerunzer" },
   { text: "Writing", href: "/writing" },
-  { text: "Resume", href: "/resume.pdf" },
+  { text: "Projects", href: "/projects" },
 ];
 
 const StyledMenu = styled.ul(
