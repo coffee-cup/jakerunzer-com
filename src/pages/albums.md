@@ -9,7 +9,7 @@ import Album from "../components/Album";
 
 # Top Albums
 
-I listen to music... a lot. These are my favourite albums of all time _(in no
+I listen to music. These are my favourite albums of all time _(in no
 particular order)_.
 
 <Album 
