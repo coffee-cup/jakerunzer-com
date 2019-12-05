@@ -37,7 +37,7 @@ View artwork grid of your top albums.
 
 ## Languages
 
-**[Krill](https://krill.jakerunzer)**
+**[Krill](https://krill.jakerunzer.com)**
 
 Dynamic, curried, and minimal programming language. Implemented in Haskell.
 
