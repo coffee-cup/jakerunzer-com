@@ -53,7 +53,7 @@ JVM.
 
 ## Dev Tools
 
-**[favocon](https://github.com/coffee-cup/favocon)**
+**[favocon](https://crates.io/crates/favocon)**
 
 Command line utility for creating favicons from an image.
 
