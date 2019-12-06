@@ -23,7 +23,7 @@ tools like [CRA](https://create-react-app.dev/) and
 editing the config.
 - Plugins can lead to confusion as it can be unclear what in the code is being
 transpiled and what isn't.
-- They can conflict in non-intuitive ways. The ordering you defining the plugins
+- They can conflict in non-intuitive ways. The ordering you define the plugins
   in is important and when the ordering causes a bug, it can be impossible to debug.
   
 Babel macros to the rescue!
