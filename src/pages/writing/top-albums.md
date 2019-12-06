@@ -1,16 +1,24 @@
 ---
 title: Top Albums
+date: 2018-12-06T15:21:00+01:00
+description: My top albums of all time.
 ---
 
-import Layout from "../components/Layout";
+import Layout from "../../components/Layout";
 export default Layout;
 
-import Album from "../components/Album";
+import Album from "../../components/Album";
 
 # Top Albums
 
-I listen to music. These are my favourite albums of all time _(in no
-particular order)_.
+Spotify recently release their _Wrapped 2019_, a playlist of your most listened
+songs of the last year. The decade is also ending soon, so I see a lot of people posting
+their top albums and songs from 2010-2020. My music taste and listening habits
+has really change (progressed?) in the last decade, so some of my favourite
+music that I discovered was actually released before 2010. That being said, I
+still wanted to create a list (_in no particular order_) of my top and most listened to albums of the
+decade. These are albums I can put on repeat or come back to after half a year
+and still enjoy them immensely.
 
 <Album 
   title="2012-2017" 
@@ -38,6 +46,13 @@ particular order)_.
   artist="Emancipator" 
   image="https://lastfm.freetls.fastly.net/i/u/770x0/fdc2f8b1e2c7ca5869d027b7097842d0.jpg#fdc2f8b1e2c7ca5869d027b7097842d0" 
   link="https://open.spotify.com/album/3vUL7XVv8gsxuIFbamidAn" 
+/>
+
+<Album 
+  title="Sirens" 
+  artist="Nicolas Jaar" 
+  image="https://lastfm.freetls.fastly.net/i/u/770x0/31047ef810e1bf6fed2ebac16d5a6190.jpg#31047ef810e1bf6fed2ebac16d5a6190" 
+  link="https://open.spotify.com/album/5jgnoe0auRKrLvvj4qO5VX" 
 />
 
 <Album 
