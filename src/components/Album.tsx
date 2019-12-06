@@ -10,10 +10,22 @@ export interface Props {
   link: string;
 }
 
+const shadowColor = "#00000040";
+
 const AlbumLink = styled(Link)(
   css({
     display: "inline-block",
     textDecoration: "none",
+    width: "100%",
+
+    "&:hover": {
+      opacity: 2,
+
+      img: {
+        transform: "scale(1.05)",
+        boxShadow: `0 0 20px ${shadowColor}`,
+      },
+    },
   }),
 );
 
@@ -21,7 +33,7 @@ const StyledAlbum = styled.div(
   css({
     display: "flex",
     alignItems: "center",
-    py: 2,
+    py: 3,
 
     a: {
       textDecoration: "none",
@@ -32,6 +44,9 @@ const StyledAlbum = styled.div(
 const AlbumArt = styled.img(
   css({
     maxWidth: ["10rem", "16rem"],
+    boxShadow: `0 0 15px ${shadowColor}`,
+
+    transition: "all 250ms ease-in-out",
   }),
 );
 
