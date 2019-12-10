@@ -6,8 +6,6 @@ date: 2018-09-05T15:21:00+01:00
 import Layout from "../../components/Layout";
 export default Layout;
 
-# Applicatives
-
 Applicative functors are more powerful than Functors but not as powerful as
 monads. They provide a way to partially apply a function inside an Applicative
 context to parameters also inside the same context.

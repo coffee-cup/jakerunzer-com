@@ -5,8 +5,6 @@ title: "Grilled Cheese"
 import Layout from "../../components/Layout";
 export default Layout;
 
-# Grilled Cheese
-
 yum yum.
 
 ## Ingredients

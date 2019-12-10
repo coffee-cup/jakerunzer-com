@@ -5,8 +5,6 @@ title: Recipes
 import Layout from "../../components/Layout";
 export default Layout;
 
-# Recipes
-
 A collection of delicious recipes.
 
 - [Grilled cheese](/recipes/grilled-cheese)

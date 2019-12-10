@@ -5,8 +5,6 @@ title: Shrimp and mango salad recipe
 import Layout from "../../components/Layout";
 export default Layout;
 
-# Shrimp and Mango Salad
-
 ## Ingredients
 
 - 500g fresh peeled shrimp

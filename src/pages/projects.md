@@ -1,11 +1,10 @@
 ---
 title: Projects
+description: The project I have worked on.
 ---
 
 import Layout from "../components/Layout";
 export default Layout;
-
-# Projects
 
 Over the years I have completed a number of
 projects that I do not want to forget. This page is a way for me to catalogue

@@ -9,8 +9,6 @@ export default Layout;
 
 import Album from "../../components/Album";
 
-# Top Albums
-
 Spotify recently release their _Wrapped 2019_, a playlist of your most listened
 songs of the last year. The decade is also ending soon, so I see a lot of people posting
 their top albums and songs from 2010-2020. My music taste and listening habits

@@ -7,10 +7,12 @@ import css from "@styled-system/css";
 import Footer from "./Footer";
 import Header from "./Header";
 import SEO from "./SEO";
+import { BlogTitle } from "./Text";
 
 export interface FrontMatter {
   title?: string;
   description?: string;
+  date?: string;
 }
 
 export interface Props extends FrontMatter {
@@ -25,7 +27,7 @@ const ContentWrapper = styled(Styled.root)(
     my: 0,
     mx: "auto",
     py: 0,
-    px: 4,
+    px: [3, 4],
     fontSize: [2],
   }),
 );
@@ -46,7 +48,12 @@ const Layout: React.FC<Props> = ({ children, ...rest }) => {
       <ContentWrapper className="wrapper">
         {!rest.noHeader && <Header />}
 
-        <Content>{children}</Content>
+        <Content>
+          {frontmatter.title != null && (
+            <BlogTitle title={frontmatter.title} date={frontmatter.date} />
+          )}
+          {children}
+        </Content>
 
         <Footer />
       </ContentWrapper>

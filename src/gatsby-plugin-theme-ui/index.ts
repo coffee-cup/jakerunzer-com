@@ -71,7 +71,7 @@ const theme: Theme = {
     },
     h2: {
       ...heading,
-      fontSize: 4,
+      fontSize: [4, 5],
     },
     h3: {
       ...heading,

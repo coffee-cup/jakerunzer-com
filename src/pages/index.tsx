@@ -5,7 +5,14 @@ import { Styled } from "theme-ui";
 import Layout from "../components/Layout";
 import Link from "../components/Link";
 import { Heading } from "../components/Text";
-import Menu from "../components/Menu";
+
+const links = [
+  { text: "Github", href: "https://github.com/coffee-cup" },
+  { text: "Keybase", href: "https://keybase.io/jakerunzer" },
+  { text: "Twitter", href: "https://twitter.com/jakerunzer" },
+  { text: "Writing", href: "/writing" },
+  { text: "Projects", href: "/projects" },
+];
 
 const Hero = styled(Styled.div)(
   css({
@@ -34,6 +41,35 @@ const StyledHome = styled(Styled.div)(
     minHeight: "100vh",
     pb: 1,
   }),
+);
+
+const StyledMenu = styled.ul(
+  css({
+    listStyle: "none",
+    pl: 0,
+  }),
+);
+
+const MenuItem = styled.li(
+  css({
+    pl: 0,
+    py: 1,
+    fontWeight: "bold",
+    fontSize: 2,
+    textDecoration: "underline",
+  }),
+);
+
+const Menu = () => (
+  <StyledMenu>
+    {links.map(l => (
+      <MenuItem key={l.href}>
+        <Link empty to={l.href}>
+          {l.text}
+        </Link>
+      </MenuItem>
+    ))}
+  </StyledMenu>
 );
 
 const Home = () => (

@@ -5,8 +5,6 @@ title: "Miso Dressing"
 import Layout from "../../components/Layout";
 export default Layout;
 
-# Miso dressing
-
 Dressing for any occasion! My favourite is on a kale salad or couscous bowl.
 
 ## Ingredients

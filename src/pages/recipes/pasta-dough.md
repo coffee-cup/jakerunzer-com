@@ -5,8 +5,6 @@ title: Pasta Dough
 import Layout from "../../components/Layout";
 export default Layout;
 
-# Pasta Dough
-
 ## Ingredients
 
 - 3 cups flour

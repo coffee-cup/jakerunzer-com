@@ -100,6 +100,7 @@ module.exports = {
         lang: "en",
       },
     },
+    `gatsby-plugin-emotion`,
     `gatsby-plugin-theme-ui`,
     {
       resolve: "gatsby-theme-style-guide",

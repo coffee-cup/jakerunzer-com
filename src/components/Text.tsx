@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "@emotion/styled";
-import { makeAnchor } from "../utils";
+import { makeAnchor, formatDate } from "../utils";
 import { Styled } from "theme-ui";
 import css from "@styled-system/css";
 
@@ -59,4 +59,27 @@ export const Heading: React.FC<Props> = props => (
     <HeadingTitle>{props.title}</HeadingTitle>
     {props.subtitle && <HeadingSubTitle>{props.subtitle}</HeadingSubTitle>}
   </StyledHeading>
+);
+
+const StyledBlogTitle = styled.div(
+  css({
+    mb: 4,
+    h1: {
+      mb: 2,
+    },
+
+    span: {
+      color: "grey",
+    },
+  }),
+);
+
+export const BlogTitle: React.FC<{
+  title: string;
+  date?: string;
+}> = props => (
+  <StyledBlogTitle>
+    <Styled.h1>{props.title}</Styled.h1>
+    {props.date != null && <span>{formatDate(props.date)}</span>}
+  </StyledBlogTitle>
 );

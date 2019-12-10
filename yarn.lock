@@ -382,7 +382,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.0.0"
 
-"@babel/plugin-syntax-jsx@^7.7.4":
+"@babel/plugin-syntax-jsx@^7.2.0", "@babel/plugin-syntax-jsx@^7.7.4":
   version "7.7.4"
   resolved "https://registry.yarnpkg.com/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.7.4.tgz#dab2b56a36fb6c3c222a1fbc71f7bf97f327a9ec"
   integrity sha512-wuy6fiMe9y7HeZBWXYCGt2RGxZOj0BImZ9EyXJVnVGBKO/Br592rbR3rtIQn0eQhAk9vqaKP5n8tVqEFBQMfLg==
@@ -653,7 +653,7 @@
     "@babel/helper-plugin-utils" "^7.0.0"
     "@babel/plugin-syntax-jsx" "^7.7.4"
 
-"@babel/plugin-transform-react-jsx@^7.7.4":
+"@babel/plugin-transform-react-jsx@^7.3.0", "@babel/plugin-transform-react-jsx@^7.7.4":
   version "7.7.4"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-jsx/-/plugin-transform-react-jsx-7.7.4.tgz#d91205717fae4e2f84d020cd3057ec02a10f11da"
   integrity sha512-LixU4BS95ZTEAZdPaIuyg/k8FiiqN9laQ0dMHB4MlpydHY53uQdWCUrwjLr5o6ilS6fAgZey4Q14XBjl5tL6xw==
@@ -871,6 +871,23 @@
     esutils "^2.0.2"
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
+
+"@emotion/babel-plugin-jsx-pragmatic@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@emotion/babel-plugin-jsx-pragmatic/-/babel-plugin-jsx-pragmatic-0.1.4.tgz#12fd120ecb202c6110dc98d3edabddafda1515f1"
+  integrity sha512-5LfpS5JWi0e+ss9nQdLByslCSjM2Gl72+WnUg60lJFvGk2ecr0tL86f5z8FbvlhpIhoIIIRBpFKMLr0BuIaLWg==
+  dependencies:
+    "@babel/plugin-syntax-jsx" "^7.2.0"
+
+"@emotion/babel-preset-css-prop@^10.0.23":
+  version "10.0.23"
+  resolved "https://registry.yarnpkg.com/@emotion/babel-preset-css-prop/-/babel-preset-css-prop-10.0.23.tgz#7c21a36c97c3ce9e96f5896b56f68b9bbac800bd"
+  integrity sha512-XG1s1SQF8twf/ufh+j3EdVjQW7SjcAPOdPZDxEsVVahoR1mF2/nWl4adc5ROppSr/P84QJEdquA6lmyZWcnaBQ==
+  dependencies:
+    "@babel/plugin-transform-react-jsx" "^7.3.0"
+    "@babel/runtime" "^7.5.5"
+    "@emotion/babel-plugin-jsx-pragmatic" "^0.1.4"
+    babel-plugin-emotion "^10.0.23"
 
 "@emotion/cache@^10.0.17":
   version "10.0.19"
@@ -5864,6 +5881,14 @@ gatsby-page-utils@^0.0.33:
     glob "^7.1.6"
     lodash "^4.17.15"
     micromatch "^3.1.10"
+
+gatsby-plugin-emotion@^4.1.16:
+  version "4.1.16"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-emotion/-/gatsby-plugin-emotion-4.1.16.tgz#7ac7f03f8b2a1c93ff0ecd2378a14c97ef9380b1"
+  integrity sha512-zC9wQowDdaVnjD2zOxkdQHGHI9cYozDyIRYOoRQoKEvJjhet3Qb4ocRY4MNq5orpRzanFX3LNhMbVSTVxtoK2g==
+  dependencies:
+    "@babel/runtime" "^7.7.4"
+    "@emotion/babel-preset-css-prop" "^10.0.23"
 
 gatsby-plugin-feed@^2.3.21:
   version "2.3.22"
