@@ -1,6 +1,6 @@
 ---
 title: Functors
-date: 2018-09-05T15:21:00+01:00
+date: 2018-06-01
 ---
 
 import Layout from "../../components/Layout";

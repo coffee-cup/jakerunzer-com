@@ -1,6 +1,6 @@
 ---
 title: Top Albums
-date: 2018-12-06T15:21:00+01:00
+date: 2019-12-06
 description: My top albums of all time.
 ---
 

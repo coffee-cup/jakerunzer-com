@@ -1,7 +1,6 @@
 ---
 title: Babel Macros
-description: Using and creating Babel macros with JavaScript and TypeScript.
-date: 2018-09-05T15:21:00+01:00
+date: 2019-12-10
 ---
 
 import Layout from "../../components/Layout";

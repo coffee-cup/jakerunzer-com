@@ -1,6 +1,6 @@
 ---
 title: Static Sites
-date: 2018-09-05T15:21:00+01:00
+date: 2018-10-01
 ---
 
 import Layout from "../../components/Layout";

@@ -2,6 +2,7 @@ function getBlogFeed({ filePathRegex, blogUrl, ...overrides }) {
   return {
     serialize: ({ query: { site, allMdx } }) => {
       const stripSlash = slug => (slug.startsWith("/") ? slug.slice(1) : slug);
+
       return allMdx.edges.map(edge => {
         const siteUrl = site.siteMetadata.url;
         const url = `${siteUrl}/${stripSlash(edge.node.fields.slug)}`;
@@ -17,8 +18,8 @@ function getBlogFeed({ filePathRegex, blogUrl, ...overrides }) {
 
         return {
           ...edge.node.frontmatter,
-          description: edge.node.excerpt,
-          date: edge.node.fields.date,
+          description: edge.node.frontmatter.description || edge.node.excerpt,
+          date: edge.node.frontmatter.date,
           url,
           guid: url,
           custom_elements: [{ "content:encoded": html + postText }],
@@ -50,6 +51,7 @@ function getBlogFeed({ filePathRegex, blogUrl, ...overrides }) {
              frontmatter {
                title
                date
+               description
              }
            }
          }

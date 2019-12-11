@@ -57,18 +57,19 @@ module.exports = {
             site {
               siteMetadata {
                 title
-                description
-                siteUrl: url
+                author
               }
             }
           }
         `,
         feeds: [
           getBlogFeed({
-            filePathRegex: `content/blog/`,
-            blogUrl: `https:jakerunzer.com/blog`,
+            filePathRegex: `//writing/`,
+            site_url: `https://jakerunzer.com/writing`,
+            feed_url: `https://jakerunzer.com/rss.xml`,
             output: `/rss.xml`,
-            title: `Jake Runzer's Blog`,
+            title: `Jake Runzer's Writing`,
+            description: "Personal writing by Jake Runzer.",
           }),
         ],
       },
