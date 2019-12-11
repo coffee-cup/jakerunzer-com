@@ -1,6 +1,6 @@
 const config = {
-  siteTitle: "Jake Runzer",
-  siteShortTitle: "Jake",
+  title: "Jake Runzer",
+  shortTitle: "Jake",
   logo: "/logos/logo-1024.png",
   url: "https://jakerunzer.com",
   description: "Software engineering working in London.",
@@ -8,6 +8,7 @@ const config = {
   dateFormat: "DD/MM/YYYY",
   author: "Jake Runzer",
   authorEmail: "jakerunzer@gmail.com",
+  twitter: "@jakerunzer",
 };
 
 module.exports = config;

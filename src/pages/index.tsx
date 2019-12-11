@@ -1,6 +1,6 @@
-import * as React from "react";
 import styled from "@emotion/styled";
 import css from "@styled-system/css";
+import * as React from "react";
 import { Styled } from "theme-ui";
 import Layout from "../components/Layout";
 import Link from "../components/Link";

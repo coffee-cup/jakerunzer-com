@@ -5,26 +5,28 @@ import Helmet from "react-helmet";
 export interface Props {
   title?: string;
   description?: string;
-  data?: {
-    site: {
-      siteMetadata: {
-        siteShortTitle: string;
-        description: string;
-        author: string;
-        url: string;
-      };
+}
+
+interface Query {
+  site: {
+    siteMetadata: {
+      title: string;
+      shortTitle: string;
+      url: string;
+      author?: string;
+      description?: string;
+      image?: string;
+      twitter?: string;
     };
   };
 }
 
 const SEO: React.FC<Props> = props => {
-  const data = useStaticQuery(query);
+  const data: Query = useStaticQuery(query);
   const meta = data.site.siteMetadata;
 
   const title =
-    props.title != null
-      ? `${props.title} | ${meta.siteShortTitle}`
-      : meta.siteShortTitle;
+    props.title != null ? `${props.title} | ${meta.shortTitle}` : meta.title;
   const description = props.description || meta.description;
 
   return (
@@ -48,10 +50,7 @@ const SEO: React.FC<Props> = props => {
 
       {/* Twitter Card tags */}
       <meta name="twitter:card" content="summary" />
-      <meta
-        name="twitter:creator"
-        content={meta.userTwitter ? meta.userTwitter : ""}
-      />
+      <meta name="twitter:creator" content={meta.twitter ? meta.twitter : ""} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       {meta.image && <meta name="twitter:image" content={meta.image} />}
@@ -65,10 +64,13 @@ const query = graphql`
   query {
     site {
       siteMetadata {
-        siteShortTitle
+        title
+        shortTitle
         description
         author
         url
+        image
+        twitter
       }
     }
   }

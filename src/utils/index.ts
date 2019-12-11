@@ -1,4 +1,4 @@
-import * as dayjs from "dayjs";
+import dayjs from "dayjs";
 
 export const makeAnchor = (value: any): string =>
   value.replace(/\s+/g, "-").toLowerCase();
