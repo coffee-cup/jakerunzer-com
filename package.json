@@ -11,7 +11,7 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "build": "gatsby build",
-    "tsc": "tsc -p . --noEmit --watch"
+    "tsc": "tsc -p . --noEmit"
   },
   "author": "Jake Runzer <jakerunzer@gmail.com> (https://jakerunzer.com)",
   "dependencies": {
