@@ -40,7 +40,9 @@ const SEO: React.FC<Props> = props => {
       <title>{title}</title>
       <meta name="description" content={description} />
 
-      {meta.image && <meta name="image" content={meta.image} />}
+      {meta.image && meta.image !== "" && (
+        <meta name="image" content={meta.image} />
+      )}
 
       {/* OpenGraph tags */}
       <meta property="og:url" content={meta.url} />
@@ -53,7 +55,9 @@ const SEO: React.FC<Props> = props => {
       <meta name="twitter:creator" content={meta.twitter ? meta.twitter : ""} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      {meta.image && <meta name="twitter:image" content={meta.image} />}
+      {meta.image && meta.image !== "" && (
+        <meta name="twitter:image" content={meta.image} />
+      )}
     </Helmet>
   );
 };

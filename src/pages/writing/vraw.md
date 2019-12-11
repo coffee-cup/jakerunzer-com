@@ -1,6 +1,7 @@
 ---
 title: Vaw
 date: 2018-09-05T15:21:00+01:00
+draft: true
 ---
 
 import Layout from "../../components/Layout";

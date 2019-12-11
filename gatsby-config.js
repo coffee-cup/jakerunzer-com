@@ -14,6 +14,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: `writing`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [".mdx", ".md"],
@@ -42,37 +49,37 @@ module.exports = {
         ],
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-feed`,
-    //   options: {
-    //     query: `
-    //       {
-    //         site {
-    //           siteMetadata {
-    //             title: siteTitle
-    //             description
-    //             siteUrl: url
-    //           }
-    //         }
-    //       }
-    //     `,
-    //     feeds: [
-    //       getBlogFeed({
-    //         filePathRegex: `//content/blog/`,
-    //         blogUrl: `https://jakerunzer.com/blog`,
-    //         output: `/rss.xml`,
-    //         title: `Jake Runzer's Blog`,
-    //       }),
-    //     ],
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl: url
+              }
+            }
+          }
+        `,
+        feeds: [
+          getBlogFeed({
+            filePathRegex: `content/blog/`,
+            blogUrl: `https:jakerunzer.com/blog`,
+            output: `/rss.xml`,
+            title: `Jake Runzer's Blog`,
+          }),
+        ],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: metadata.siteTitle,
-        short_name: metadata.siteShortTitle,
+        name: metadata.title,
+        short_name: metadata.shortTitle,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#ffffff`,

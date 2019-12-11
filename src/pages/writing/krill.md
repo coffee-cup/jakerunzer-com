@@ -1,6 +1,7 @@
 ---
 title: Krill
 description: Dynamic, curried, and minimal programming language.
+draft: true
 ---
 
 import Layout from "../../components/Layout";

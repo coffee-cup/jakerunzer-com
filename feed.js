@@ -3,7 +3,7 @@ function getBlogFeed({ filePathRegex, blogUrl, ...overrides }) {
     serialize: ({ query: { site, allMdx } }) => {
       const stripSlash = slug => (slug.startsWith("/") ? slug.slice(1) : slug);
       return allMdx.edges.map(edge => {
-        const siteUrl = site.siteMetadata.siteUrl;
+        const siteUrl = site.siteMetadata.url;
         const url = `${siteUrl}/${stripSlash(edge.node.fields.slug)}`;
 
         const postText = `<div style="margin-top=55px; font-style: italic;">(This article was posted to my blog at <a href="${blogUrl}">${blogUrl}</a>. You can <a href="${url}">read it online by clicking here</a>.)</div>`;
@@ -29,10 +29,7 @@ function getBlogFeed({ filePathRegex, blogUrl, ...overrides }) {
      {
        site {
          siteMetadata {
-           siteTitle
-           description
-           author
-           siteUrl: url
+           url
          }
        }
        allMdx(

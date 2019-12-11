@@ -4,9 +4,6 @@
   "version": "0.1.0",
   "license": "MIT",
   "private": true,
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
   "scripts": {
     "dev": "gatsby develop",
     "lint": "set -ex; tsc --noEmit -p .; tslint --project .",
@@ -16,6 +13,7 @@
     "build": "gatsby build",
     "tsc": "tsc -p . --noEmit --watch"
   },
+  "author": "Jake Runzer <jakerunzer@gmail.com> (https://jakerunzer.com)",
   "dependencies": {
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.23",
@@ -42,6 +40,7 @@
     "@babel/plugin-syntax-typescript": "^7.7.4",
     "@types/reach__router": "^1.2.4",
     "@types/react": "^16.9.14",
+    "@types/react-helmet": "^5.0.14",
     "@types/styled-system": "^5.1.4",
     "@types/styled-system__css": "^5.0.4",
     "@types/theme-ui": "^0.2.5",
