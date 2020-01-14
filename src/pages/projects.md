@@ -36,6 +36,10 @@ View artwork grid of your top albums.
 
 ## Languages
 
+** [Stck](https://stck.jakerunzer.com)
+
+Minimal stack based esoteric programming language. Implemented in TypeScript.
+
 **[Krill](https://krill.jakerunzer.com)**
 
 Dynamic, curried, and minimal programming language. Implemented in Haskell.
