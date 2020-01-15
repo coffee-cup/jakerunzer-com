@@ -36,7 +36,7 @@ View artwork grid of your top albums.
 
 ## Languages
 
-** [Stck](https://stck.jakerunzer.com)
+**[Stck](https://stck.jakerunzer.com)**
 
 Minimal stack based esoteric programming language. Implemented in TypeScript.
 
