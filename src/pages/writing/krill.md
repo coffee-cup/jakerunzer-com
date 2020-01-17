@@ -74,8 +74,8 @@ This aspect of any language is mostly down to personal preference, but I think
 most of us can agree that large amounts of punctuation and complicated symbols
 can make code harder to look at. Ruby is easier to read than C++.
 
-In Krill I tried to kept the use of punctuation to a minimum. There are no semi
-colons as the end of the line, no commas between function parameters, and no
+In Krill I tried to keep the use of punctuation to a minimum. There are no semi
+colons at the end of the line, no commas between function parameters, and no
 parens surrounding function arguments. There is even an operator (stolen from
 Haskell) dedicated to avoiding parens. It works by evaluating the entire right
 side of the operator before the left.  With it, you can change this
@@ -108,6 +108,15 @@ where the result of the first one is used as the input to the second.
 
 ```python
 (f . g) x == f (g x)
+```
+
+With this you can create complicated functions by composing together simple
+ones.
+
+```python
+even = x -> x % 2 == 0
+square = x -> x * x
+sumOddSquares = sum . filter (not . even) . map square
 ```
 
 An important feature of functional languages is the fact that functions are
@@ -201,7 +210,7 @@ while to figure out was how to properly report errors during evaluation.
 The [repl](https://github.com/coffee-cup/krill/blob/master/src/Repl.hs) uses
 [haskeline](https://hackage.haskell.org/package/haskeline) which provides a
 fairly nice interface for tab completing common things such as filenames and
-variable names (if I get around to setting that up). The repl execution loop is
+variable names. The repl execution loop is
 fairly simple. It just runs the compiler and updates the compiler state.
 
 ```hs
@@ -210,7 +219,6 @@ exec compM = do
   cs <- gets _compilerState
   (cm , cs') <- liftIO $ runCompilerM compM cs
   hoistErr cm
-
   updateCompilerState cs'
   return ()
 ```
