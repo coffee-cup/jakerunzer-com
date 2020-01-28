@@ -67,6 +67,13 @@ and still enjoy them immensely.
   link="https://open.spotify.com/album/0zlLi9xAKvF6fDVIW4XZbJ" 
 />
 
+<Album
+  title="Seductive Nightmares"
+  artist="Hot Sugar"
+  image="https://lastfm.freetls.fastly.net/i/u/770x0/5ad63b42f8c1f3974ee4e16ed4a19736.webp#5ad63b42f8c1f3974ee4e16ed4a19736"
+  link="https://open.spotify.com/album/5aC512oHIBbWAh912cO3u6?si=_6n3EmztRfSDc2lhC4aCqA"
+/>
+
 <Album 
   title="Skin" 
   artist="Flume" 
