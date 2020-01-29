@@ -6,10 +6,9 @@ description: The project I have worked on.
 import Layout from "../components/Layout";
 export default Layout;
 
-Over the years I have completed a number of
-projects that I do not want to forget. This page is a way for me to catalogue
-and showcase this work. The source code for all of these projects can be found
-on [my Github](https://github.com/coffee-cup).
+Over the years I have completed a number of projects. This page is a way for me
+to catalogue and showcase this work. The source code for all of these projects
+can be found on [my Github](https://github.com/coffee-cup).
 
 ## Apps
 
