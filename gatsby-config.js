@@ -72,7 +72,7 @@ module.exports = {
         feeds: [
           getBlogFeed({
             filePathRegex: `//writing/`,
-            site_url: `https://jakerunzer.com/writing`,
+            site_url: `https://jakerunzer.com`,
             feed_url: `https://jakerunzer.com/rss.xml`,
             output: `/rss.xml`,
             title: `Jake Runzer's Writing`,

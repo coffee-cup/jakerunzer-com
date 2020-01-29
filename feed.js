@@ -1,4 +1,4 @@
-function getBlogFeed({ filePathRegex, blogUrl, ...overrides }) {
+function getBlogFeed({ filePathRegex, site_url, ...overrides }) {
   return {
     serialize: ({ query: { site, allMdx } }) => {
       const stripSlash = slug => (slug.startsWith("/") ? slug.slice(1) : slug);
@@ -7,7 +7,7 @@ function getBlogFeed({ filePathRegex, blogUrl, ...overrides }) {
         const siteUrl = site.siteMetadata.url;
         const url = `${siteUrl}/${stripSlash(edge.node.fields.slug)}`;
 
-        const postText = `<div style="margin-top=55px; font-style: italic;">(This article was posted to my blog at <a href="${blogUrl}">${blogUrl}</a>. You can <a href="${url}">read it online by clicking here</a>.)</div>`;
+        const postText = `<div style="margin-top=55px; font-style: italic;">(This article was posted to my website at <a href="${site_url}">${site_url}</a>. You can <a href="${url}">read it online by clicking here</a>.)</div>`;
 
         // Hacky workaround for https://github.com/gaearon/overreacted.io/issues/65
         const html = (edge.node.html || ``)
