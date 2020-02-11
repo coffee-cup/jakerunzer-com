@@ -12,6 +12,10 @@ can be found on [my Github](https://github.com/coffee-cup).
 
 ## Apps
 
+**[Tag Tester](https://tag-tester.now.sh)**
+
+Test and edit your websites HTML, open graph, and twitter metadata tags.
+
 **[Solis](https://solisapp.xyz)**
 
 iOS app that shows you the times of sunrise, sunset, twilight's, and golden hour.
