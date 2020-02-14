@@ -7,7 +7,8 @@ import Layout from "../../components/Layout";
 export default Layout;
 
 These posts are my attempt at clarifying my thoughts and teaching others what I
-have learned. I don't write often, but I am trying to get better at.
+have learned. Most are technical and about some aspect of a project I've worked
+on.
 
 - [The Krill Language](/writing/krill)
 - [Babel Macros](/writing/babel-macros)
