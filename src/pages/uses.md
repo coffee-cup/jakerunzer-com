@@ -8,7 +8,7 @@ export default Layout;
 
 I use this software
 
-- Editor: [emacs](https://www.gnu.org/software/emacs/) | [my config](https://github.com/coffee-cup/emacs.d)
+- Editor: [doom emacs](https://github.com/hlissner/doom-emacs) | [my config](https://github.com/coffee-cup/doom.d)
 - Shell: [zsh](https://ohmyz.sh/)
 - Terminal: [iterm2](https://iterm2.com/)
 - Browser: [firefox](https://www.mozilla.org/en-GB/firefox/developer/)
