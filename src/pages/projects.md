@@ -14,7 +14,7 @@ Github](https://github.com/coffee-cup).
 
 ## Apps
 
-**[Tag Tester](https://tag-tester.now.sh)**
+**[Tag Tester](https://tagtester.dev)**
 
 Test and edit your websites HTML, open graph, and twitter metadata tags.
 

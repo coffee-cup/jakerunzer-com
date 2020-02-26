@@ -12,7 +12,7 @@ language](https://esolangs.org/wiki/Esoteric_programming_language). You can
 check out and use stck at [stck.jakerunzer.com](https://stck.jakerunzer.com), or
 find the source on [Github](https://github.com/coffee-cup/stck).
 
-In Stck the only data structures are a global stacks. Stacks are identified
+In Stck, the only data structures are global stacks. Stacks are identified
 using a sequence of alpha characters.
 
 ```
