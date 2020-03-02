@@ -80,7 +80,7 @@ const Home = () => (
           <Heading title="Hello." subtitle="I'm Jake 👋" />
           <Description>
             Software engineer working at{" "}
-            <Link to="https://prodo.dev">@prodo</Link> in London. I like to
+            <Link to="https://prodo.dev">prodo</Link> in London. I like to
             build web and iOS apps, as well as dig deep into React, compilers,
             and functional programming.
           </Description>
