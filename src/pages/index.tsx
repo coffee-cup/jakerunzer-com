@@ -56,7 +56,6 @@ const MenuItem = styled.li(
     py: 1,
     fontWeight: "bold",
     fontSize: 2,
-    textDecoration: "underline",
   }),
 );
 
@@ -64,7 +63,7 @@ const Menu = () => (
   <StyledMenu>
     {links.map(l => (
       <MenuItem key={l.href}>
-        <Link empty to={l.href}>
+        <Link to={l.href} variant="empty">
           {l.text}
         </Link>
       </MenuItem>
@@ -79,10 +78,9 @@ const Home = () => (
         <div>
           <Heading title="Hello." subtitle="I'm Jake 👋" />
           <Description>
-            Software engineer working at{" "}
-            <Link to="https://prodo.dev">prodo</Link> in London. I like to
-            build web and iOS apps, as well as dig deep into React, compilers,
-            and functional programming.
+            Software engineer working <Link to="https://prodo.dev">@prodo</Link>{" "}
+            in London. I like to build web and iOS apps, as well as dig deep
+            into React, compilers, and functional programming.
           </Description>
 
           <Menu />

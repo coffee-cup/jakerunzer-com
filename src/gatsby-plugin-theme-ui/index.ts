@@ -23,6 +23,16 @@ const font = [
   "Segoe UI Symbol",
 ].join(",");
 
+const baseLink = {
+  color: "text",
+  textDecoration: "underline",
+  transition: "all 150ms ease-in-out",
+
+  "&:hover": {
+    bg: "accent",
+  },
+};
+
 const theme: Theme = {
   ...system,
   colors: {
@@ -88,20 +98,21 @@ const theme: Theme = {
 
   links: {
     header: {
-      color: "text",
+      ...baseLink,
       textDecoration: "none",
 
       "&:hover": {
+        ...baseLink["&:hover"],
         color: "text",
         bg: "accent",
       },
     },
     mdxItem: {
-      color: "text",
+      ...baseLink,
       textDecoration: "none",
-      transition: "all 150ms ease-in-out",
 
       "&:hover": {
+        ...baseLink["&:hover"],
         bg: "accent",
       },
     },
@@ -109,6 +120,14 @@ const theme: Theme = {
       px: 2,
       py: 1,
       fontSize: 2,
+    },
+    empty: {
+      ...baseLink,
+      textDecoration: "none",
+
+      "&:hover": {
+        ...baseLink["&:hover"],
+      },
     },
   },
 
@@ -159,15 +178,7 @@ const theme: Theme = {
       variant: "textStyles.heading",
       fontSize: 1,
     },
-    a: {
-      color: "text",
-      textDecoration: "underline",
-      transition: "all 250ms ease-in-out",
-
-      "&:hover": {
-        bg: "accent",
-      },
-    },
+    a: baseLink,
     p: {
       code: {
         color: "text",

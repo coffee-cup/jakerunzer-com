@@ -12,7 +12,7 @@ context to parameters also inside the same context.
 
 Confused? Well hopefully after this article you won't be.
 
-As we saw [earlier](/blog/functors), a Functor is just a Haskell typeclass with the
+As we saw [earlier](/writing/functors), a Functor is just a Haskell typeclass with the
 single required `fmap` function.
 
 ```haskell
