@@ -1,8 +1,7 @@
 ---
-title: Krill
+title: The Krill Language
 description: Dynamic, curried, and minimal programming language.
-date: 2020-01-15
-draft: true
+date: 2020-02-15
 ---
 
 import Layout from "../../components/Layout";
@@ -44,7 +43,7 @@ Lets dig into these
 
 ### Immutable
 
-Variables in Krill are immutable per scope. 
+Variables in Krill are immutable per scope.
 
 ```python
 x = 1
@@ -78,7 +77,7 @@ In Krill I tried to keep the use of punctuation to a minimum. There are no semi
 colons at the end of the line, no commas between function parameters, and no
 parens surrounding function arguments. There is even an operator (stolen from
 Haskell) dedicated to avoiding parens. It works by evaluating the entire right
-side of the operator before the left.  With it, you can change this
+side of the operator before the left. With it, you can change this
 
 ```python
 print (foo (bar x))

@@ -96,6 +96,15 @@ const theme: Theme = {
         bg: "accent",
       },
     },
+    mdxItem: {
+      color: "text",
+      textDecoration: "none",
+      transition: "all 150ms ease-in-out",
+
+      "&:hover": {
+        bg: "accent",
+      },
+    },
     nav: {
       px: 2,
       py: 1,
