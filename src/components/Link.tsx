@@ -1,26 +1,12 @@
-import styled from "@emotion/styled";
-import css from "@styled-system/css";
 import { Link as GLink } from "gatsby";
 import * as React from "react";
-import { Styled } from "theme-ui";
-import theme from "../gatsby-plugin-theme-ui";
-
-const StyledLink = styled(GLink)<{ empty: number }>(props =>
-  css({
-    ...(props.empty
-      ? {
-          ...theme.styles.a,
-          textDecoration: "none",
-        }
-      : theme.styles.a),
-  }),
-);
+import { Link as TLink } from "theme-ui";
 
 export interface Props {
-  to: string;
+  to?: string;
   href?: string;
-  empty?: boolean;
   target?: string;
+  variant?: string;
   className?: string;
 }
 
@@ -31,25 +17,17 @@ const Link: React.FC<Props> = props => {
   const href = props.href || props.to;
   if (isExternalLink(href)) {
     return (
-      <Styled.a href={href} target="_blank" rel="noopener" {...props}>
+      <TLink href={href} target="_blank" rel="noopener" {...props}>
         {props.children}
-      </Styled.a>
+      </TLink>
     );
   }
 
   return (
-    <StyledLink to={href} {...{ ...props, empty: props.empty ? 1 : 0 }}>
+    <TLink as={GLink} to={href} {...props}>
       {props.children}
-    </StyledLink>
+    </TLink>
   );
 };
 
 export default Link;
-
-export const EmptyLink: React.FC<Props> = props => (
-  <Link empty={true} {...props} />
-);
-
-export const MdxLink: React.FC<any> = props => {
-  return <Link {...props} />;
-};

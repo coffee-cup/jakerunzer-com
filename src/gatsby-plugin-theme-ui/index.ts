@@ -29,108 +29,161 @@ const theme: Theme = {
     text: "#333",
     background: "white",
     primary: "#4d3ae2",
-    secondary: "text",
+    secondary: "#89a6fb",
+    accent: "#fbb13c",
     muted: "#eff0f6",
     grey: "#a2a2a2",
   },
+
   breakpoints: ["40em", "52em", "64em"],
+
   fontWeights: {
     body: 400,
     heading: 700,
     bold: 700,
   },
+
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+
   fonts: {
     body: font,
     heading: `"Montserrat", ${font}`,
     monospace: "Consolas, Liberation Mono, Menlo, Courier, monospace",
   },
+
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
+
   sizes: {
     container: "48em",
     measure: "32em",
-    header: "4rem",
+    header: "6rem",
   },
+
   lineHeights: {
     body: 1.5,
     heading: 1.125,
   },
+
+  buttons: {
+    primary: {
+      color: "white",
+      cursor: "pointer",
+      py: 2,
+
+      "&:hover": {
+        bg: "black",
+      },
+    },
+    secondary: {
+      color: "text",
+      backgroundColor: "muted",
+      cursor: "pointer",
+
+      "&:hover": {
+        bg: "black",
+        color: "white",
+      },
+    },
+  },
+
+  links: {
+    header: {
+      color: "text",
+      textDecoration: "none",
+
+      "&:hover": {
+        color: "text",
+        bg: "accent",
+      },
+    },
+    nav: {
+      px: 2,
+      py: 1,
+      fontSize: 2,
+    },
+  },
+
+  forms: {
+    slider: {
+      color: "primary",
+    },
+  },
+
+  text: {
+    heading,
+    display: {
+      variant: "textStyles.heading",
+      fontSize: [5, 6],
+      fontWeight: "heading",
+      letterSpacing: "-0.03em",
+      mt: 3,
+    },
+  },
+
   styles: {
     ...system.styles,
-    body: {
-      fontFamily: "monospace",
-    },
     root: {
       fontFamily: "body",
       lineHeight: "body",
       fontWeight: "body",
     },
     h1: {
-      ...heading,
-      fontSize: [6, 7],
+      variant: "textStyles.display",
     },
     h2: {
-      ...heading,
-      fontSize: [4, 5],
+      variant: "textStyles.heading",
+      fontSize: 5,
     },
     h3: {
-      ...heading,
-      fontSize: 3,
+      variant: "textStyles.heading",
+      fontSize: 4,
     },
     h4: {
-      ...heading,
-      fontSize: 2,
+      variant: "textStyles.heading",
+      fontSize: 3,
     },
     h5: {
-      ...heading,
-      fontSize: 1,
+      variant: "textStyles.heading",
+      fontSize: 2,
     },
     h6: {
-      ...heading,
-      fontSize: 0,
+      variant: "textStyles.heading",
+      fontSize: 1,
     },
     a: {
       color: "text",
       textDecoration: "underline",
-      transition: "opacity 250ms ease-in-out",
+      transition: "all 250ms ease-in-out",
 
       "&:hover": {
-        opacity: 0.6,
+        bg: "accent",
       },
     },
     p: {
       code: {
+        color: "text",
         p: "2px",
         borderRadius: "4px",
       },
     },
     pre: {
       fontFamily: "monospace",
-      overflowX: "auto",
+      fontSize: 1,
+      p: 3,
+      color: "text",
+      bg: "muted",
+      overflow: "auto",
       code: {
         color: "inherit",
       },
     },
     code: {
       ...nightOwl,
+      fontFamily: "monospace",
       backgroundColor: "muted",
       p: 2,
       borderRadius: "4px",
-      fontFamily: "monospace",
-      fontSize: "inherit",
-    },
-    table: {
-      width: "100%",
-      borderCollapse: "separate",
-      borderSpacing: 0,
-    },
-    th: {
-      textAlign: "left",
-      borderBottomStyle: "solid",
-    },
-    td: {
-      textAlign: "left",
-      borderBottomStyle: "solid",
+      fontSize: 2,
     },
     blockquote: {
       mt: 0,

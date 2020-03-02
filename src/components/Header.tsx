@@ -25,7 +25,7 @@ const Logo = styled.span(
 const Header: React.FC<{ home?: string }> = props => (
   <StyledHeader>
     <Logo>
-      <Link to={props.home || "/"} empty>
+      <Link to={props.home || "/"} variant="header">
         j.
       </Link>
     </Logo>

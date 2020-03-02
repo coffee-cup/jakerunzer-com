@@ -10,8 +10,7 @@ This is my blog.
 
 I write about technical challenges I've solved in hopes of teaching others
 (_others = me in 6 months when I forget_). I also shamelessly introduce
-[projects](/projects) I'm working on. Find a more free flowing feed of what I am
-working on at [/flow](/flow).
+[projects](/projects) I'm working on.
 
 I tend to publish early and edit often. If you find mistakes, [feedback is
 welcome](https://twitter.com/jakerunzer) :D.

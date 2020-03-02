@@ -1,12 +1,13 @@
+/** @jsx jsx */
 import styled from "@emotion/styled";
 import { MDXProvider } from "@mdx-js/react";
 import css from "@styled-system/css";
 import * as React from "react";
-import { Styled } from "theme-ui";
 import Footer from "./Footer";
 import Header from "./Header";
 import SEO from "./SEO";
 import { BlogTitle } from "./Text";
+import { jsx } from "theme-ui";
 
 export interface FrontMatter {
   title?: string;
@@ -18,18 +19,6 @@ export interface Props extends FrontMatter {
   noHeader?: boolean;
   _frontmatter?: FrontMatter;
 }
-
-const ContentWrapper = styled(Styled.root)(
-  css({
-    maxWidth: "container",
-    color: "text",
-    my: 0,
-    mx: "auto",
-    py: 0,
-    px: [3, 4],
-    fontSize: [2],
-  }),
-);
 
 const Content = styled.main(
   css({
@@ -44,7 +33,16 @@ const Layout: React.FC<Props> = ({ children, ...rest }) => {
     <MDXProvider>
       <SEO title={frontmatter.title} description={frontmatter.description} />
 
-      <ContentWrapper className="wrapper">
+      <div
+        className="wrapper"
+        sx={{
+          maxWidth: "container",
+          mx: "auto",
+          my: 0,
+          px: [3, 4],
+          py: 0,
+        }}
+      >
         {!rest.noHeader && <Header />}
 
         <Content>
@@ -55,7 +53,7 @@ const Layout: React.FC<Props> = ({ children, ...rest }) => {
         </Content>
 
         <Footer />
-      </ContentWrapper>
+      </div>
     </MDXProvider>
   );
 };
