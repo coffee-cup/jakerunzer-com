@@ -18,22 +18,22 @@ Github](https://github.com/coffee-cup).
 
 Test and edit your websites HTML, open graph, and twitter metadata tags.
 
+**[LastFM leaderboards](https://lastfm.jakerunzer.com)**
+
+Music leaderboards powered by Elm and last.fm.
+
 **[Solis](https://solisapp.xyz)**
 
 iOS app that shows you the times of sunrise, sunset, twilight's, and golden hour.
-
-**[Bowtie](https://bowtie.jakerunzer.com)**
-
-Score keeping iOS app. Save paper when playing card or board games.
 
 **[Quiztastic](https://quiztastic.app)**
 
 Web based trivia game for friends and family. Create games that can be joined by
 multiple people.
 
-**[LastFM leaderboards](https://lastfm.jakerunzer.com)**
+**[Bowtie](https://bowtie.jakerunzer.com)**
 
-Music leaderboards powered by last.fm.
+Score keeping iOS app. Save paper when playing card or board games.
 
 **[LastFM Albums](https://lastfm-albums.jakerunzer.com/)**
 
