@@ -80,7 +80,7 @@ const Home = () => (
           <Description>
             Software engineer working <Link to="https://prodo.dev">@prodo</Link>{" "}
             in London. I like to build web and iOS apps, as well as dig deep
-            into React, compilers, and functional programming.
+            into languages, compilers, and functional programming.
           </Description>
 
           <Menu />
