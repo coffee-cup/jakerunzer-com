@@ -14,6 +14,10 @@ Github](https://github.com/coffee-cup).
 
 ## Apps
 
+**[Chronicle](https://chronicle.ink)**
+
+Lightweight journaling app where you record highlights of your day.
+
 **[Tag Tester](https://tagtester.dev)**
 
 Test and edit your websites HTML, open graph, and twitter metadata tags.
