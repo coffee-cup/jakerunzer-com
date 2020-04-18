@@ -36,7 +36,7 @@ const baseLink = {
 const theme: Theme = {
   ...system,
   colors: {
-    text: "#333",
+    text: "#171717",
     background: "white",
     primary: "#4d3ae2",
     secondary: "#89a6fb",
@@ -186,6 +186,14 @@ const theme: Theme = {
         borderRadius: "4px",
       },
     },
+    ".caption": {
+      color: "grey",
+      textAlign: "center",
+      fontSize: 0,
+    },
+    img: {
+      maxWidth: "100%",
+    },
     pre: {
       fontFamily: "monospace",
       fontSize: 1,
@@ -203,7 +211,7 @@ const theme: Theme = {
       backgroundColor: "muted",
       p: 2,
       borderRadius: "4px",
-      fontSize: 2,
+      fontSize: 1,
     },
     blockquote: {
       mt: 0,

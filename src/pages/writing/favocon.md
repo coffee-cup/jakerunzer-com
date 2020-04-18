@@ -1,6 +1,6 @@
 ---
 title: Introducing Favocon
-date: 2020-01-27
+date: 2019-10-27
 ---
 
 import Layout from "../../components/Layout";
