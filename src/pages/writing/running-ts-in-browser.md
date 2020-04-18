@@ -8,8 +8,7 @@ import Caption from "../../components/Caption";
 import Layout from "../../components/Layout";
 export default Layout;
 
-
-_This post will be based off [this
+_This post is based off [this
 CodeSandbox](https://codesandbox.io/s/ts-typechecking-in-the-browser-gg9il).
 Some of the writing is unfinished _
 
@@ -32,7 +31,6 @@ Credit where credit is due: [Andrew's](https://twitter.com/atcb) blog post,
 [_Overengineering a blog_](https://blog.andrewbran.ch/overengineering-a-blog/),
 and [associated source](https://github.com/andrewbranch/blog) were an invaluable
 resource. Thanks Andrew!
-
 
 ---
 
