@@ -43,8 +43,6 @@ const MdxList: React.FC<Props> = props => {
     [],
   );
 
-  console.log(filtered);
-
   return (
     <Box>
       {filtered.map(page => (
