@@ -37,7 +37,7 @@ resource. Thanks Andrew!
 The main functionality I wanted was to query the compiler for type errors.
 
 ```ts
-function getTypeErrors(code: string): TypeError[] {
+function typecheck(code: string): TypeError[] {
   /* ... */
 }
 ```
@@ -50,79 +50,261 @@ of the core compiler and provides common editor like operations.
 <Caption><a href="https://github.com/microsoft/TypeScript/wiki/Architectural-Overview">TS compiler architecture</a></Caption>
 
 The compiler does not directly use the filesystem and instead interacts with an
-abstraction on top of it. When running TypeScript in Node, then the default
+abstraction on top of it. When running TypeScript in Node, the the default
 abstraction is just a wrapper around `fs`. However, in the browser we do not
 have access to the filesystem so we need to create these abstractions
 ourselves.
 
-To create a language service in the browser we need the following:
+To typecheck code in the browser we need the following:
 
-- virtual system
-- virtual compiler host
-- virtual language service host
+- `ts.System`
+- `ts.CompilerHost`
+- `ts.LanguageServiceHost`
+- TypeScript type files for any language features we want to use
 
-### System
+## System
 
 A `ts.System` contains methods for reading files, writing files, checking if a
 file exists, etc. If you run TypeScript in Node, then the system is a wrapper
 around `fs`. The filesystem does not exist in the browser, so we have to create
-our own _virtual_ system.
+our own _virtual_ system. The full file is [here](https://codesandbox.io/s/ts-typechecking-in-the-browser-gg9il?file=/src/system.ts).
 
 ```ts
+// system.ts
 import * as ts from "typescript";
 
 export function createSystem(files: { [name: string]: string }): ts.System {
   files = { ...files };
   return {
-    args: [],
-    createDirectory: () => {
-      throw new Error("createDirectory not implemented");
-    },
+    // ...
     directoryExists: directory =>
       Object.keys(files).some(path => path.startsWith(directory)),
-    exit: () => {
-      throw new Error("exit not implemented");
-    },
     fileExists: fileName => files[fileName] != null,
     getCurrentDirectory: () => "/",
-    getDirectories: () => [],
-    getExecutingFilePath: () => {
-      throw new Error("getExecutingFilePath not implemented");
-    },
-    readDirectory: directory => (directory === "/" ? Object.keys(files) : []),
     readFile: fileName => files[fileName],
-    resolvePath: path => path,
-    newLine: "\n",
-    useCaseSensitiveFileNames: true,
-    write: () => notImplemented("write"),
-    writeFile: (fileName, contents) => {
-      files[fileName] = contents;
-    },
   };
 }
+
 ```
 
 We pass in an object from filename → file contents that contains all of our
 files on our virtual filesystem.
 
-# TODO
+## Library Types
+
+TypeScript knows the types of variables and functions through the use of
+declaration files (`.d.ts` extensions). These are what you download when you
+install a package from DefinitelyTyped (`@types/package`). 
+
+Since there are many different versions of TypeScript/JavaScript, the types of
+core language features are not baked into the compiler. Declaration files for
+the languages features you want to use must be included in the virtual file
+system. This is what the `lib` field in your `tsconfig.json` file configures.
+
+In this demo we will use es2015 and dom features, equivalent to 
+
+```json
+// tsconfig.json
+{
+  // ...
+  "lib": ["es2015", "dom"],
+}
+```
+
+
+The decalaration files are in `node_modules` and can be loaded at build time using the Webpack `raw-loader`.
+
+
+```ts
+// tsLib.ts
+export const libs = {
+  "/dom.d.ts": require("!raw-loader!typescript/lib/lib.dom.d.ts"),
+  "/es2015.d.ts": require("!raw-loader!typescript/lib/lib.es2015.d.ts"),
+  "/lib.es5.d.ts": require("!raw-loader!typescript/lib/lib.es5.d.ts"),
+  "/lib.es2015.d.ts": require("!raw-loader!typescript/lib/lib.es2015.d.ts"),
+  "/lib.es2015.core.d.ts": require("!raw-loader!typescript/lib/lib.es2015.core.d.ts"),
+  "/lib.es2015.collection.d.ts": require("!raw-loader!typescript/lib/lib.es2015.collection.d.ts"),
+  "/lib.es2015.generator.d.ts": require("!raw-loader!typescript/lib/lib.es2015.generator.d.ts"),
+  "/lib.es2015.promise.d.ts": require("!raw-loader!typescript/lib/lib.es2015.promise.d.ts"),
+  "/lib.es2015.iterable.d.ts": require("!raw-loader!typescript/lib/lib.es2015.iterable.d.ts"),
+  "/lib.es2015.proxy.d.ts": require("!raw-loader!typescript/lib/lib.es2015.proxy.d.ts"),
+  "/lib.es2015.reflect.d.ts": require("!raw-loader!typescript/lib/lib.es2015.reflect.d.ts"),
+  "/lib.es2015.symbol.d.ts": require("!raw-loader!typescript/lib/lib.es2015.symbol.d.ts"),
+  "/lib.es2015.symbol.wellknown.d.ts": require("!raw-loader!typescript/lib/lib.es2015.symbol.wellknown.d.ts")
+};
+```
 
 ## Compiler Host
 
-> A CompilerHost which represents the users' system, with an API for reading
-> files, checking directories and case sensitivity etc.
+The TypeScript compiler interacts with the host environment via a compiler host.
+If we were running the code in NodeJS then we would only need to create a custom `ts.CompilerHost`. However, since the code will run in the browser where there is no
+filesystem, we must also create a `ts.System`.
+
+```ts
+const compilerHost: ts.CompilerHost = {
+  // ...
+  getCanonicalFileName: fileName => fileName,
+  getDefaultLibFileName: () => "/lib.es2015.d.ts",
+  getDirectories: () => [],
+  getNewLine: () => sys.newLine,
+  getSourceFile: filename => sourceFiles[filename],
+  useCaseSensitiveFileNames: () => sys.useCaseSensitiveFileNames
+};
+```
+
+The compiler host uses `ts.SourceFile` for representing files on the filesytem.
+These include the content of the file as well as addional metadata. We can
+easily create source files from an object from filename -> contents.
+
+```ts
+const sourceFiles: { [name: string]: ts.SourceFile } = {};
+for (const name of Object.keys(files)) {
+  sourceFiles[name] = ts.createSourceFile(
+    name,
+    files[name],
+    compilerOptions.target || ts.ScriptTarget.Latest
+  );
+}
+```
 
 ## Language Service Host
 
+The language service host "abstracts all interactions between the language service and the external world. The language service host defers managing, monitoring, and maintaining input files to the host" ([source](https://github.com/microsoft/TypeScript/wiki/Using-the-Language-Service-API#language-service-host)).
+
+This means that the only way the compiler can access the outside world is through the language service host.
+
+```ts
+const languageServiceHost: ts.LanguageServiceHost = {
+  // ...
+  getCompilationSettings: () => compilerOptions,
+  getScriptFileNames: () => Object.keys(files),
+  getScriptSnapshot: filename => {
+    const contents = sys.readFile(filename);
+    if (contents) {
+      return ts.ScriptSnapshot.fromString(contents);
+    }
+
+    return undefined;
+  },
+};
+```
+
+In the above code we create a `ScriptSnapshot` instead of returning the contents of the file as a string because they allow efficient incremental parsing. The snapshot contains information about the entire contents of the file, as well as changes made from a previous snapshot. Since we are not worrying about incremental parsing in this demo, a new snapshot is created every time.
+
 ## Language Service
+
+The final thing we need is a `ts.LanguageService`. This will be our main
+interface into the compiler. In a proper application you would create the
+language service once and update the (virtual) file contents as you need. This
+would allow the compiler to performance various optimizations such as only
+parsing and typechecking code that has changed. However, in our demo we will
+create a new language service every time we want to typecheck some code.
+
+```ts
+const languageService = ts.createLanguageService(languageServiceHost);
+```
 
 ## Getting Diagnostics
 
-- why
-  - alternatives
-- virtual system
-- compiler host
-- getting diagnostics
+The language service contains a bunch of useful functions for querying the compiler.
+
+![language service available functions](./language-service.png)
+
+The one we are most interested in is `getSemanticDiagnostics`, which will return an array of `ts.Diagnostic`s that look like,
+
+```ts
+{
+  file: SourceFileObject;
+  start: number;
+  length: number;
+  code: number;
+  messageText: string;
+}
+```
+
+The field `messageText` is a human readable description of the problem it found.
+
+## Implementation
+
+Using the information above, lets typecheck the following code
+
+```ts
+const x: string = 100;
+```
+
+We should see a type error as 100 is not a string.
+
+The compiler options look nearly identical to those found in `tsconfig.json`.
+
+```ts
+const compilerOptions: ts.CompilerOptions = {
+  ...ts.getDefaultCompilerOptions(),
+  jsx: ts.JsxEmit.React,
+  strict: false,
+  target: ts.ScriptTarget.Latest,
+  esModuleInterop: true,
+  module: ts.ModuleKind.None,
+  suppressOutputPathCheck: true,
+  skipLibCheck: true,
+  skipDefaultLibCheck: true,
+  moduleResolution: ts.ModuleResolutionKind.NodeJs
+};
+```
+
+And now onto our typechecking function. Some code is commented out for
+concisness as it is shown in more detail above. The full typechecking code can
+be found
+[here](https://codesandbox.io/s/ts-typechecking-in-the-browser-gg9il?file=/src/typecheck.ts).
+
+```ts
+const typecheck = (code: string): ts.Diagnostic[] => { 
+  // Create our virtual file system
+  const dummyFilename = "file.ts";
+  const files: { [name: string]: string } = {
+    [dummyFilename]: code
+  };
+  const sys = createSystem({ ...libs, ...files });
+ 
+  // create source files from the `files` object
+  const sourceFiles: { [name: string]: ts.SourceFile } = {};
+  for (const name of Object.keys(files)) { /* ... */ }
+
+  // create the compiler host, an abstraction for the language service 
+  // to interact with the host environment
+  const compilerHost: ts.CompilerHost = { /* ... */ }
+  
+  // create the language service host, an absctraction of all interactions
+  // between the language service and the external world
+  const languageServiceHost: ts.LanguageServiceHost = { /* ... */ }
+
+  // create an instance of the TypeScript language service
+  const languageService = ts.createLanguageService(languageServiceHost);
+  
+  // get all semantic diagnostics for the code we passed into this function
+  const diagnostics = languageService.getSemanticDiagnostics(dummyFilename);
+  return diagnostics;
+}
+```
+
+And there you have it! A simple function for typechecking code in the browser with TypeScript.
+
+## Improvements
+
+Our current implementation has the overhead of re-creating the language service
+everytime we call `typecheck`. An improvment we could make is to only create a
+single instance of the language service and just update the contents of the
+virtual file when something changes. If we can track which parts of the file
+have updated, we can pass that information to the compiler via a
+`ScriptSnapshot` to enable incremental parsing.
+
+We could also use the language service to offer IDE like features in the browser with things like quick info, function documentation, JSX closing tag hints, and much more.
+
+## Conclusion
+
+Although getting TypeScript running in the browser is not as simple as
+installing a package from NPM, with a little understaning of how the language
+service works, we can get the full power of TypeScript in the browser fairly
+quickly. With that we can query the compiler for type errors and many more IDE like features.
 
 ## Resources
 
