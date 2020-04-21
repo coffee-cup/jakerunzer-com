@@ -8,10 +8,6 @@ import Caption from "../../components/Caption";
 import Layout from "../../components/Layout";
 export default Layout;
 
-_This post is based off [this
-CodeSandbox](https://codesandbox.io/s/ts-typechecking-in-the-browser-gg9il).
-Some of the writing is unfinished _
-
 ![Stock image of a laptop and code](https://images.unsplash.com/photo-1545670723-196ed0954986?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80)
 
 <Caption>Random picture of a computer by <a href="https://unsplash.com/photos/FGXqbqbGt5o">Joshua Aragon</a></Caption>
@@ -28,6 +24,9 @@ memory. However, running TypeScript in the browser with no access to the file
 system turned out to be a bit more challenging than I thought. In this post I
 will go over setting up a TypeScript language service that you can use to get
 type errors, quick info, documentation, etc, of code in the browser.
+
+All code in this post can be found in [this
+CodeSandbox](https://codesandbox.io/s/ts-typechecking-in-the-browser-gg9il).
 
 Credit where credit is due: [Andrew's](https://twitter.com/atcb) blog post,
 [_Overengineering a blog_](https://blog.andrewbran.ch/overengineering-a-blog/),
