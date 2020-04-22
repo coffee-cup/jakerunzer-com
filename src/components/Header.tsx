@@ -1,35 +1,26 @@
-import styled from "@emotion/styled";
-import css from "@styled-system/css";
+/** @jsx jsx */
 import * as React from "react";
+import { Box, Flex, jsx } from "theme-ui";
 import Link from "./Link";
-
-const StyledHeader = styled.header(
-  css({
-    color: "text",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    height: props => props.sizes.header,
-    pt: 3,
-  }),
-);
-
-const Logo = styled.span(
-  css({
-    fontSize: 4,
-    fontWeight: "bold",
-    fontFamily: "heading",
-  }),
-);
+import Nav from "./Nav";
 
 const Header: React.FC<{ home?: string }> = props => (
-  <StyledHeader>
-    <Logo>
+  <Flex
+    sx={{
+      pt: 3,
+      pb: [3, 4],
+      alignItems: "center",
+      justifyContent: "space-between",
+    }}
+  >
+    <Box sx={{ fontSize: 24, fontWeight: "bold", fontFamily: "heading" }}>
       <Link to={props.home || "/"} variant="header">
         j.
       </Link>
-    </Logo>
-  </StyledHeader>
+    </Box>
+
+    <Nav />
+  </Flex>
 );
 
 export default Header;

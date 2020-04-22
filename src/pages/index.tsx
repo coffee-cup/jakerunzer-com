@@ -1,92 +1,46 @@
-import styled from "@emotion/styled";
-import css from "@styled-system/css";
+/** @jsx jsx */
 import * as React from "react";
-import { Styled } from "theme-ui";
+import { Box, Flex, jsx, NavLink as TNavLink, Styled, Text } from "theme-ui";
 import Layout from "../components/Layout";
 import Link from "../components/Link";
-import { Heading } from "../components/Text";
 
-const links = [
-  { text: "Github", href: "https://github.com/coffee-cup" },
-  { text: "Keybase", href: "https://keybase.io/jakerunzer" },
-  { text: "Twitter", href: "https://twitter.com/jakerunzer" },
-  { text: "Writing", href: "/writing" },
-  { text: "Projects", href: "/projects" },
-];
-
-const Hero = styled(Styled.div)(
-  css({
-    display: "flex",
-    alignItems: "center",
-    color: "text",
-  }),
+const NavLink: React.FC<{ href: string }> = props => (
+  <Box>
+    <TNavLink as={Link} href={props.href}>
+      {props.children}
+    </TNavLink>
+  </Box>
 );
 
-const Description = styled(Styled.p)(
-  css({
-    maxWidth: "38ch",
-    my: 3,
-
-    a: {
-      color: "primary",
-      textDecoration: "none",
-    },
-  }),
-);
-
-const StyledHome = styled(Styled.div)(
-  css({
-    display: "flex",
-    alignItems: "center",
-    minHeight: "100vh",
-    pb: 1,
-  }),
-);
-
-const StyledMenu = styled.ul(
-  css({
-    listStyle: "none",
-    pl: 0,
-  }),
-);
-
-const MenuItem = styled.li(
-  css({
-    pl: 0,
-    py: 1,
-    fontWeight: "bold",
-    fontSize: 2,
-  }),
-);
-
-const Menu = () => (
-  <StyledMenu>
-    {links.map(l => (
-      <MenuItem key={l.href}>
-        <Link to={l.href} variant="empty">
-          {l.text}
-        </Link>
-      </MenuItem>
-    ))}
-  </StyledMenu>
+const Nav: React.FC = () => (
+  <Box as="nav">
+    <NavLink href="https://github.com/coffee-cup">github</NavLink>
+    <NavLink href="https://twitter.com/jakerunzer">twitter</NavLink>
+    <NavLink href="/writing">writing</NavLink>
+    <NavLink href="/projects">projects</NavLink>
+  </Box>
 );
 
 const Home = () => (
-  <Layout noHeader>
-    <StyledHome className="home">
-      <Hero>
-        <div>
-          <Heading title="Hello." subtitle="I'm Jake 👋" />
-          <Description>
-            Software engineer working <Link to="https://prodo.dev">@prodo</Link>{" "}
-            in London. I like to build web and iOS apps, as well as dig deep
-            into languages, compilers, and functional programming.
-          </Description>
+  <Layout>
+    <Box sx={{ pt: [5, 6], pb: 2 }}>
+      <Text variant="display" as="h1" sx={{ fontSize: [96, 128], ml: "-8px" }}>
+        Hello.
+      </Text>
+      <Text variant="heading" as="h2" sx={{ fontSize: 5 }}>
+        I'm Jake 👋
+      </Text>
+    </Box>
 
-          <Menu />
-        </div>
-      </Hero>
-    </StyledHome>
+    <Box>
+      <Styled.p sx={{ maxWidth: "narrow" }}>
+        Frontend focused software engineer based out of London. I like to build
+        things for the web and iOS, as well as dig deep into languages and
+        compilers.
+      </Styled.p>
+
+      <Nav />
+    </Box>
   </Layout>
 );
 

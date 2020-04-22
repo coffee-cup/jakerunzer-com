@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import * as React from "react";
-import { graphql, useStaticQuery } from "gatsby";
-import { jsx, Box, Styled } from "theme-ui";
-import Link from "./Link";
 import dayjs from "dayjs";
+import { graphql, useStaticQuery } from "gatsby";
+import * as React from "react";
+import { Box, jsx, Styled } from "theme-ui";
+import Link from "./Link";
 
 export interface Props {
   path: string;

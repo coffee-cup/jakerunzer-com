@@ -1,13 +1,11 @@
 /** @jsx jsx */
-import styled from "@emotion/styled";
 import { MDXProvider } from "@mdx-js/react";
-import css from "@styled-system/css";
 import * as React from "react";
+import { Box, Flex, jsx } from "theme-ui";
 import Footer from "./Footer";
 import Header from "./Header";
 import SEO from "./SEO";
 import { BlogTitle } from "./Text";
-import { jsx } from "theme-ui";
 
 export interface FrontMatter {
   title?: string;
@@ -19,12 +17,6 @@ export interface Props extends FrontMatter {
   noHeader?: boolean;
   _frontmatter?: FrontMatter;
 }
-
-const Content = styled.main(
-  css({
-    minHeight: props => `calc(100vh - ${props.sizes.header})`,
-  }),
-);
 
 const Layout: React.FC<Props> = ({ children, ...rest }) => {
   const frontmatter = rest._frontmatter || rest || {};
@@ -43,14 +35,17 @@ const Layout: React.FC<Props> = ({ children, ...rest }) => {
           py: 0,
         }}
       >
-        {!rest.noHeader && <Header />}
+        <Flex sx={{ minHeight: "100vh", flexDirection: "column" }}>
+          {!rest.noHeader && <Header />}
 
-        <Content>
-          {frontmatter.title != null && (
-            <BlogTitle title={frontmatter.title} date={frontmatter.date} />
-          )}
-          {children}
-        </Content>
+          <Box sx={{ flexGrow: 1 }}>
+            {frontmatter.title != null && (
+              <BlogTitle title={frontmatter.title} date={frontmatter.date} />
+            )}
+
+            {children}
+          </Box>
+        </Flex>
 
         <Footer />
       </div>

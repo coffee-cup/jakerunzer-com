@@ -52,9 +52,10 @@ of the core compiler and provides common editor like operations.
 
 To typecheck code in the browser we need the following:
 
-- `ts.System`
-- `ts.CompilerHost`
-- `ts.LanguageServiceHost`
+- Virtual system
+- Compiler host
+- Language service host
+- Language service
 - Type files for any language features we want to use
 
 ## System

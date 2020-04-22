@@ -1,21 +1,17 @@
-import styled from "@emotion/styled";
-import css from "@styled-system/css";
-import * as React from "react";
-import Section from "./Section";
-
-const StyledFooter = styled.footer(
-  css({
-    display: "flex",
-    alignItems: "center",
-  }),
-);
+/** @jsx jsx */
+import { Box, jsx, Text } from "theme-ui";
 
 const Footer = () => (
-  <StyledFooter>
-    <Section>
-      <h3>♥</h3>
-    </Section>
-  </StyledFooter>
+  <Box
+    as="footer"
+    sx={{
+      pt: [5, 6],
+      pb: 4,
+      fontSize: 4,
+    }}
+  >
+    <span sx={{ color: "crimson" }}>&hearts;</span>
+  </Box>
 );
 
 export default Footer;

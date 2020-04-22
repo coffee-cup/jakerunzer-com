@@ -1,6 +1,7 @@
-import { system } from "@theme-ui/presets";
-import nightOwl from "@theme-ui/prism/presets/night-owl-light.json";
+import { SystemStyleObject } from "@styled-system/css";
+import system from "@theme-ui/preset-system";
 import { Theme } from "theme-ui";
+import { codeStyles, darkCodeColors, lightCodeColors } from "./code";
 
 const heading = {
   fontFamily: "heading",
@@ -23,26 +24,75 @@ const font = [
   "Segoe UI Symbol",
 ].join(",");
 
-const baseLink = {
+const baseLink: SystemStyleObject = {
   color: "text",
   textDecoration: "underline",
   transition: "all 150ms ease-in-out",
+  cursor: "pointer",
 
-  "&:hover": {
+  "&:hover,&:focus,&:active": {
+    color: "text",
     bg: "accent",
+  },
+};
+
+const baseInput: SystemStyleObject = {
+  borderRadius: 0,
+  borderWidth: 1,
+
+  "&:focus": {
+    borderColor: "accent",
+    outline: "none",
+  },
+
+  "&.error": {
+    borderColor: "error",
+  },
+};
+
+const darkColor = "#171717";
+const lightColor = "white";
+
+const baseButton: SystemStyleObject = {
+  color: "secondary",
+  bg: "primary",
+  cursor: "pointer",
+  py: 1,
+  borderRadius: 0,
+  border: "solid 2px",
+  borderColor: "currentColor",
+  transition: "all 150ms ease-in-out",
+
+  "&:hover,&:focus,&:active": {
+    color: "primary",
+    bg: "secondary",
   },
 };
 
 const theme: Theme = {
   ...system,
   colors: {
-    text: "#171717",
-    background: "white",
-    primary: "#4d3ae2",
-    secondary: "#89a6fb",
-    accent: "#fbb13c",
+    text: darkColor,
+    background: lightColor,
+    primary: darkColor,
+    secondary: lightColor,
+    accent: "#fbba72",
     muted: "#eff0f6",
-    grey: "#a2a2a2",
+    grey: "#777",
+    ...lightCodeColors,
+
+    modes: {
+      dark: {
+        ...darkCodeColors,
+        text: lightColor,
+        background: darkColor,
+        primary: lightColor,
+        secondary: darkColor,
+        muted: "#313030",
+        accent: "#c37620",
+        grey: "#999",
+      },
+    },
   },
 
   breakpoints: ["40em", "52em", "64em"],
@@ -66,74 +116,78 @@ const theme: Theme = {
   sizes: {
     container: "48em",
     measure: "32em",
-    header: "6rem",
+    narrow: "26em",
   },
 
   lineHeights: {
-    body: 1.5,
+    body: 1.6,
     heading: 1.125,
   },
 
   buttons: {
-    primary: {
-      color: "white",
+    primary: baseButton,
+    icon: {
+      ...baseButton,
+      display: "flex",
+      alignItems: "center",
+      borderRadius: 0,
       cursor: "pointer",
-      py: 2,
-
-      "&:hover": {
-        bg: "black",
-      },
-    },
-    secondary: {
-      color: "text",
-      backgroundColor: "muted",
-      cursor: "pointer",
-
-      "&:hover": {
-        bg: "black",
-        color: "white",
-      },
     },
   },
 
   links: {
-    header: {
-      ...baseLink,
+    button: {
+      ...baseButton,
+      px: 3,
       textDecoration: "none",
-
-      "&:hover": {
-        ...baseLink["&:hover"],
-        color: "text",
-        bg: "accent",
-      },
-    },
-    mdxItem: {
-      ...baseLink,
-      textDecoration: "none",
-
-      "&:hover": {
-        ...baseLink["&:hover"],
-        bg: "accent",
-      },
+      display: "inline-block",
     },
     nav: {
       px: 2,
       py: 1,
       fontSize: 2,
     },
+    mdxItem: {
+      ...baseLink,
+      textDecoration: "none",
+    },
+    header: {
+      ...baseLink,
+      textDecoration: "none",
+      px: 3,
+      py: 2,
+
+      "&:hover,&:focus,&:active": {
+        color: "text",
+        bg: "accent",
+      },
+    },
     empty: {
       ...baseLink,
       textDecoration: "none",
-
-      "&:hover": {
-        ...baseLink["&:hover"],
-      },
     },
   },
 
   forms: {
+    input: baseInput,
+    logInput: {
+      ...baseInput,
+    },
     slider: {
       color: "primary",
+    },
+    textarea: {
+      borderRadius: 0,
+      borderColor: "grey",
+      resize: "vertical",
+      maxHeight: "200px",
+      fontSize: 2,
+      fontFamily: "body",
+
+      "&:focus": {
+        outline: "none",
+        borderColor: "accent",
+      },
     },
   },
 
@@ -157,6 +211,7 @@ const theme: Theme = {
     },
     h1: {
       variant: "textStyles.display",
+      fontSize: 6,
     },
     h2: {
       variant: "textStyles.heading",
@@ -165,6 +220,7 @@ const theme: Theme = {
     h3: {
       variant: "textStyles.heading",
       fontSize: 4,
+      mb: 3,
     },
     h4: {
       variant: "textStyles.heading",
@@ -179,13 +235,6 @@ const theme: Theme = {
       fontSize: 1,
     },
     a: baseLink,
-    p: {
-      code: {
-        color: "text",
-        p: "2px",
-        borderRadius: "4px",
-      },
-    },
     ".caption": {
       color: "grey",
       textAlign: "center",
@@ -193,6 +242,14 @@ const theme: Theme = {
     },
     img: {
       maxWidth: "100%",
+    },
+    p: {
+      code: {
+        color: "text",
+        fontFamily: "monospace",
+        p: "2px",
+        borderRadius: "4px",
+      },
     },
     pre: {
       fontFamily: "monospace",
@@ -206,7 +263,7 @@ const theme: Theme = {
       },
     },
     code: {
-      ...nightOwl,
+      ...codeStyles,
       fontFamily: "monospace",
       backgroundColor: "muted",
       p: 2,
@@ -219,8 +276,9 @@ const theme: Theme = {
       py: 0,
       pr: 0,
       pl: 3,
-      borderLeft: "solid 4px hsla(0,0%,0%,0.13)",
-      color: "hsla(0,0%,0%,0.53)",
+      borderLeft: "solid 4px",
+      borderColor: "grey",
+      color: "grey",
     },
     ul: {},
     li: {
