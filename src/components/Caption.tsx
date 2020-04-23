@@ -7,7 +7,7 @@ const Caption: React.FC = props => (
     sx={{
       width: "100%",
       mt: -3,
-      mb: 3,
+      mb: 4,
       textAlign: "center",
       fontSize: 0,
       color: "grey",

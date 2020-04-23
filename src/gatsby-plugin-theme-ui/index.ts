@@ -115,6 +115,7 @@ const theme: Theme = {
 
   sizes: {
     container: "48em",
+    largeContainer: "64em",
     measure: "32em",
     narrow: "26em",
   },

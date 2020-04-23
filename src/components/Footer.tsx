@@ -5,7 +5,7 @@ const Footer = () => (
   <Box
     as="footer"
     sx={{
-      pt: [5, 6],
+      pt: 5,
       pb: 4,
       fontSize: 4,
     }}

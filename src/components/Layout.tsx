@@ -2,10 +2,10 @@
 import { MDXProvider } from "@mdx-js/react";
 import * as React from "react";
 import { Box, Flex, jsx } from "theme-ui";
+import BlogTitle from "./BlogTitle";
 import Footer from "./Footer";
 import Header from "./Header";
 import SEO from "./SEO";
-import { BlogTitle } from "./Text";
 
 export interface FrontMatter {
   title?: string;
@@ -16,10 +16,11 @@ export interface FrontMatter {
 export interface Props extends FrontMatter {
   noHeader?: boolean;
   _frontmatter?: FrontMatter;
+  large?: boolean;
 }
 
-const Layout: React.FC<Props> = ({ children, ...rest }) => {
-  const frontmatter = rest._frontmatter || rest || {};
+const Layout: React.FC<Props> = props => {
+  const frontmatter = props._frontmatter || {};
 
   return (
     <MDXProvider>
@@ -28,7 +29,7 @@ const Layout: React.FC<Props> = ({ children, ...rest }) => {
       <div
         className="wrapper"
         sx={{
-          maxWidth: "container",
+          maxWidth: props.large ? "largeContainer" : "container",
           mx: "auto",
           my: 0,
           px: [3, 4],
@@ -36,14 +37,14 @@ const Layout: React.FC<Props> = ({ children, ...rest }) => {
         }}
       >
         <Flex sx={{ minHeight: "100vh", flexDirection: "column" }}>
-          {!rest.noHeader && <Header />}
+          {!props.noHeader && <Header />}
 
           <Box sx={{ flexGrow: 1 }}>
             {frontmatter.title != null && (
               <BlogTitle title={frontmatter.title} date={frontmatter.date} />
             )}
 
-            {children}
+            {props.children}
           </Box>
         </Flex>
 

@@ -9,7 +9,6 @@ import {
   Input,
   jsx,
   Label,
-  Link,
   NavLink,
   Radio,
   Select,
@@ -19,6 +18,7 @@ import {
   Textarea,
 } from "theme-ui";
 import Layout from "../components/Layout";
+import Link from "../components/Link";
 
 const Section: React.FC = props => <Box {...props} sx={{ py: 2 }} />;
 const Color: React.FC = props => (
