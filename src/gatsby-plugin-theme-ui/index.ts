@@ -281,7 +281,14 @@ const theme: Theme = {
       borderColor: "grey",
       color: "grey",
     },
-    ul: {},
+    ul: {
+      code: {
+        color: "text",
+        fontFamily: "monospace",
+        p: "2px",
+        borderRadius: "4px",
+      },
+    },
     li: {
       pb: 1,
     },

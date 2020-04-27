@@ -20,7 +20,7 @@ using a sequence of alpha characters.
 
 1>a # push 1 onto stack a
 a>  # pop from a
-a>b # pop from a and push to be
+a>b # pop from a and push to b
 ```
 
 The stacks `o` and `i` are used to output to standard out and take input from

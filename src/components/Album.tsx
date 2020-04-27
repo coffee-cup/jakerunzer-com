@@ -20,6 +20,7 @@ const AlbumLink = styled(Link)(
 
     "&:hover": {
       opacity: 2,
+      bg: "transparent",
 
       img: {
         transform: "scale(1.05)",

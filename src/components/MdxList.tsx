@@ -26,7 +26,7 @@ const Item: React.FC<{ page: Page }> = ({ page }) => (
     </Styled.h4>
 
     {page.frontmatter.date != null && (
-      <span sx={{ color: "grey" }}>
+      <span sx={{ color: "grey", fontSize: 2 }}>
         {dayjs(page.frontmatter.date).format("MMM DD, YYYY")}
       </span>
     )}

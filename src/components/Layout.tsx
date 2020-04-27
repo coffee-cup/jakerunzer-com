@@ -39,7 +39,12 @@ const Layout: React.FC<Props> = props => {
         <Flex sx={{ minHeight: "100vh", flexDirection: "column" }}>
           {!props.noHeader && <Header />}
 
-          <Box sx={{ flexGrow: 1 }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              py: [3, 4],
+            }}
+          >
             {frontmatter.title != null && (
               <BlogTitle title={frontmatter.title} date={frontmatter.date} />
             )}

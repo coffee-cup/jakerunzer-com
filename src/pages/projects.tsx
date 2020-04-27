@@ -24,13 +24,13 @@ const SectionHeading: React.FC = props => (
 
 const Projects: React.FC = () => (
   <Layout title="Projects">
-    <Box sx={{ pt: 4 }}>
+    <Box>
       <Box sx={{ pb: 3 }}>
-        <Styled.h1>Projects</Styled.h1>
+        <Styled.h1 sx={{ mb: 2 }}>Projects</Styled.h1>
 
         <Styled.p sx={{ maxWidth: "measure" }}>
           I love taking ideas and turning them into finished products. They
-          range from iOS and web apps to programming languages and devtools.
+          range from iOS and web apps, to programming languages and devtools.
           Their source can be found on{" "}
           <Link href="https://github.com/coffee-cup">Github</Link>.
         </Styled.p>
