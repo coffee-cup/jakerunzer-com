@@ -197,7 +197,7 @@ export type MacroHandler = (params: MacroParams) => void;
 export function createMacro(handler: MacroHandler, options?: Options);
 ```
 
-#### `references`
+#### references
 
 This is the main thing our macro will use to manipulate the AST. References is
 an object that contains Babel `NodePaths` all the places your macro was
@@ -231,7 +231,7 @@ export from your macro, the default export will still be called.
 Since references contain Babel `NodePaths`, they allow use to manipulate the
 ASTs. This is what we will use below.
 
-#### `state`
+#### state
 
 The state of the file being traverse. This is the second argument received in a
 visitor function of a normal Babel plugin. It will look something like:
@@ -254,7 +254,7 @@ visitor function of a normal Babel plugin. It will look something like:
 }
 ```
 
-#### `babel`
+#### babel
 
 Same as `require("babel-core")`. We can use it to get [Babel
 types](https://babeljs.io/docs/en/babel-types).

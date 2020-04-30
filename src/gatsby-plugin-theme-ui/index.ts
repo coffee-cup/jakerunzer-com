@@ -69,6 +69,13 @@ const baseButton: SystemStyleObject = {
   },
 };
 
+const inlineCodeStyles: SystemStyleObject = {
+  color: "text",
+  fontFamily: "monospace",
+  p: "2px",
+  borderRadius: "4px",
+};
+
 const theme: Theme = {
   ...system,
   colors: {
@@ -245,12 +252,7 @@ const theme: Theme = {
       maxWidth: "100%",
     },
     p: {
-      code: {
-        color: "text",
-        fontFamily: "monospace",
-        p: "2px",
-        borderRadius: "4px",
-      },
+      code: inlineCodeStyles,
     },
     pre: {
       fontFamily: "monospace",
@@ -265,6 +267,7 @@ const theme: Theme = {
     },
     code: {
       ...codeStyles,
+      color: "text",
       fontFamily: "monospace",
       backgroundColor: "muted",
       p: 2,
@@ -281,13 +284,11 @@ const theme: Theme = {
       borderColor: "grey",
       color: "grey",
     },
+    ol: {
+      code: inlineCodeStyles,
+    },
     ul: {
-      code: {
-        color: "text",
-        fontFamily: "monospace",
-        p: "2px",
-        borderRadius: "4px",
-      },
+      code: inlineCodeStyles,
     },
     li: {
       pb: 1,

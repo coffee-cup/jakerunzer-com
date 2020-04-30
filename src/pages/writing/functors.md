@@ -13,7 +13,7 @@ In programming, they are basically the same thing.
 
 > A Functor is a data structure that can be mapped over.
 
-The term Functor is most commonly used Haskell, but nothing about them are
+The term Functor is most commonly used in Haskell, but nothing about them are
 specific to Haskell.
 
 The Haskell Functor type class is defined as
