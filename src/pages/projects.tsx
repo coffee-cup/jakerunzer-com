@@ -82,7 +82,7 @@ const Projects: React.FC = () => (
           Haskell. <Link href="/writing/krill">Associated blog post</Link>.
         </Project>
 
-        <Project title="VRaw" link="https://github.com/coffee-cup/vraw/">
+        <Project title="VRaw" link="https://vraw.surge.sh/">
           Programming language for drawing SVGs. You can create complex shapes
           by composing together simple ones.
         </Project>
