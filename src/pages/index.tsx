@@ -22,7 +22,7 @@ const Nav: React.FC = () => (
 );
 
 const Home = () => (
-  <Layout>
+  <Layout noHome>
     <Box sx={{ pt: [5, 6], pb: 2 }}>
       <Text variant="display" as="h1" sx={{ fontSize: [96, 128], ml: "-8px" }}>
         Hello.

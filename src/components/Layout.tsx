@@ -15,6 +15,7 @@ export interface FrontMatter {
 
 export interface Props extends FrontMatter {
   noHeader?: boolean;
+  noHome?: boolean;
   _frontmatter?: FrontMatter;
   large?: boolean;
 }
@@ -37,7 +38,7 @@ const Layout: React.FC<Props> = props => {
         }}
       >
         <Flex sx={{ minHeight: "100vh", flexDirection: "column" }}>
-          {!props.noHeader && <Header />}
+          {!props.noHeader && <Header noHome={props.noHome} />}
 
           <Box
             sx={{
