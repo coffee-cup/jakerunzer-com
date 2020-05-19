@@ -79,25 +79,25 @@ const inlineCodeStyles: SystemStyleObject = {
 const theme: Theme = {
   ...system,
   colors: {
-    text: darkColor,
-    background: lightColor,
-    primary: darkColor,
-    secondary: lightColor,
-    accent: "#fbba72",
-    muted: "#eff0f6",
-    grey: "#777",
-    ...lightCodeColors,
+    ...darkCodeColors,
+    text: lightColor,
+    background: darkColor,
+    primary: lightColor,
+    secondary: darkColor,
+    muted: "#313030",
+    accent: "#c37620",
+    grey: "#999",
 
     modes: {
-      dark: {
-        ...darkCodeColors,
-        text: lightColor,
-        background: darkColor,
-        primary: lightColor,
-        secondary: darkColor,
-        muted: "#313030",
-        accent: "#c37620",
-        grey: "#999",
+      light: {
+        text: darkColor,
+        background: lightColor,
+        primary: darkColor,
+        secondary: lightColor,
+        accent: "#fbba72",
+        muted: "#eff0f6",
+        grey: "#777",
+        ...lightCodeColors,
       },
     },
   },
@@ -168,6 +168,14 @@ const theme: Theme = {
       "&:hover,&:focus,&:active": {
         color: "text",
         bg: "accent",
+      },
+    },
+    dim: {
+      ...baseLink,
+      textDecoration: "none",
+
+      "&:hover,&:focus,&:active": {
+        opacity: 0.8,
       },
     },
     empty: {
