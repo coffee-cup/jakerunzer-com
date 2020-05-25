@@ -11,9 +11,11 @@ export interface Props {
 }
 
 const isExternalLink = (href: string): boolean =>
-  href.startsWith("http://") || href.startsWith("https://");
+  href.startsWith("http://") ||
+  href.startsWith("https://") ||
+  href.startsWith("mailto:");
 
-const Link: React.FC<Props> = props => {
+const Link: React.FC<Props> = (props) => {
   const href = props.href || props.to;
   if (isExternalLink(href)) {
     return (

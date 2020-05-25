@@ -5,10 +5,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "gatsby develop",
     "lint": "set -ex; tsc --noEmit -p .; tslint --project .",
     "test": "echo 'no tests'",
-    "develop": "gatsby develop",
+    "develop": "GATSBY_HOT_LOADER=fast-refresh gatsby develop",
     "start": "npm run develop",
     "build": "gatsby build",
     "tsc": "tsc -p . --noEmit"
@@ -34,7 +33,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-feather": "^2.0.4",
-    "react-helmet": "^5.2.0",
+    "react-helmet": "^6.0.0",
     "react-markdown": "^4.2.2",
     "theme-ui": "^0.3.1"
   },
@@ -44,7 +43,7 @@
     "@types/lodash": "^4.14.152",
     "@types/reach__router": "^1.2.4",
     "@types/react": "^16.9.14",
-    "@types/react-helmet": "^5.0.14",
+    "@types/react-helmet": "^6.0.0",
     "@types/styled-system": "^5.1.4",
     "@types/styled-system__css": "^5.0.4",
     "@types/theme-ui": "^0.3.0",
@@ -73,7 +72,7 @@
     "gatsby-transformer-remark": "^2.8.13",
     "gatsby-transformer-sharp": "^2.5.3",
     "mdx-utils": "^0.2.0",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.5",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",

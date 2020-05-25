@@ -19,7 +19,7 @@ export interface IPost {
 }
 
 export interface ISnippet {
-  name: string;
+  title: string;
   description: string;
   category: string;
   link: string;

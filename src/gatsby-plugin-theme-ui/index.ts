@@ -142,7 +142,7 @@ const theme: Theme = {
     monospace: "Consolas, Liberation Mono, Menlo, Courier, monospace",
   },
 
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
+  fontSizes: [9, 12, 16, 22, 28, 38, 50, 68],
 
   sizes: {
     container: "1024px",
@@ -152,7 +152,7 @@ const theme: Theme = {
   },
 
   lineHeights: {
-    body: 1.6,
+    body: 1.65,
     heading: 1.125,
   },
 
@@ -174,6 +174,7 @@ const theme: Theme = {
       textDecoration: "none",
       display: "inline-block",
     },
+    contact: {},
     nav: {
       px: 2,
       py: 1,
@@ -235,15 +236,33 @@ const theme: Theme = {
   text: {
     heading: {
       ...heading,
-      pb: 3,
-      fontSize: 4,
     },
     display: {
-      variant: "textStyles.heading",
+      ...heading,
       fontSize: [5, 6],
       fontWeight: "heading",
       letterSpacing: "-0.03em",
       mt: 3,
+    },
+    section: {
+      ...heading,
+      mb: 3,
+      fontSize: 2,
+      fontWeight: "heading",
+      color: "accent",
+      textTransform: "uppercase",
+    },
+  },
+
+  cards: {
+    primary: {
+      position: "relative",
+      px: [3, 4],
+      py: 4,
+      borderRadius: 4,
+      // boxShadow: "0 0 40px rgba(0, 0, 0, 0.125)",
+      backgroundColor: "muted",
+      maxWidth: 512,
     },
   },
 
@@ -257,27 +276,42 @@ const theme: Theme = {
     h1: {
       variant: "textStyles.display",
       fontSize: 6,
+      mt: 0,
+      lineHeight: 1.15,
     },
     h2: {
       variant: "textStyles.heading",
       fontSize: 5,
+      margin: "2.75rem 0 1.05rem",
+      lineHeight: 1.15,
     },
     h3: {
       variant: "textStyles.heading",
       fontSize: 4,
-      mb: 3,
+      margin: "2.75rem 0 1.05rem",
+      lineHeight: 1.15,
     },
     h4: {
       variant: "textStyles.heading",
       fontSize: 3,
+      margin: "2.75rem 0 1.05rem",
+      lineHeight: 1.15,
     },
     h5: {
       variant: "textStyles.heading",
       fontSize: 2,
+      margin: "2.75rem 0 1.05rem",
+      lineHeight: 1.15,
     },
     h6: {
       variant: "textStyles.heading",
       fontSize: 1,
+    },
+    p: {
+      code: inlineCodeStyles,
+      fontSize: 2,
+      lineHeight: 1.65,
+      mb: "1.15rem",
     },
     a: baseLink,
     ".caption": {
@@ -287,10 +321,6 @@ const theme: Theme = {
     },
     img: {
       maxWidth: "100%",
-    },
-    p: {
-      code: inlineCodeStyles,
-      fontSize: 3,
     },
     pre: {
       fontFamily: "monospace",

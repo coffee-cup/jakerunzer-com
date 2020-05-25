@@ -9,7 +9,7 @@ import {
   Styled,
   Text,
 } from "theme-ui";
-import { PostEntry, ProjectEntry } from "../components/Entry";
+import { PostEntry, ProjectEntry, SnippetEntry } from "../components/Entry";
 import Layout from "../components/Layout";
 import Link from "../components/Link";
 import ProjectList from "../components/ProjectList";
@@ -47,47 +47,60 @@ const Home = () => {
         </Text>
       </Box>
 
-      {/* <Box>
-      <Styled.p sx={{ maxWidth: "narrow" }}>
-        Frontend focused software engineer based. <br /> I like to build things
-        for the web and iOS, as well as dig deep into languages and compilers.
-      </Styled.p>
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+          // gridTemplateColumns: ["1fr", "1fr", "512px 1fr"],
+          gap: [4, 5],
+        }}
+      >
+        <Section>
+          <Heading variant="section">Latest</Heading>
 
-      <Nav />
-    </Box> */}
+          <Box>
+            {entries.map(entry => (
+              <React.Fragment key={entry.link}>
+                {entry.type === "project" ? (
+                  <ProjectEntry project={entry} />
+                ) : entry.type === "post" ? (
+                  <PostEntry post={entry} />
+                ) : entry.type === "snippet" ? (
+                  <SnippetEntry snippet={entry} />
+                ) : null}
+              </React.Fragment>
+            ))}
+          </Box>
+        </Section>
 
-      <Section>
-        <Heading>Latest</Heading>
+        <Section>
+          <Heading variant="section">Hello</Heading>
 
-        <Box>
-          {entries.map(entry => (
-            <React.Fragment key={entry.link}>
-              {entry.type === "project" ? (
-                <ProjectEntry project={entry} />
-              ) : entry.type === "post" ? (
-                <PostEntry post={entry} />
-              ) : null}
-            </React.Fragment>
-          ))}
-        </Box>
-      </Section>
+          <Styled.p>
+            Welcome to my place on the web. I use this space to write about and
+            share things I have learned and am working on.
+          </Styled.p>
 
-      <Section>
-        <Heading>Social and Stuff</Heading>
-
-        <Box
-          sx={{
-            display: "flex",
-          }}
-        >
-          <Link href="https://github.com/coffee-cup" sx={{ mr: 3 }}>
-            github
-          </Link>
-          <Link href="https://twitter.com/jakerunzer" sx={{ mr: 3 }}>
-            twitter
-          </Link>
-        </Box>
-      </Section>
+          <Box
+            sx={{
+              display: "flex",
+            }}
+          >
+            <Link href="https://github.com/coffee-cup" sx={{ mr: 3 }}>
+              github
+            </Link>
+            <Link href="https://twitter.com/jakerunzer" sx={{ mr: 3 }}>
+              twitter
+            </Link>
+            <Link href="https://keybase.io/jakerunzer" sx={{ mr: 3 }}>
+              keybase
+            </Link>
+            <Link href="mailto:jakerunzer.com" sx={{ mr: 3 }}>
+              contact
+            </Link>
+          </Box>
+        </Section>
+      </Box>
     </Layout>
   );
 };
