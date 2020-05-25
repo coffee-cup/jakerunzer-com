@@ -138,7 +138,7 @@ const theme: Theme = {
 
   fonts: {
     body: font,
-    heading: `"Montserrat", ${font}`,
+    heading: `"Rubik", serif, ${font}`,
     monospace: "Consolas, Liberation Mono, Menlo, Courier, monospace",
   },
 
@@ -178,6 +178,7 @@ const theme: Theme = {
       px: 2,
       py: 1,
       fontSize: 2,
+      fontFamily: "heading",
     },
     mdxItem: {
       ...baseLink,
