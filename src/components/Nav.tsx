@@ -47,13 +47,22 @@ const NavLink: React.FC<{ href: string }> = props => (
 
 const Nav: React.FC = () => {
   return (
-    <Box as="nav">
-      {/* <NavLink href="/writing" sx={{ mr: 2 }}>
-        writing
+    <Box
+      as="nav"
+      sx={{
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      <NavLink href="/writing" sx={{ mr: 2 }}>
+        posts
       </NavLink>
       <NavLink href="/projects" sx={{ mr: 2 }}>
         projects
-      </NavLink> */}
+      </NavLink>
+      <NavLink href="/snippets" sx={{ mr: 2 }}>
+        snippets
+      </NavLink>
 
       <ThemeSwitcher />
     </Box>

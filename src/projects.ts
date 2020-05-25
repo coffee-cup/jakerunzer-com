@@ -3,44 +3,53 @@ import { IProject } from "./types";
 export const projects: IProject[] = [
   {
     name: "Chronicle",
-    desc: "Lightweight journaling app where you record highlights of your day.",
+    description:
+      "Lightweight journaling app where you record highlights of your day.",
     link: "https://chronicle.ink",
-    featured: true,
+    date: new Date("2020-04-16"),
+    type: "project",
   },
   {
     name: "Tag Tester",
-    desc: "Test and edit your websites open graph metadata tags",
+    description: "Test and edit your websites open graph metadata tags",
     link: "https://tagtester.dev",
-    featured: true,
+    date: new Date("2020-02-20"),
+    type: "project",
   },
   {
     name: "Solis",
-    desc:
+    description:
       "iOS app that shows you the times of sunrise, sunset, and twilight's.",
     link: "https://solisapp.xyz",
-    featured: true,
+    date: new Date("2016-08-27"),
+    type: "project",
   },
   {
     name: "Stck",
-    desc: "Minimal stack based esoteric programming language.",
+    description: "Minimal stack based esoteric programming language.",
     link: "https://stck.jakerunzer.com",
+    date: new Date("2020-03-20"),
+    type: "project",
   },
   {
     name: "Quiztastic",
-    desc: " Web based trivia game for friends and family.",
+    description: " Web based trivia game for friends and family.",
     link: "https://tagtester.dev",
-    featured: true,
+    date: new Date("2019-10-18"),
+    type: "project",
   },
   {
     name: "Krill",
-    desc: "Dynamic, curried, and minimal programming language.",
+    description: "Dynamic, curried, and minimal programming language.",
     link: "https://krill.jakerunzer.com",
-    featured: true,
+    date: new Date("2019-06-10"),
+    type: "project",
   },
   {
     name: "Bowtie",
-    desc: "Score keeping iOS app",
+    description: "Score keeping iOS app",
     link: "https://bowtie.jakerunzer.com",
-    featured: true,
+    date: new Date("2017-03-26"),
+    type: "project",
   },
 ];

@@ -50,9 +50,6 @@ const baseInput: SystemStyleObject = {
   },
 };
 
-const darkColor = "#171717";
-const lightColor = "white";
-
 const baseButton: SystemStyleObject = {
   color: "secondary",
   bg: "primary",
@@ -76,28 +73,55 @@ const inlineCodeStyles: SystemStyleObject = {
   borderRadius: "4px",
 };
 
+const baseColors = {
+  black: "#171717",
+  white: "#ffffff",
+  darkPink: "#F74F57",
+  lightPink: "#F4989C",
+};
+
 const theme: Theme = {
   ...system,
   colors: {
-    ...darkCodeColors,
-    text: lightColor,
-    background: darkColor,
-    primary: lightColor,
-    secondary: darkColor,
-    muted: "#313030",
-    accent: "#c37620",
-    grey: "#999",
+    ...lightCodeColors,
+    text: baseColors.black,
+    background: baseColors.white,
+    primary: baseColors.black,
+    secondary: baseColors.white,
+    accent: baseColors.lightPink,
+    muted: "#eff0f6",
+    grey: {
+      50: "#f5f5f5",
+      100: "#eeeeee",
+      200: "#e0e0e0",
+      300: "#bdbdbd",
+      400: "#9e9e9e",
+      500: "#757575",
+      600: "#616161",
+      700: "#424242",
+      800: "#212121",
+    },
 
     modes: {
-      light: {
-        text: darkColor,
-        background: lightColor,
-        primary: darkColor,
-        secondary: lightColor,
-        accent: "#fbba72",
-        muted: "#eff0f6",
-        grey: "#777",
-        ...lightCodeColors,
+      dark: {
+        ...darkCodeColors,
+        text: baseColors.white,
+        background: baseColors.black,
+        primary: baseColors.white,
+        secondary: baseColors.black,
+        accent: baseColors.darkPink,
+        muted: "#313030",
+        grey: {
+          50: "#c2c2c2",
+          100: "#bcbcbc",
+          200: "#aeaeae",
+          300: "#8d8d8d",
+          400: "#707070",
+          500: "#494949",
+          600: "#373737",
+          700: "#1b1b1b",
+          800: "#000000",
+        },
       },
     },
   },
@@ -121,7 +145,7 @@ const theme: Theme = {
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
 
   sizes: {
-    container: "48em",
+    container: "1024px",
     largeContainer: "64em",
     measure: "32em",
     narrow: "26em",
@@ -208,7 +232,11 @@ const theme: Theme = {
   },
 
   text: {
-    heading,
+    heading: {
+      ...heading,
+      pb: 3,
+      fontSize: 4,
+    },
     display: {
       variant: "textStyles.heading",
       fontSize: [5, 6],
@@ -261,6 +289,7 @@ const theme: Theme = {
     },
     p: {
       code: inlineCodeStyles,
+      fontSize: 3,
     },
     pre: {
       fontFamily: "monospace",

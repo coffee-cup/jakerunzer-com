@@ -14,7 +14,8 @@
     "noUnusedLocals": false,
     "noUnusedParameters": true,
     "jsx": "preserve",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src", "typings"]
 }
