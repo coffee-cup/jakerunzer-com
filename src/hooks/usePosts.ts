@@ -12,6 +12,7 @@ export const usePosts = (): IPost[] => {
         date: new Date(node.frontmatter.date),
         link: node.fields.slug,
         excerpt: node.excerpt,
+        description: node.frontmatter.description,
         type: "post",
       })),
     [pages],

@@ -2,6 +2,7 @@
 title: TypeScript in the Browser
 date: 2020-04-15
 draft: false
+description: Learn how to typecheck code in the browser using TypeScript.
 ---
 
 import Caption from "../../components/Caption";

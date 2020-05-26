@@ -145,7 +145,7 @@ const theme: Theme = {
   fontSizes: [9, 12, 16, 22, 28, 38, 50, 68],
 
   sizes: {
-    container: "1024px",
+    container: "48em",
     largeContainer: "64em",
     measure: "32em",
     narrow: "26em",

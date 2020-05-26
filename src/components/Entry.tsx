@@ -30,11 +30,11 @@ const Info: React.FC = props => (
 );
 
 const Desc: React.FC = props => (
-  <Text {...props} sx={{ fontSize: 2, maxWidth: "measure", pb: 2 }} />
+  <Text {...props} sx={{ fontSize: 2, maxWidth: "measure" }} />
 );
 
-const EntryCard: React.FC<{ type: string; href: string }> = ({
-  type,
+const EntryCard: React.FC<{ tag: string; href: string }> = ({
+  tag,
   href,
   children,
   ...props
@@ -75,7 +75,7 @@ const EntryCard: React.FC<{ type: string; href: string }> = ({
             borderTopRightRadius: 4,
           }}
         />
-        <span sx={{ position: "relative" }}>{type}</span>
+        <span sx={{ position: "relative" }}>{tag}</span>
       </Box>
       <Box>{children}</Box>
     </Card>
@@ -93,13 +93,19 @@ const LinkText: React.FC = props => (
   />
 );
 
-export const ProjectEntry: React.FC<{ project: IProject }> = ({ project }) => {
+export const ProjectEntry: React.FC<{
+  project: IProject;
+  categoryTag?: boolean;
+}> = ({ project, categoryTag }) => {
   const shortLink = getShortLink(project.link);
 
   return (
-    <EntryCard type={project.type} href={project.link}>
+    <EntryCard
+      tag={categoryTag ? project.category : project.type}
+      href={project.link}
+    >
       <Title>{project.name}</Title>
-      <Desc>{project.description}</Desc>
+      <Desc sx={{ pb: 2 }}>{project.description}</Desc>
       <LinkText>{shortLink}</LinkText>
     </EntryCard>
   );
@@ -107,16 +113,16 @@ export const ProjectEntry: React.FC<{ project: IProject }> = ({ project }) => {
 
 export const PostEntry: React.FC<{ post: IPost }> = ({ post }) => {
   return (
-    <EntryCard type={post.type} href={post.link}>
+    <EntryCard tag={post.type} href={post.link}>
       <Title>{post.title}</Title>
-      <Desc>{post.excerpt}</Desc>
+      <Desc>{post.description ?? post.excerpt}</Desc>
     </EntryCard>
   );
 };
 
 export const SnippetEntry: React.FC<{ snippet: ISnippet }> = ({ snippet }) => {
   return (
-    <EntryCard type={snippet.type} href={snippet.link}>
+    <EntryCard tag={snippet.type} href={snippet.link}>
       <Title>{snippet.title}</Title>
       <Desc>{snippet.description}</Desc>
     </EntryCard>

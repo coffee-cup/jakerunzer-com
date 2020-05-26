@@ -60,9 +60,9 @@ const Nav: React.FC = () => {
       <NavLink href="/projects" sx={{ mr: 2 }}>
         projects
       </NavLink>
-      <NavLink href="/snippets" sx={{ mr: 2 }}>
+      {/* <NavLink href="/snippets" sx={{ mr: 2 }}>
         snippets
-      </NavLink>
+      </NavLink> */}
 
       <ThemeSwitcher />
     </Box>

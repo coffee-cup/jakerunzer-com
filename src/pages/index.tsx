@@ -30,7 +30,7 @@ const Home = () => {
   console.log(entries);
 
   return (
-    <Layout>
+    <Layout large>
       <Box sx={{ py: 6 }}>
         {/* <Text
         variant="display"
@@ -80,6 +80,8 @@ const Home = () => {
             Welcome to my place on the web. I use this space to write about and
             share things I have learned and am working on.
           </Styled.p>
+
+          <Styled.p>You can also find me here.</Styled.p>
 
           <Box
             sx={{
