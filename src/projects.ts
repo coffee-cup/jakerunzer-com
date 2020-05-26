@@ -19,6 +19,14 @@ export const projects: IProject[] = [
     type: "project",
   },
   {
+    name: "Stck",
+    description: "Minimal stack based esoteric programming language.",
+    link: "https://stck.jakerunzer.com",
+    category: "language",
+    date: new Date("2020-03-20"),
+    type: "project",
+  },
+  {
     name: "Solis",
     description:
       "iOS app that shows you the times of sunrise, sunset, and twilight's.",
@@ -28,11 +36,11 @@ export const projects: IProject[] = [
     type: "project",
   },
   {
-    name: "Stck",
-    description: "Minimal stack based esoteric programming language.",
-    link: "https://stck.jakerunzer.com",
+    name: "Krill",
+    description: "Dynamic, curried, and minimal programming language.",
+    link: "https://krill.jakerunzer.com",
     category: "language",
-    date: new Date("2020-03-20"),
+    date: new Date("2019-06-10"),
     type: "project",
   },
   {
@@ -41,14 +49,6 @@ export const projects: IProject[] = [
     link: "https://tagtester.dev",
     category: "web",
     date: new Date("2019-10-18"),
-    type: "project",
-  },
-  {
-    name: "Krill",
-    description: "Dynamic, curried, and minimal programming language.",
-    link: "https://krill.jakerunzer.com",
-    category: "language",
-    date: new Date("2019-06-10"),
     type: "project",
   },
   {

@@ -5,24 +5,6 @@ import Layout from "../components/Layout";
 import Link from "../components/Link";
 import { useProjects } from "../hooks/useProjects";
 
-const Section: React.FC = props => <Box {...props} sx={{ pb: 4 }} />;
-
-const SectionHeading: React.FC = props => (
-  <Text {...props} sx={{ pb: 3 }}>
-    <span
-      sx={{
-        bg: "muted",
-        p: 1,
-        fontSize: 2,
-        fontWeight: "bold",
-        textTransform: "lowercase",
-      }}
-    >
-      {props.children}
-    </span>
-  </Text>
-);
-
 const Projects: React.FC = () => {
   const projects = useProjects();
 
