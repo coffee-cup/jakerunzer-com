@@ -1,44 +1,18 @@
 /** @jsx jsx */
 import * as React from "react";
-import {
-  Box,
-  Flex,
-  Heading,
-  jsx,
-  NavLink as TNavLink,
-  Styled,
-  Text,
-} from "theme-ui";
+import { Box, Heading, jsx, Styled, Text } from "theme-ui";
 import { PostEntry, ProjectEntry, SnippetEntry } from "../components/Entry";
 import Layout from "../components/Layout";
 import Link from "../components/Link";
-import ProjectList from "../components/ProjectList";
 import { useLatest } from "../hooks/useLatest";
 
-const NavLink: React.FC<{ href: string }> = props => (
-  <Box>
-    <TNavLink as={Link} href={props.href}>
-      {props.children}
-    </TNavLink>
-  </Box>
-);
-
-const Section: React.FC = props => <Box {...props} sx={{ py: 3 }} />;
+const Section: React.FC = props => <Box {...props} sx={{ py: [4, 4, 3] }} />;
 
 const Home = () => {
   const entries = useLatest();
-  console.log(entries);
-
   return (
     <Layout large>
       <Box sx={{ py: 6 }}>
-        {/* <Text
-        variant="display"
-        as="h1"
-        sx={{ fontSize: [96, 128], ml: "-2px", mb: 2 }}
-      >
-        Hello.
-      </Text> */}
         <Text variant="display" as="h1" sx={{ mb: 3 }}>
           Jake Runzer
         </Text>
@@ -49,9 +23,9 @@ const Home = () => {
 
       <Box
         sx={{
-          display: "grid",
+          display: ["flex", "flex", "grid"],
+          flexDirection: "column-reverse",
           gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
-          // gridTemplateColumns: ["1fr", "1fr", "512px 1fr"],
           gap: [4, 5],
         }}
       >
@@ -76,7 +50,7 @@ const Home = () => {
         <Section>
           <Heading variant="section">Hello</Heading>
 
-          <Styled.p>
+          <Styled.p sx={{ maxWidth: "measure" }}>
             Welcome to my place on the web. I use this space to write about and
             share things I have learned and am working on.
           </Styled.p>

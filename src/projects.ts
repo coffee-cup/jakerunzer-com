@@ -62,7 +62,7 @@ export const projects: IProject[] = [
   {
     name: "LastFM Leaderboards",
     description: "Music leaderboards powered by Elm and last.fm",
-    link: "https://bowtie.jakerunzer.com",
+    link: "https://lastfm.jakerunzer.com/",
     category: "web",
     date: new Date("2018-05-02"),
     type: "project",
