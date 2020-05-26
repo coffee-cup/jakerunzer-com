@@ -138,7 +138,7 @@ const theme: Theme = {
 
   fonts: {
     body: font,
-    heading: `"Rubik", serif, ${font}`,
+    heading: `"Rubik", ${font}`,
     monospace: "Consolas, Liberation Mono, Menlo, Courier, monospace",
   },
 
