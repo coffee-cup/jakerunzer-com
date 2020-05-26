@@ -120,7 +120,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Montserrat\:700`],
+        fonts: [`Rubik\:700`],
         display: "swap",
       },
     },

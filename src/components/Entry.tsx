@@ -1,0 +1,130 @@
+/** @jsx jsx */
+import dayjs from "dayjs";
+import * as React from "react";
+import { Box, Card, Flex, jsx, Text } from "theme-ui";
+import { projects } from "../projects";
+import { IPost, IProject, ISnippet } from "../types";
+import Link from "./Link";
+
+const getShortLink = (href: string): string =>
+  href.replace("https://", "").replace("http://", "");
+
+const formatDate = (date: Date | string): string =>
+  dayjs(date).format("MMM DD, YYYY");
+
+const Title: React.FC = props => (
+  <Text
+    {...props}
+    className="title"
+    variant="heading"
+    sx={{
+      fontSize: 3,
+      pb: 2,
+      transition: "all 150ms ease-in-out",
+    }}
+  />
+);
+
+const Info: React.FC = props => (
+  <Text {...props} sx={{ color: "grey.400", fontSize: 0, pb: 2 }} />
+);
+
+const Desc: React.FC = props => (
+  <Text {...props} sx={{ fontSize: 2, maxWidth: "measure" }} />
+);
+
+const EntryCard: React.FC<{ tag: string; href: string }> = ({
+  tag,
+  href,
+  children,
+  ...props
+}) => (
+  <Link variant="dim" href={href}>
+    <Card
+      {...props}
+      sx={{
+        mb: 4,
+
+        "&:hover": {
+          ".title": {
+            color: "accent",
+          },
+        },
+      }}
+    >
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
+          right: 0,
+          px: 1,
+          borderBottomLeftRadius: 2,
+          fontSize: 1,
+        }}
+      >
+        <span
+          sx={{
+            position: "absolute",
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+            bg: "accent",
+            opacity: 0.6,
+            borderBottomLeftRadius: 2,
+            borderTopRightRadius: 4,
+          }}
+        />
+        <span sx={{ position: "relative" }}>{tag}</span>
+      </Box>
+      <Box>{children}</Box>
+    </Card>
+  </Link>
+);
+
+const LinkText: React.FC = props => (
+  <Text
+    {...props}
+    sx={{
+      maxWidth: "measure",
+      fontSize: 1,
+      textDecoration: "underline",
+    }}
+  />
+);
+
+export const ProjectEntry: React.FC<{
+  project: IProject;
+  categoryTag?: boolean;
+}> = ({ project, categoryTag }) => {
+  const shortLink = getShortLink(project.link);
+
+  return (
+    <EntryCard
+      tag={categoryTag ? project.category : project.type}
+      href={project.link}
+    >
+      <Title>{project.name}</Title>
+      <Desc sx={{ pb: 2 }}>{project.description}</Desc>
+      <LinkText>{shortLink}</LinkText>
+    </EntryCard>
+  );
+};
+
+export const PostEntry: React.FC<{ post: IPost }> = ({ post }) => {
+  return (
+    <EntryCard tag={post.type} href={post.link}>
+      <Title>{post.title}</Title>
+      <Desc>{post.description ?? post.excerpt}</Desc>
+    </EntryCard>
+  );
+};
+
+export const SnippetEntry: React.FC<{ snippet: ISnippet }> = ({ snippet }) => {
+  return (
+    <EntryCard tag={snippet.type} href={snippet.link}>
+      <Title>{snippet.title}</Title>
+      <Desc>{snippet.description}</Desc>
+    </EntryCard>
+  );
+};

@@ -50,9 +50,6 @@ const baseInput: SystemStyleObject = {
   },
 };
 
-const darkColor = "#171717";
-const lightColor = "white";
-
 const baseButton: SystemStyleObject = {
   color: "secondary",
   bg: "primary",
@@ -76,28 +73,55 @@ const inlineCodeStyles: SystemStyleObject = {
   borderRadius: "4px",
 };
 
+const baseColors = {
+  black: "#171717",
+  white: "#ffffff",
+  darkPink: "#F74F57",
+  lightPink: "#F4989C",
+};
+
 const theme: Theme = {
   ...system,
   colors: {
-    text: darkColor,
-    background: lightColor,
-    primary: darkColor,
-    secondary: lightColor,
-    accent: "#fbba72",
-    muted: "#eff0f6",
-    grey: "#777",
     ...lightCodeColors,
+    text: baseColors.black,
+    background: baseColors.white,
+    primary: baseColors.black,
+    secondary: baseColors.white,
+    accent: baseColors.lightPink,
+    muted: "#eff0f6",
+    grey: {
+      50: "#f5f5f5",
+      100: "#eeeeee",
+      200: "#e0e0e0",
+      300: "#bdbdbd",
+      400: "#9e9e9e",
+      500: "#757575",
+      600: "#616161",
+      700: "#424242",
+      800: "#212121",
+    },
 
     modes: {
       dark: {
         ...darkCodeColors,
-        text: lightColor,
-        background: darkColor,
-        primary: lightColor,
-        secondary: darkColor,
+        text: baseColors.white,
+        background: baseColors.black,
+        primary: baseColors.white,
+        secondary: baseColors.black,
+        accent: baseColors.darkPink,
         muted: "#313030",
-        accent: "#c37620",
-        grey: "#999",
+        grey: {
+          50: "#c2c2c2",
+          100: "#bcbcbc",
+          200: "#aeaeae",
+          300: "#8d8d8d",
+          400: "#707070",
+          500: "#494949",
+          600: "#373737",
+          700: "#1b1b1b",
+          800: "#000000",
+        },
       },
     },
   },
@@ -114,11 +138,11 @@ const theme: Theme = {
 
   fonts: {
     body: font,
-    heading: `"Montserrat", ${font}`,
+    heading: `"Rubik", ${font}`,
     monospace: "Consolas, Liberation Mono, Menlo, Courier, monospace",
   },
 
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
+  fontSizes: [9, 12, 16, 22, 28, 38, 50, 68],
 
   sizes: {
     container: "48em",
@@ -128,7 +152,7 @@ const theme: Theme = {
   },
 
   lineHeights: {
-    body: 1.6,
+    body: 1.65,
     heading: 1.125,
   },
 
@@ -150,10 +174,12 @@ const theme: Theme = {
       textDecoration: "none",
       display: "inline-block",
     },
+    contact: {},
     nav: {
       px: 2,
       py: 1,
       fontSize: 2,
+      fontFamily: "heading",
     },
     mdxItem: {
       ...baseLink,
@@ -168,6 +194,14 @@ const theme: Theme = {
       "&:hover,&:focus,&:active": {
         color: "text",
         bg: "accent",
+      },
+    },
+    dim: {
+      ...baseLink,
+      textDecoration: "none",
+
+      "&:hover,&:focus,&:active": {
+        opacity: 0.8,
       },
     },
     empty: {
@@ -200,13 +234,35 @@ const theme: Theme = {
   },
 
   text: {
-    heading,
+    heading: {
+      ...heading,
+    },
     display: {
-      variant: "textStyles.heading",
+      ...heading,
       fontSize: [5, 6],
       fontWeight: "heading",
       letterSpacing: "-0.03em",
       mt: 3,
+    },
+    section: {
+      ...heading,
+      mb: 3,
+      fontSize: 2,
+      fontWeight: "heading",
+      color: "accent",
+      textTransform: "uppercase",
+    },
+  },
+
+  cards: {
+    primary: {
+      position: "relative",
+      px: [3, 4],
+      py: 4,
+      borderRadius: 4,
+      // boxShadow: "0 0 40px rgba(0, 0, 0, 0.125)",
+      backgroundColor: "muted",
+      maxWidth: 512,
     },
   },
 
@@ -220,27 +276,42 @@ const theme: Theme = {
     h1: {
       variant: "textStyles.display",
       fontSize: 6,
+      mt: 0,
+      lineHeight: 1.15,
     },
     h2: {
       variant: "textStyles.heading",
       fontSize: 5,
+      margin: "2.75rem 0 1.05rem",
+      lineHeight: 1.15,
     },
     h3: {
       variant: "textStyles.heading",
       fontSize: 4,
-      mb: 3,
+      margin: "2.75rem 0 1.05rem",
+      lineHeight: 1.15,
     },
     h4: {
       variant: "textStyles.heading",
       fontSize: 3,
+      margin: "2.75rem 0 1.05rem",
+      lineHeight: 1.15,
     },
     h5: {
       variant: "textStyles.heading",
       fontSize: 2,
+      margin: "2.75rem 0 1.05rem",
+      lineHeight: 1.15,
     },
     h6: {
       variant: "textStyles.heading",
       fontSize: 1,
+    },
+    p: {
+      code: inlineCodeStyles,
+      fontSize: 2,
+      lineHeight: 1.65,
+      mb: "1.15rem",
     },
     a: baseLink,
     ".caption": {
@@ -250,9 +321,6 @@ const theme: Theme = {
     },
     img: {
       maxWidth: "100%",
-    },
-    p: {
-      code: inlineCodeStyles,
     },
     pre: {
       fontFamily: "monospace",

@@ -38,7 +38,7 @@ const Layout: React.FC<Props> = props => {
         }}
       >
         <Flex sx={{ minHeight: "100vh", flexDirection: "column" }}>
-          {!props.noHeader && <Header noHome={props.noHome} />}
+          {!props.noHeader && <Header />}
 
           <Box
             sx={{
