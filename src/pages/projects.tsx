@@ -1,9 +1,8 @@
 /** @jsx jsx */
-import { Box, Heading, jsx, Styled, Text } from "theme-ui";
+import { Box, jsx, Styled, Text } from "theme-ui";
 import { ProjectEntry } from "../components/Entry";
 import Layout from "../components/Layout";
 import Link from "../components/Link";
-import Project from "../components/Project";
 import { useProjects } from "../hooks/useProjects";
 
 const Section: React.FC = props => <Box {...props} sx={{ pb: 4 }} />;
