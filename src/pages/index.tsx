@@ -55,8 +55,6 @@ const Home = () => {
             share things I have learned and am working on.
           </Styled.p>
 
-          <Styled.p>You can also find me here.</Styled.p>
-
           <Box
             sx={{
               display: "flex",
