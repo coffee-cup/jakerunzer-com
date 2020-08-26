@@ -46,7 +46,7 @@ export const projects: IProject[] = [
   {
     name: "Quiztastic",
     description: " Web based trivia game for friends and family.",
-    link: "https://tagtester.dev",
+    link: "https://quiztastic.app",
     category: "web",
     date: new Date("2019-10-18"),
     type: "project",
