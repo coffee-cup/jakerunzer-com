@@ -23,13 +23,12 @@ const Home = () => {
 
       <Box
         sx={{
-          display: ["flex", "flex", "grid"],
-          flexDirection: "column-reverse",
-          gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
-          gap: [4, 5],
+          py: 5,
+          // gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
+          // gap: [4, 5],
         }}
       >
-        <Section>
+        {/* <Section>
           <Heading variant="section">Latest</Heading>
 
           <Box>
@@ -45,7 +44,7 @@ const Home = () => {
               </React.Fragment>
             ))}
           </Box>
-        </Section>
+        </Section> */}
 
         <Section>
           <Heading variant="section">Hello</Heading>
@@ -70,7 +69,7 @@ const Home = () => {
               keybase
             </Link>
             <Link href="mailto:jakerunzer.com" sx={{ mr: 3 }}>
-              contact
+              email
             </Link>
           </Box>
         </Section>
