@@ -18,7 +18,9 @@ const ThemeSwitcher: React.FC = () => {
   return (
     <Button
       aria-label="theme switcher"
-      onClick={() => setColorMode(colorMode === "default" ? "dark" : "default")}
+      onClick={() =>
+        setColorMode(colorMode === "default" ? "light" : "default")
+      }
       sx={{
         display: "flex",
         alignItems: "center",
@@ -34,7 +36,7 @@ const ThemeSwitcher: React.FC = () => {
         },
       }}
     >
-      {colorMode === "default" ? <Moon size={size} /> : <Sun size={size} />}
+      {colorMode === "default" ? <Sun size={size} /> : <Moon size={size} />}
     </Button>
   );
 };
