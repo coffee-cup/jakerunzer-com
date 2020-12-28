@@ -7,6 +7,17 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: "gatsby-plugin-fathom",
+      options: {
+        // Fathom server URL. Defaults to `cdn.usefathom.com`
+        trackingUrl: "jakerunzer.com",
+        // Unique site id
+        siteId: "DYTMHZIC",
+        // Domain whitelist
+        whitelistHostnames: ["jakerunzer.com"],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content`,
