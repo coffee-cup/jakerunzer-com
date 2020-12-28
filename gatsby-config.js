@@ -10,7 +10,7 @@ module.exports = {
       resolve: "gatsby-plugin-fathom",
       options: {
         // Fathom server URL. Defaults to `cdn.usefathom.com`
-        trackingUrl: "jakerunzer.com",
+        trackingUrl: "jackal.jakerunzer.com",
         // Unique site id
         siteId: "DYTMHZIC",
         // Domain whitelist
