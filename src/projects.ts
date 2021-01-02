@@ -2,9 +2,17 @@ import { IProject } from "./types";
 
 export const projects: IProject[] = [
   {
+    name: "Bowtie",
+    description: "Score keeping iOS app for card and board games",
+    link: "https://bowtie.cards",
+    category: "ios",
+    date: new Date("2020-12-27"),
+    type: "project",
+  },
+  {
     name: "Chronicle",
     description:
-      "Lightweight journaling app where you record highlights of your day.",
+      "Lightweight journaling app where you record highlights of your day",
     link: "https://chronicle.ink",
     category: "web",
     date: new Date("2020-04-16"),
@@ -20,7 +28,7 @@ export const projects: IProject[] = [
   },
   {
     name: "Stck",
-    description: "Minimal stack based esoteric programming language.",
+    description: "Minimal stack based esoteric programming language",
     link: "https://stck.jakerunzer.com",
     category: "language",
     date: new Date("2020-03-20"),
@@ -29,7 +37,7 @@ export const projects: IProject[] = [
   {
     name: "Solis",
     description:
-      "iOS app that shows you the times of sunrise, sunset, and twilight's.",
+      "iOS app that shows you the times of sunrise, sunset, and twilight's",
     link: "https://solisapp.xyz",
     category: "ios",
     date: new Date("2016-08-27"),
@@ -37,7 +45,7 @@ export const projects: IProject[] = [
   },
   {
     name: "Krill",
-    description: "Dynamic, curried, and minimal programming language.",
+    description: "Dynamic, curried, and minimal programming language",
     link: "https://krill.jakerunzer.com",
     category: "language",
     date: new Date("2019-06-10"),
@@ -45,18 +53,10 @@ export const projects: IProject[] = [
   },
   {
     name: "Quiztastic",
-    description: " Web based trivia game for friends and family.",
+    description: " Web based trivia game for friends and family",
     link: "https://quiztastic.app",
     category: "web",
     date: new Date("2019-10-18"),
-    type: "project",
-  },
-  {
-    name: "Bowtie",
-    description: "Score keeping iOS app",
-    link: "https://bowtie.jakerunzer.com",
-    category: "ios",
-    date: new Date("2017-03-26"),
     type: "project",
   },
   {
@@ -69,7 +69,7 @@ export const projects: IProject[] = [
   },
   {
     name: "Favocon",
-    description: "Command line utility for creating favicons from any image.",
+    description: "Command line utility for creating favicons from any image",
     link: "https://crates.io/crates/favocon",
     category: "devtool",
     date: new Date("2019-10-08"),
