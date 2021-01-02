@@ -11,7 +11,7 @@ const Section: React.FC = props => <Box {...props} sx={{ py: [4, 4, 3] }} />;
 const Home = () => {
   const entries = useLatest();
   return (
-    <Layout large>
+    <Layout>
       <Box sx={{ py: 6 }}>
         <Text variant="display" as="h1" sx={{ mb: 3 }}>
           Jake Runzer
