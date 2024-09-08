@@ -20,6 +20,7 @@ const blogEntries = await getCollection("blog");
     <ul class="grid gap-2 mt-8">
       {
         blogEntries
+          .filter((entry) => !entry.data.draft)
           .sort((a, b) =>
             a.data.date.getTime() < b.data.date.getTime() ? 1 : -1
           )

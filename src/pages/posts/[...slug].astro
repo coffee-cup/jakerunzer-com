@@ -24,7 +24,9 @@ const { Content } = await entry.render();
   image={entry.data.image}
 >
   <main class="px-5 md:px-12 py-12 sm:py-24 max-w-5xl mx-auto">
-    <h1 class="text-4xl font-bold font-serif mb-8">{entry.data.title}</h1>
+    <h1 class="text-4xl font-bold font-serif mb-8 leading-normal">
+      {entry.data.title}
+    </h1>
 
     <article class="content prose">
       <Content />
