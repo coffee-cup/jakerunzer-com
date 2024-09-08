@@ -25,6 +25,14 @@ const go = async () => {
   );
 
   fs.writeFileSync(fileName, contents);
+  return contents;
 };
 
-go();
+go()
+  .then((bookmark) => {
+    console.log("Bookmark added:");
+    console.log(bookmark);
+  })
+  .catch((error) => {
+    console.error("Error adding bookmark:", error);
+  });
