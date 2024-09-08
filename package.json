@@ -29,6 +29,8 @@
   "devDependencies": {
     "@astrojs/rss": "^4.0.7",
     "@tailwindcss/typography": "^0.5.10",
-    "@types/node": "^20.11.20"
+    "@types/node": "^20.11.20",
+    "markdown-it": "^14.1.0",
+    "sanitize-html": "^2.13.0"
   }
 }

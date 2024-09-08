@@ -23,8 +23,8 @@ const defaultDescription = "frontend focused software engineer";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="author" content="Jake Runzer" />
 
-    <meta name="theme-color" content="#fefdfb" />
     <meta name="theme-color" content="#151320" />
     <meta name="color-scheme" content="dark light" />
     <meta name="robots" content="index, max-image-preview:large" />
@@ -33,6 +33,13 @@ const defaultDescription = "frontend focused software engineer";
     <meta
       property="og:description"
       content={description ?? defaultDescription}
+    />
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Jake Runzer's posts and bookmarks"
+      href={new URL("rss.xml", Astro.site)}
     />
 
     {
