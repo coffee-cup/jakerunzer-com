@@ -38,10 +38,10 @@ Initialize a new Zig project.
 zig init
 ```
 
-## Add Raylib to your project 
+## Add Raylib
 
 We will be using the [raylib-zig](https://github.com/Not-Nik/raylib-zig)
-bindings. Fetch the bindings and add them to your project with:
+bindings. Fetch the bindings with:
 
 ```sh
 zig fetch --save https://github.com/Not-Nik/raylib-zig/archive/devel.tar.gz
@@ -49,7 +49,7 @@ zig fetch --save https://github.com/Not-Nik/raylib-zig/archive/devel.tar.gz
 
 ## Configure build.zig
 
-After installing the exe artifact, configure the raylib dependency.
+After installing the exe artifact, configure the raylib dependency in `build.zig`.
 
 ```zig
 b.installArtifact(exe); // already exists
@@ -235,3 +235,5 @@ And there we have it! A bunch of pink balls bouncing around the screen.
 ## Repo
 
 You can find all the code for this post [here](https://github.com/coffee-cup/zig-with-raylib).
+
+If interested, you can also take a look at a [pong game I made using raylib and zig](https://github.com/coffee-cup/zig-pong).
