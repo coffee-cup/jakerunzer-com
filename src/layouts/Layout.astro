@@ -5,14 +5,15 @@ import "@fontsource-variable/playfair-display";
 import "@fontsource-variable/jetbrains-mono";
 import "../global.css";
 
-interface Props {
+export interface Props {
   title: string;
   description?: string;
   image?: string;
   date?: string | Date;
+  hideNav?: boolean;
 }
 
-const { title, description, image, date } = Astro.props;
+const { title, description, image, date, hideNav } = Astro.props;
 
 const defaultDescription = "frontend focused software engineer";
 ---
@@ -74,7 +75,7 @@ const defaultDescription = "frontend focused software engineer";
   </head>
 
   <body class="bg-bg text-fg">
-    <Nav />
+    {!hideNav && <Nav />}
     <slot />
   </body>
 </html>

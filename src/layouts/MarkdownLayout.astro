@@ -1,0 +1,21 @@
+---
+import "@fontsource-variable/jetbrains-mono";
+import "@fontsource-variable/playfair-display";
+import "../global.css";
+import Layout, { type Props as LayoutProps } from "./Layout.astro";
+
+interface Props extends LayoutProps {
+  frontmatter: Record<string, any>;
+}
+
+const props = Astro.props;
+const frontmatter = props.frontmatter;
+
+const layoutProps = { ...props, ...frontmatter };
+---
+
+<Layout {...layoutProps}>
+  <main class="px-5 md:px-12 py-12 sm:py-24 max-w-5xl mx-auto prose">
+    <slot />
+  </main>
+</Layout>
