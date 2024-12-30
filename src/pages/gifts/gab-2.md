@@ -2,6 +2,7 @@
 layout: ../../layouts/MarkdownLayout.astro
 title: gift for gab 2
 description: happy new year
+image: https://jakerunzer.com/gift-gab-2-og.jpg
 hideNav: true
 ---
 
