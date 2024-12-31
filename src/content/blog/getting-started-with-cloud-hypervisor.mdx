@@ -118,9 +118,80 @@ images](https://cloud-images.ubuntu.com/) page._
 ```bash
 cloud-hypervisor \
 	--kernel vmlinux \
-	--disk path=noble-server-cloudimg-amd64.raw \
+	--disk path=noble-server-cloudimg-amd64.raw path=/tmp/ubuntu-cloudinit.img \
 	--cmdline "console=hvc0 root=/dev/vda1 rw" \
 	--cpus boot=4 \
 	--memory size=1024M \
 	--net "tap=,mac=,ip=,mask="
+```
+
+You should see the VM boot up and be prompted for the Ubuntu username and
+password. With the default cloud-init image, the username is `cloud` and the
+password is `cloud123`.
+
+You should be now have a shell into a fresh Ubuntu 24.04 instance.
+
+```bash
+uname -a
+```
+
+You can shutdown the VM with
+
+```bash
+# From inside the VM
+sudo shutdown -h now
+
+# From the host
+pkill cloud-hypervisor
+```
+
+## Networking
+
+_Section still in progress. It doesn't work yet._
+
+`cloud-hypervisor` automatically creates a tap interface for the VM if `--net` is specified.
+
+Now to configure the VM to use the tap interface, you can modify the cloud-init
+
+```bash
+vim cloud-hypervisor/test_data/cloud-init/ubuntu/local/network-config
+```
+
+and add
+
+```
+version: 2
+ethernets:
+    ens4:
+        addresses:
+            - 192.168.100.2/24
+        routes:
+            - to: 0.0.0.0/0
+              via: 192.168.100.1
+        nameservers:
+            addresses:
+                - 8.8.8.8
+                - 8.8.4.4
+        dhcp4: false
+```
+
+_Note: You might need to change the `ens4` to the correct interface name for
+your machine, such as `eth0`._
+
+Re-generate the cloud-init ISO with
+
+```bash
+pushd cloud-hypervisor && ./scripts/create-cloud-init.sh && popd
+```
+
+Now lets re-boot the VM with the updated network config.
+
+```bash
+cloud-hypervisor \
+    --kernel vmlinux \
+    --disk path=noble-server-cloudimg-amd64.raw path=/tmp/ubuntu-cloudinit.img \
+    --cmdline "console=hvc0 root=/dev/vda1 rw" \
+    --cpus boot=4 \
+    --memory size=1024M \
+    --net "tap=tap0,mac=,ip=192.168.100.2,mask=255.255.255.0"
 ```
