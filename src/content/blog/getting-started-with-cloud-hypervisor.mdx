@@ -126,11 +126,11 @@ cloud-hypervisor \
 	--net "tap=,mac=,ip=,mask="
 ```
 
-You should see the VM boot up and be prompted for the Ubuntu username and
+The VM boot up and be prompted for the Ubuntu username and
 password. With the default cloud-init image, the username is `cloud` and the
 password is `cloud123`.
 
-You should be now have a shell into a fresh Ubuntu 24.04 instance.
+You should now have a shell into a fresh Ubuntu 24.04 instance.
 
 ```bash
 uname -a
@@ -139,10 +139,10 @@ uname -a
 You can shutdown the VM with
 
 ```bash
-# From inside the VM
+# from inside the VM
 sudo shutdown -h now
 
-# From the host
+# or from the host
 pkill cloud-hypervisor
 ```
 
