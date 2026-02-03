@@ -13,7 +13,7 @@ const go = async () => {
   const $ = cheerio.load(data);
   const title = $("title").text();
 
-  const fileName = `${BASE_PATH}/${slugify(title, { lower: true })}.json`;
+  const fileName = `${BASE_PATH}/${slugify(title, { lower: true, remove: /[*+~.()'"!:@]/g })}.json`;
   const contents = JSON.stringify(
     {
       url,

@@ -1,6 +1,6 @@
 ---
 import Nav from "../components/Nav.astro";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import "@fontsource-variable/playfair-display";
 import "@fontsource-variable/jetbrains-mono";
 import "../global.css";
@@ -71,7 +71,7 @@ const defaultDescription = "frontend focused software engineer";
     <script src="https://cdn.usefathom.com/script.js" data-site="DYTMHZIC" defer
     ></script>
 
-    <ViewTransitions />
+    <ClientRouter />
   </head>
 
   <body class="bg-bg text-fg selection:bg-pink-300 dark:selection:bg-pink-600">
