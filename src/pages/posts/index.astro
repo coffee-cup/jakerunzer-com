@@ -28,7 +28,7 @@ const blogEntries = await getCollection("blog");
             <PostItem
               title={entry.data.title}
               date={entry.data.date}
-              href={`/posts/${entry.slug}`}
+              href={`/posts/${entry.id}`}
             />
           ))
       }
