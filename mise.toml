@@ -1,0 +1,19 @@
+[tools]
+node = "24"
+bun = "latest"
+
+[tasks.dev]
+run = "bun run dev"
+description = "Start dev server"
+
+[tasks.build]
+run = "bun run build"
+description = "Production build"
+
+[tasks.up]
+run = "railway up --detach"
+description = "Deploy to Railway"
+
+[tasks.check]
+run = "bun astro check"
+description = "Typecheck"
