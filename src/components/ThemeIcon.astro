@@ -4,7 +4,7 @@ import { Moon, Sun } from "lucide-astro";
 
 <button
   id="themeToggle"
-  class="text-fg opacity-50 hover:text-pink-500 hover:opacity-100"
+  class="text-fg opacity-50 hover:text-accent hover:opacity-100"
   aria-label="Toggle theme"
 >
   <Moon class="moon" size={18} />
@@ -46,6 +46,13 @@ import { Moon, Sun } from "lucide-astro";
     return "light";
   };
 
+  const syncThemeColor = () => {
+    document.querySelector('meta[name="theme-color"]')?.setAttribute(
+      "content",
+      getComputedStyle(document.documentElement).getPropertyValue("--bg").trim(),
+    );
+  };
+
   const setTheme = () => {
     const theme = getTheme();
     if (theme === "light") {
@@ -55,6 +62,7 @@ import { Moon, Sun } from "lucide-astro";
     }
 
     localStorage.setItem("theme", theme);
+    syncThemeColor();
   };
 
   setTheme();
@@ -65,6 +73,7 @@ import { Moon, Sun } from "lucide-astro";
 
     const isDark = element.classList.contains("dark");
     localStorage.setItem("theme", isDark ? "dark" : "light");
+    syncThemeColor();
   };
 
   document
