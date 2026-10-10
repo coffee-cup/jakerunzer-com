@@ -7,12 +7,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Only run mise commands:
 
 ```bash
+mise run dev    # development server / local preview
 mise run check  # typecheck
 mise run build  # production build
 mise run up     # deploy to railway
 ```
 
-**Never run dev/preview servers** - user runs these themselves.
+Dev/preview servers may be started and managed by the agent when needed.
 
 Add bookmark: `bun scripts/add-bookmark.ts <url> [date]`
 

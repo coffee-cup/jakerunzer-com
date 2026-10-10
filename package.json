@@ -13,25 +13,25 @@
     "node": "24"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.6",
-    "@astrojs/mdx": "^4.3.13",
-    "@astrojs/tailwind": "^6.0.2",
-    "@fontsource-variable/jetbrains-mono": "^5.0.19",
-    "@fontsource-variable/playfair-display": "^5.0.21",
-    "astro": "^5.17.1",
-    "cheerio": "^1.0.0-rc.12",
-    "dayjs": "^1.11.10",
-    "lucide-astro": "^0.340.0",
-    "node-html-parser": "^6.1.12",
-    "slugify": "^1.6.6",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.9.3"
+    "@astrojs/check": "^0.9.10",
+    "@astrojs/mdx": "^8.0.3",
+    "@tailwindcss/vite": "^4.3.3",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@fontsource-variable/playfair-display": "^5.3.0",
+    "astro": "^7.3.8",
+    "cheerio": "^1.2.0",
+    "dayjs": "^1.11.23",
+    "lucide-astro": "^0.556.0",
+    "node-html-parser": "^9.0.4",
+    "slugify": "^1.6.9",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3"
   },
   "devDependencies": {
-    "@astrojs/rss": "^4.0.15",
-    "@tailwindcss/typography": "^0.5.10",
-    "@types/node": "^20.19.30",
-    "markdown-it": "^14.1.0",
-    "sanitize-html": "^2.13.0"
+    "@astrojs/rss": "^4.0.19",
+    "@tailwindcss/typography": "^0.5.20",
+    "@types/node": "^24.19.2",
+    "markdown-it": "^15.0.2",
+    "sanitize-html": "^2.18.0"
   }
 }
