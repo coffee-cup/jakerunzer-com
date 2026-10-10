@@ -1,13 +1,19 @@
 :root {
-  --bg: #fefdfb;
-  --fg: #212529;
-  --article: #4e4e4e;
+  color-scheme: light;
+  --bg: #f0eafa;
+  --fg: #403a52;
+  --article: #6a607c;
+  --accent: #7960a3;
+  --accent-soft: color-mix(in srgb, var(--accent) 18%, var(--bg));
 }
 
 .dark {
-  --bg: #151320;
-  --fg: #f8f9fa;
-  --article: #dee2e6;
+  color-scheme: dark;
+  --bg: #2c293b;
+  --fg: #f1edfa;
+  --article: #cdc4de;
+  --accent: #c7bdf2;
+  --accent-soft: color-mix(in srgb, var(--accent) 18%, var(--bg));
 }
 
 html.dark pre {
