@@ -1,6 +1,6 @@
 import defaultTheme from "tailwindcss/defaultTheme";
 
-/** @type {import('tailwindcss').Config} */
+import typography from "@tailwindcss/typography";
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   darkMode: "class",
@@ -47,7 +47,7 @@ export default {
             "--tw-prose-quote-borders": theme("colors.article"),
 
             "h1, h2, h3": {
-              fontFamily: theme("fontFamily.serif").join(", "),
+              fontFamily: theme("fontFamily.serif"),
             },
 
             code: {
@@ -70,5 +70,5 @@ export default {
       }),
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [typography],
 };
