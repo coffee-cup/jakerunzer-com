@@ -1,0 +1,19 @@
+---
+// Keep these three icons local: lucide-astro's barrel loads its entire icon
+// collection in Astro dev, even when a page only needs the theme toggle.
+interface Props {
+  name: "moon" | "sun" | "arrow-up-right";
+  size?: number | string;
+  class?: string;
+}
+const { name, size = 24, class: className, ...attributes } = Astro.props;
+---
+
+<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class={className} aria-hidden="true" {...attributes}>
+  {name === "moon" && <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />}
+  {name === "sun" && <>
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2v2M12 20v2m-7.07-17.07 1.41 1.41m11.32 11.32 1.41 1.41M2 12h2M20 12h2m-15.66 5.66-1.41 1.41m14.14-14.14-1.41 1.41" />
+  </>}
+  {name === "arrow-up-right" && <path d="M7 7h10v10M7 17 17 7" />}
+</svg>

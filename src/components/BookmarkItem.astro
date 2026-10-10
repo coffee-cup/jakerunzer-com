@@ -11,13 +11,13 @@ import FormattedDate from "./FormattedDate.astro";
 ---
 
 <li class="grid md:grid-cols-[1fr_auto] gap-x-3 gap-y-2 w-full max-w-3xl">
-  <a href={url} class="min-w-0 [overflow-wrap:anywhere] hover:text-pink-500" target="_blank">
+  <a href={url} class="min-w-0 [overflow-wrap:anywhere] hover:text-accent" target="_blank">
     <div class="group grid gap-1 items-start justify-between">
-      <span class="text-article group-hover:text-pink-500 max-w-lg"
+      <span class="text-article group-hover:text-accent max-w-lg"
         >{title}</span
       >
 
-      <span class="text-sm text-gray-700 dark:text-gray-500 font-normal"
+      <span class="text-sm text-article font-normal"
         >{url.replace("https://", "")}</span
       >
     </div>
@@ -25,6 +25,6 @@ import FormattedDate from "./FormattedDate.astro";
 
   <FormattedDate
     date={date}
-    className="min-w-fit text-gray-300 dark:text-gray-700 text-xs font-mono lowercase md:text-right whitespace-nowrap"
+    className="min-w-fit text-article text-xs font-mono lowercase md:text-right whitespace-nowrap"
   />
 </li>

@@ -10,19 +10,8 @@ export default {
         bg: "var(--bg)",
         fg: "var(--fg)",
         article: "var(--article)",
-        pink: {
-          50: "#ffeff2",
-          100: "#ffe0e7",
-          200: "#ffc6d6",
-          300: "#ff97b3",
-          400: "#ff5d8c",
-          500: "#ff2469",
-          600: "#ff1769",
-          700: "#d7004c",
-          800: "#b40048",
-          900: "#990244",
-          950: "#570020",
-        },
+        accent: "var(--accent)",
+        "accent-soft": "var(--accent-soft)",
         gray: {
           50: "#f7f7f7",
           100: "#ededed",
@@ -73,7 +62,7 @@ export default {
             a: {
               textDecoration: "underline",
               "&:hover": {
-                color: theme("colors.pink.500"),
+                color: theme("colors.accent"),
               },
             },
           },
